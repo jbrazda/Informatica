@@ -1,4 +1,3 @@
-s
 # Installation of ActiveVOS on Websphere Cluster
 
 | Document Property |                       Value                       |
