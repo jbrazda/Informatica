@@ -1,0 +1,2150 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #fff;
+}
+
+.markdown-body .highlight .h {
+  color: #333;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.markdown-body .highlight .mf,
+.markdown-body .highlight .mh,
+.markdown-body .highlight .mi,
+.markdown-body .highlight .mo,
+.markdown-body .highlight .il,
+.markdown-body .highlight .m {
+  color: #945277;
+}
+
+.markdown-body .highlight .s,
+.markdown-body .highlight .sb,
+.markdown-body .highlight .sc,
+.markdown-body .highlight .sd,
+.markdown-body .highlight .s2,
+.markdown-body .highlight .se,
+.markdown-body .highlight .sh,
+.markdown-body .highlight .si,
+.markdown-body .highlight .sx,
+.markdown-body .highlight .s1 {
+  color: #df5000;
+}
+
+.markdown-body .highlight .kc,
+.markdown-body .highlight .kd,
+.markdown-body .highlight .kn,
+.markdown-body .highlight .kp,
+.markdown-body .highlight .kr,
+.markdown-body .highlight .kt,
+.markdown-body .highlight .k,
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #458;
+}
+
+.markdown-body .highlight .c,
+.markdown-body .highlight .cm,
+.markdown-body .highlight .c1 {
+  color: #998;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp,
+.markdown-body .highlight .cs,
+.markdown-body .highlight .cp .h {
+  color: #999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cs {
+  font-style: italic;
+}
+
+.markdown-body .highlight .n {
+  color: #333;
+}
+
+.markdown-body .highlight .na,
+.markdown-body .highlight .nv,
+.markdown-body .highlight .vc,
+.markdown-body .highlight .vg,
+.markdown-body .highlight .vi {
+  color: #008080;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086B3;
+}
+
+.markdown-body .highlight .nc {
+  color: #458;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: #094e99;
+}
+
+.markdown-body .highlight .ni {
+  color: #800080;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #945277;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555;
+}
+
+.markdown-body .highlight .nt {
+  color: #000080;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .gd {
+  color: #000;
+  background-color: #fdd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000;
+  background-color: #faa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000;
+  background-color: #dfd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000;
+  background-color: #afa;
+}
+
+.markdown-body .highlight .go {
+  color: #888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbb;
+}
+
+.markdown-body .highlight .sr {
+  color: #017936;
+}
+
+.markdown-body .highlight .ss {
+  color: #8b467f;
+}
+
+.markdown-body .highlight .bp {
+  color: #999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+
+.markdown-body .highlight .pl-coc,
+.markdown-body .highlight .pl-entm,
+.markdown-body .highlight .pl-eoa,
+.markdown-body .highlight .pl-mai .pl-sf,
+.markdown-body .highlight .pl-pdv,
+.markdown-body .highlight .pl-sc,
+.markdown-body .highlight .pl-sr,
+.markdown-body .highlight .pl-v,
+.markdown-body .highlight .pl-vpf {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .pl-eoac,
+.markdown-body .highlight .pl-mdht,
+.markdown-body .highlight .pl-mi1,
+.markdown-body .highlight .pl-mri,
+.markdown-body .highlight .pl-va,
+.markdown-body .highlight .pl-vpu {
+  color: #008080;
+}
+
+.markdown-body .highlight .pl-c,
+.markdown-body .highlight .pl-pdc {
+  color: #b4b7b4;
+  font-style: italic;
+}
+
+.markdown-body .highlight .pl-k,
+.markdown-body .highlight .pl-ko,
+.markdown-body .highlight .pl-kolp,
+.markdown-body .highlight .pl-mc,
+.markdown-body .highlight .pl-mr,
+.markdown-body .highlight .pl-ms,
+.markdown-body .highlight .pl-s,
+.markdown-body .highlight .pl-sok,
+.markdown-body .highlight .pl-st {
+  color: #6e5494;
+}
+
+.markdown-body .highlight .pl-ef,
+.markdown-body .highlight .pl-enf,
+.markdown-body .highlight .pl-enm,
+.markdown-body .highlight .pl-entc,
+.markdown-body .highlight .pl-eoi,
+.markdown-body .highlight .pl-sf,
+.markdown-body .highlight .pl-smc {
+  color: #d12089;
+}
+
+.markdown-body .highlight .pl-ens,
+.markdown-body .highlight .pl-eoai,
+.markdown-body .highlight .pl-kos,
+.markdown-body .highlight .pl-mh .pl-pdh,
+.markdown-body .highlight .pl-mp,
+.markdown-body .highlight .pl-pde,
+.markdown-body .highlight .pl-stp {
+  color: #458;
+}
+
+.markdown-body .highlight .pl-enti {
+  color: #d12089;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-cce,
+.markdown-body .highlight .pl-enc,
+.markdown-body .highlight .pl-kou,
+.markdown-body .highlight .pl-mq {
+  color: #f93;
+}
+
+.markdown-body .highlight .pl-mp1 .pl-sf {
+  color: #458;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-cos,
+.markdown-body .highlight .pl-ent,
+.markdown-body .highlight .pl-md,
+.markdown-body .highlight .pl-mdhf,
+.markdown-body .highlight .pl-ml,
+.markdown-body .highlight .pl-pdc1,
+.markdown-body .highlight .pl-pds,
+.markdown-body .highlight .pl-s1,
+.markdown-body .highlight .pl-scp,
+.markdown-body .highlight .pl-sol {
+  color: #df5000;
+}
+
+.markdown-body .highlight .pl-c1,
+.markdown-body .highlight .pl-cn,
+.markdown-body .highlight .pl-pse,
+.markdown-body .highlight .pl-pse .pl-s2,
+.markdown-body .highlight .pl-vi {
+  color: #a31515;
+}
+
+.markdown-body .highlight .pl-mb,
+.markdown-body .highlight .pl-pdb {
+  color: #df5000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-mi,
+.markdown-body .highlight .pl-pdi {
+  color: #6e5494;
+  font-style: italic;
+}
+
+.markdown-body .highlight .pl-ms1 {
+  background-color: #f5f5f5;
+}
+
+.markdown-body .highlight .pl-mdh,
+.markdown-body .highlight .pl-mdi {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-mdr {
+  color: #0086b3;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-s2 {
+  color: #333;
+}
+
+.markdown-body .highlight .pl-ii {
+  background-color: #df5000;
+  color: #fff;
+}
+
+.markdown-body .highlight .pl-ib {
+  background-color: #f93;
+}
+
+.markdown-body .highlight .pl-id {
+  background-color: #a31515;
+  color: #fff;
+}
+
+.markdown-body .highlight .pl-iu {
+  background-color: #b4b7b4;
+}
+
+.markdown-body .highlight .pl-mo {
+  color: #969896;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}</style><title>Install_ActiveVOS_MDM</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-informatica-ips-integration-development-image" class="anchor" href="#informatica-ips-integration-development-image" aria-hidden="true"><span class="octicon octicon-link"></span></a>Informatica IPS Integration Development Image</h1>
+
+<table>
+<thead>
+<tr>
+<th>Document Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author:</td>
+<td><a href="mailto:jbrazda@informatica.com">Jaroslav Brazda</a></td>
+</tr>
+<tr>
+<td>Release Date:</td>
+<td>November 2014</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<ul>
+<li>
+<a href="#included-software">Included Software</a>
+
+<ul>
+<li><a href="#informatica-software">Informatica Software</a></li>
+</ul>
+</li>
+<li>
+<a href="#installation-steps">Installation steps</a>
+
+<ul>
+<li><a href="#midnight-commander">Midnight Commander</a></li>
+<li><a href="#subversion">Subversion</a></li>
+<li><a href="#oracle-java-jdk">Oracle Java JDK</a></li>
+<li><a href="#informatica-bpm-activevos-build-framework">Informatica BPM (ActiveVOS) Build Framework</a></li>
+<li><a href="#install-mdm-server">Install MDM Server</a></li>
+<li><a href="#install-activevos-server">Install ActiveVOS Server</a></li>
+<li><a href="#configure-users-and-roles">Configure Users and Roles</a></li>
+<li><a href="#enable-activevos-identity-service">Enable ActiveVOS Identity Service</a></li>
+<li><a href="#configure-urn-mappings">Configure URN Mappings</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+<p>This image is based on the base Centos Image downloaded from
+Download</p>
+
+<p>This image focuses on support for the complex integration scenarios that involve multiple products with focus on the Informatica BPM Integration scenarios</p>
+
+<p>Additional configuration changes </p>
+
+<ul>
+<li>Added user <code>infa</code> pasword <code>informatica!234</code>
+
+<ul>
+<li>Configured user to have access to the oracle client installed under <code>oracle</code>
+</li>
+<li>
+<code>infa</code> user is set as sudoer</li>
+</ul>
+</li>
+<li>Changed hostname to infadev.informatica.com</li>
+<li>Installed avahi deamon to enable apple multicast DNS discovery and ability resolve the vm host as infadev.local on the host machine</li>
+<li>oracle management console is accessible on
+
+<ul>
+<li>
+<a href="https://infadev.local:1158/em">https://infadev.local:1158/em</a> (works only from vmware host machine)</li>
+<li><a href="https://infadev.informatica.com:1158/em">https://infadev.informatica.com:1158/em</a></li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="user-content-included-software" class="anchor" href="#included-software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Included Software</h2>
+
+<ul>
+<li>Oracle 11g 64-bit release 11.2.0.4</li>
+<li>Oracle Java JDK 64-Bit Server VM (build 24.71-b01)</li>
+<li>Midnight Commander</li>
+<li>Subversion 1.6.11 (r934486)</li>
+<li>Sublime Text 3 Editor build 3065</li>
+<li> </li>
+</ul>
+
+<h2>
+<a id="user-content-informatica-software" class="anchor" href="#informatica-software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Informatica Software</h2>
+
+<ul>
+<li>Informatica BPM (ActiveVOS Server 9.2.4)</li>
+<li>Informatica MDM 9.7.1</li>
+<li>Informatica PIM 7.1</li>
+<li>Informatica Power Center </li>
+</ul>
+
+<p>User that runs all components is </p>
+
+<ul>
+<li>User name: <code>infa</code>
+</li>
+<li>Password: <code>informatica!234</code>
+</li>
+<li>Default interactive shell: <code>zsh</code>
+</li>
+</ul>
+
+<blockquote>
+<p>Note: if you want to change default shell you can use <code>System Preferences/Users and groups</code> (requires root password)</p>
+</blockquote>
+
+<p>All user environment variables are set in the <code>~/.profile</code></p>
+
+<div class="highlight highlight-shell"><pre>ORACLE_HOME=/oracle/product/11.2.0/dbhome_2
+ORACLE_HOSTNAME=infadev.informatica.com
+PATH=<span class="pl-vo">$ORACLE_HOME</span>/bin:<span class="pl-vo">$PATH</span>
+LD_LIBRARY_PATH=<span class="pl-vo">$ORACLE_HOME</span>/lib:<span class="pl-vo">$LD_LIBRARY_PATH</span>
+ORACLE_SID=ORCLPCHC
+NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+JAVA_HOME=/usr/java/jdk1.7.0_71
+<span class="pl-s">export</span> ORACLE_HOME
+<span class="pl-s">export</span> ORACLE_HOSTNAME
+<span class="pl-s">export</span> ORACLE_SID
+<span class="pl-s">export</span> NLS_LANG
+<span class="pl-s">export</span> LD_LIBRARY_PATH
+<span class="pl-s">export</span> PATH
+<span class="pl-s">export</span> JAVA_HOME</pre></div>
+
+<h1>
+<a id="user-content-installation-steps" class="anchor" href="#installation-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation steps</h1>
+
+<h2>
+<a id="user-content-midnight-commander" class="anchor" href="#midnight-commander" aria-hidden="true"><span class="octicon octicon-link"></span></a>Midnight Commander</h2>
+
+<p>Useful and efficient two pane file manager, just type mc in the shell to use it</p>
+
+<div class="highlight highlight-shell"><pre>sudo yum -y install mc</pre></div>
+
+<h2>
+<a id="user-content-subversion" class="anchor" href="#subversion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subversion</h2>
+
+<div class="highlight highlight-shell"><pre> sudo yum -y install subversion</pre></div>
+
+<h2>
+<a id="user-content-oracle-java-jdk" class="anchor" href="#oracle-java-jdk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Oracle Java JDK</h2>
+
+<p>Download latest 64 bit Java rpm from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> </p>
+
+<blockquote>
+<p>Check this guide for additional details <a href="http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-7-on-fedora-centos-red-hat-rhel/">Java install guide RHEL/Fedora/Centos</a></p>
+</blockquote>
+
+<div class="highlight highlight-shell"><pre>sudo rpm -Uvh /path/to/binary/jdk-7u67-linux-x64.rpm</pre></div>
+
+<h2>
+<a id="user-content-informatica-bpm-activevos-build-framework" class="anchor" href="#informatica-bpm-activevos-build-framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Informatica BPM (ActiveVOS) Build Framework</h2>
+
+<p>One of the best practices to deliver ActiveVOS based solutions is to automate build and deployment procedures and enable projects for continuous integration and eliminate manual steps to build test and deploy an orchestration projects. 
+This image contains example of such framework
+This framework is using Apache Ant, Centos yum isntaller provides only quite outdated ant version 1.6.x we want to use something newer.</p>
+
+<h3>
+<a id="user-content-install-ant" class="anchor" href="#install-ant" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Ant</h3>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads
+curl -o http://archive.apache.org/dist/ant/binaries/apache-ant-1.9.4-bin.tar.gz
+sudo mkdir -p /opt/java/ant
+sudo tar xvfvz apache-ant-1.9.4-bin.tar.gz -C /opt/java/ant
+sudo ln -s /opt/java/ant/apache-ant-1.9.4 /opt/ant</pre></div>
+
+<p>You then have to set up ANT_HOME environment variable, and include Ant binary in our path, as follows.</p>
+
+<div class="highlight highlight-shell"><pre>sudo sh -c <span class="pl-s1"><span class="pl-pds">'</span>echo ANT_HOME=/opt/ant &gt;&gt; /etc/environment<span class="pl-pds">'</span></span>
+sudo ln -s /opt/ant/bin/ant /usr/bin/ant</pre></div>
+
+<h3>
+<a id="user-content-install-maven" class="anchor" href="#install-maven" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Maven</h3>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads
+curl -O http://apache.osuosl.org/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
+sudo mkdir -p /opt/java/maven 
+sudo tar xvfvz apache-maven-3.0.5-bin.tar.gz -C /opt/java/maven
+sudo ln -s /opt/java/maven/apache-maven-3.0.5 /opt/maven
+
+sudo sh -c <span class="pl-s1"><span class="pl-pds">'</span>echo MAVEN_HOME=/opt/maven &gt;&gt; /etc/environment<span class="pl-pds">'</span></span>
+sudo ln -s /opt/maven/bin/mvn /usr/bin/mvn
+</pre></div>
+
+<h3>
+<a id="user-content-checkout-build-framework-from-the-svn" class="anchor" href="#checkout-build-framework-from-the-svn" aria-hidden="true"><span class="octicon octicon-link"></span></a>Checkout Build framework from the SVN</h3>
+
+<div class="highlight highlight-shell"><pre>svn co --username [your_user_name] http://aedev.informatica.com/AETechSvcs/trunk/CustomerProjects/BuildFramework/trunk</pre></div>
+
+<h3>
+<a id="user-content-install-jboss" class="anchor" href="#install-jboss" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install JBOSS</h3>
+
+<p>We will install JBOSS EAP 6.2 as it  is supported both by MDM and ActiveVOS. We will use single app server instance to save some valuable HDD Space and RAM on this VM
+It is not possible to download jboss without authentication jboss community portal so it is already downloaded in case wyou want to re-install jboss or install newer version you have to download it manually from <a href="http://www.jboss.org/products/eap/download/">http://www.jboss.org/products/eap/download/</a></p>
+
+<blockquote>
+<p>Note: we are using infa:infa user/group to be an owner of the jboss directory, typically this would be jboss user in real production environment. we are using single user to install all software to simplify management of this Development/Demo intended VM image.</p>
+</blockquote>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads
+sudo mkdir -p /opt/java/jboss 
+sudo unzip jboss-eap-6.2.0.zip -d /opt/java/jboss
+sudo chown -R infa:infa /opt/java/jboss
+sudo ln -s /opt/java/jboss/jboss-eap-6.2 /opt/jboss
+sudo chown -R infa:infa /opt/jboss
+sudo sh -c <span class="pl-s1"><span class="pl-pds">'</span>echo JBOSS_HOME=/opt/jboss &gt;&gt; /etc/environment<span class="pl-pds">'</span></span></pre></div>
+
+<h4>
+<a id="user-content-configure-jboss" class="anchor" href="#configure-jboss" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure JBOSS</h4>
+
+<p>For this installation we will use JBOSS in standalone mode and deploy all the MDM and ActiveVOS components to a single JVM</p>
+
+<p>Before starting the JBoss server we need to add a user to access the JBoss console. 
+We have used:</p>
+
+<ul>
+<li>Username: infa</li>
+<li>Password: informatica!234</li>
+</ul>
+
+<p>Run following</p>
+
+<pre><code>cd /opt/jboss/bin
+&gt; $ ./add-user.sh
+What type of user do you wish to add? 
+ a) Management User (mgmt-users.properties) 
+ b) Application User (application-users.properties)
+(a):     
+
+Enter the details of the new user to add.
+Using realm 'ManagementRealm' as discovered from the existing property files.
+Username : infa       
+Password : 
+Re-enter Password : 
+What groups do you want this user to belong to? (Please enter a comma separated list, or leave blank for none)[  ]: abAdmin,abTaskClient
+About to add user 'infa' for realm 'ManagementRealm'
+Is this correct yes/no? yes
+Added user 'infa' to file '/opt/java/jboss/jboss-eap-6.2/standalone/configuration/mgmt-users.properties'
+Added user 'infa' to file '/opt/java/jboss/jboss-eap-6.2/domain/configuration/mgmt-users.properties'
+Added user 'infa' with groups abAdmin,abTaskClient to file '/opt/java/jboss/jboss-eap-6.2/standalone/configuration/mgmt-groups.properties'
+Added user 'infa' with groups abAdmin,abTaskClient to file '/opt/java/jboss/jboss-eap-6.2/domain/configuration/mgmt-groups.properties'
+Is this new user going to be used for one AS process to connect to another AS process? 
+e.g. for a slave host controller connecting to the master or for a Remoting connection for server to server EJB calls.
+yes/no? yes
+To represent the user add the following to the server-identities definition &lt;secret value="aW5mb3JtYXRpY2EhMjM0" /&gt;
+
+</code></pre>
+
+<p>We also want to adjust  some startup parameters  namely JVM parameters
+to do so edit the <code>/opt/jboss/bin/standalone.conf</code> file</p>
+
+<p>Add following line to to the top of the file</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-c">## -*- shell-script -*- ######################################################</span>
+<span class="pl-c">##                                                                          ##</span>
+<span class="pl-c">##  JBoss Bootstrap Script Configuration                                    ##</span>
+<span class="pl-c">##                                                                          ##</span>
+<span class="pl-c">##############################################################################</span>
+
+JAVA_OPTS=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-vo">$JAVA_OPTS</span> -Xms2048m -Xmx2048m -XX:MaxPermSize=384m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true<span class="pl-pds">"</span></span>
+...
+<span class="pl-c"># remaining lines can stay unchanged</span></pre></div>
+
+<h3>
+<a id="user-content-mdm-hub-required-changes" class="anchor" href="#mdm-hub-required-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>MDM Hub required Changes</h3>
+
+<ul>
+<li>Increase the transaction timeout to 3600 in the following file <code>/opt/jboss/standalone/configuration/standalone-full.xml</code>
+</li>
+<li>Disable HornetQ Security: Set hornetQ security to false as shown in the following example</li>
+</ul>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">hornetq-server</span>&gt;
+    &lt;<span class="pl-ent">security-enabled</span>&gt;false&lt;/<span class="pl-ent">security-enabled</span>&gt;
+    ...
+&lt;/<span class="pl-ent">hornetq-server</span>&gt;</pre></div>
+
+<ul>
+<li>Under <code>&lt;subsystem xmlns="urn:jboss:domain:logging:1.3"&gt;</code> add the following XML code to configure asynchronous handling for the logger:</li>
+</ul>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">async-handler</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>ASYNC<span class="pl-pds">"</span></span>&gt; 
+    &lt;<span class="pl-ent">level</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>INFO<span class="pl-pds">"</span></span>/&gt; 
+    &lt;<span class="pl-ent">queue-length</span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>1024<span class="pl-pds">"</span></span>/&gt; 
+    &lt;<span class="pl-ent">overflow-action</span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>BLOCK<span class="pl-pds">"</span></span>/&gt; 
+    &lt;<span class="pl-ent">subhandlers</span>&gt; 
+        &lt;<span class="pl-ent">handler</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>FILE<span class="pl-pds">"</span></span>/&gt; 
+        &lt;<span class="pl-ent">handler</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>CONSOLE<span class="pl-pds">"</span></span>/&gt; 
+    &lt;/<span class="pl-ent">subhandlers</span>&gt; 
+&lt;/<span class="pl-ent">async-handler</span>&gt;</pre></div>
+
+<ul>
+<li> Under <code>&lt;subsystem xmlns="urn:jboss:domain:logging:1.3"&gt;</code> add the following XML code to configure asynchronous handling for the root logger</li>
+</ul>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">root-logger</span>&gt;
+    &lt;<span class="pl-ent">level</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>INFO<span class="pl-pds">"</span></span>/&gt; 
+    &lt;<span class="pl-ent">handlers</span>&gt; 
+        &lt;<span class="pl-ent">handler</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>ASYNC<span class="pl-pds">"</span></span>/&gt; 
+    &lt;/<span class="pl-ent">handlers</span>&gt; 
+&lt;/<span class="pl-ent">root-logger</span>&gt;</pre></div>
+
+<ul>
+<li>Disable remote connector security. Remove the security-realm attribute from the following code</li>
+</ul>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">subsystem</span> <span class="pl-e">xmlns</span>=<span class="pl-s1"><span class="pl-pds">"</span>urn:jboss:domain:remoting:1.1<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">connector</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>remoting-connector<span class="pl-pds">"</span></span> <span class="pl-e">socket-binding</span>=<span class="pl-s1"><span class="pl-pds">"</span>remoting<span class="pl-pds">"</span></span> <span class="pl-e">security-realm</span>=<span class="pl-s1"><span class="pl-pds">"</span>ApplicationRealm<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">subsystem</span>&gt;</pre></div>
+
+<h2>
+<a id="user-content-install-mdm-server" class="anchor" href="#install-mdm-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install MDM Server</h2>
+
+<p>Install and Configure Oracle
+Oracle is already pre-installed on this VM</p>
+
+<h3>
+<a id="user-content-create-the-directory-for-the-mdm-tablespace-storage" class="anchor" href="#create-the-directory-for-the-mdm-tablespace-storage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create the directory for the MDM tablespace storage</h3>
+
+<div class="highlight highlight-shell"><pre>su -l oracle
+mkdir /oracle/oradata/mdm</pre></div>
+
+<h3>
+<a id="user-content-prepare-mdm-database" class="anchor" href="#prepare-mdm-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prepare MDM Database</h3>
+
+<p>You can run following script or follow manually DB configuration steps below</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">exit</span> <span class="pl-k">|</span> sqlplus -S system/Ter4Lyte @/home/infa/workpace/mdm/create_database.sql</pre></div>
+
+<h3>
+<a id="user-content-disable-the-oracle-recycle-bin" class="anchor" href="#disable-the-oracle-recycle-bin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disable the Oracle Recycle Bin</h3>
+
+<p>Once database is installed, turn off the Oracle recycle bin. To turn the feature ON or OFF here what you have to do</p>
+
+<div class="highlight highlight-sql"><pre>ALTER SYSTEM <span class="pl-k">SET</span> recyclebin <span class="pl-k">=</span> OFF DEFERRED;
+ALTER SYSTEM <span class="pl-k">SET</span> recyclebin <span class="pl-k">=</span> <span class="pl-k">ON</span> DEFERRED;</pre></div>
+
+<blockquote>
+<p>NOTE:  DEFERRED is used because it takes effect in new sessions in the database</p>
+</blockquote>
+
+<h3>
+<a id="user-content-create-tablespaces" class="anchor" href="#create-tablespaces" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Tablespaces</h3>
+
+<p>You must create the CMX_DATA, CMX_INDX, CMX_TEMP table spaces for the Hub Store
+We have slitely altered the default tablespace sttings documented in the MDM installation guide to enable tible autoextend and start with smaler initial zize.</p>
+
+<div class="highlight highlight-sql"><pre>CREATE BIGFILE TABLESPACE CMX_DATA
+NOLOGGING
+DATAFILE <span class="pl-s1"><span class="pl-pds">'</span>/oracle/oradata/mdm/CMX_DATA1.dbf<span class="pl-pds">'</span></span> SIZE 1024M REUSE
+autoextend <span class="pl-k">on</span> maxsize unlimited;
+
+CREATE BIGFILE TABLESPACE CMX_INDX
+NOLOGGING
+DATAFILE <span class="pl-s1"><span class="pl-pds">'</span>/oracle/oradata/mdm/CMX_INDX1.dbf<span class="pl-pds">'</span></span> SIZE 1024M
+autoextend <span class="pl-k">on</span> maxsize unlimited;
+
+CREATE BIGFILE TABLESPACE CMX_TEMP
+NOLOGGING
+DATAFILE <span class="pl-s1"><span class="pl-pds">'</span>/oracle/oradata/mdm/CMX_TEMP1.dbf<span class="pl-pds">'</span></span> SIZE 1024M
+autoextend <span class="pl-k">on</span> maxsize unlimited;</pre></div>
+
+<p>If you want to cleanup databses for re-install, you can use following script (login as sys)</p>
+
+<div class="highlight highlight-sql"><pre><span class="pl-k">DROP</span> <span class="pl-k">TABLE</span>SPACE CMX_DATA INCLUDING CONTENTS  CASCADE CONSTRAINTS;
+<span class="pl-k">DROP</span> <span class="pl-k">TABLE</span>SPACE CMX_INDX INCLUDING CONTENTS  CASCADE CONSTRAINTS;
+<span class="pl-k">DROP</span> <span class="pl-k">TABLE</span>SPACE CMX_TEMP INCLUDING CONTENTS  CASCADE CONSTRAINTS;</pre></div>
+
+<h3>
+<a id="user-content-db-user-and-permissions" class="anchor" href="#db-user-and-permissions" aria-hidden="true"><span class="octicon octicon-link"></span></a>DB User and Permissions</h3>
+
+<p><strong>Create a database user <code>cmx_system</code></strong></p>
+
+<div class="highlight highlight-sql"><pre><span class="pl-k">CREATE</span> <span class="pl-k">USER</span> <span class="pl-en">cmx_system</span> IDENTIFIED BY cmx_system;
+<span class="pl-k">GRANT</span> CONNECT TO cmx_system;</pre></div>
+
+<p>Connect to database as “sys” user and execute following grant operations for the “cmx_system”
+Open sqlplus and connect as sys user using command “sys as sysdba” and provide password.</p>
+
+<div class="highlight highlight-sql"><pre><span class="pl-k">GRANT</span> <span class="pl-k">SELECT</span> <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">pending_trans</span>$ TO cmx_system with <span class="pl-k">grant</span> option;
+<span class="pl-k">GRANT</span> <span class="pl-k">SELECT</span> <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">dba_pending_transactions</span> TO cmx_system with <span class="pl-k">grant</span> option;
+<span class="pl-k">GRANT</span> <span class="pl-k">SELECT</span> <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">dba_2pc_pending</span> TO cmx_system with <span class="pl-k">grant</span> option;
+<span class="pl-k">GRANT</span> EXECUTE <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">dbms_xa</span> TO cmx_system with <span class="pl-k">grant</span> option;</pre></div>
+
+<p>The Hub Server and Process Server installer do not add the TNS name into the tnsnames.ora file. You must add TNS name entries to the tnsnames.ora file on the Hub Server and Process Server machines to connect to the Oracle database.
+Add the following entry in the tnsnames.ora file:</p>
+
+<pre><code>&lt;TNS NAME&gt; = (DESCRIPTION =  
+    (ADDRESS_LIST = (   ADDRESS = (PROTOCOL = TCP)(Host = &lt;Oracle server host name&gt;)(Port = &lt;Oracle server port&gt;))) 
+    (CONNECT_DATA = (SERVICE_NAME = &lt;Oracle SID&gt;)) 
+)   
+</code></pre>
+
+<blockquote>
+<p>Note: Ensure that the TNS names on the Hub Server machine and the Process Server machine are the same. This step can be skipped on this VM as the tns is already set</p>
+</blockquote>
+
+<ul>
+<li> Use the following command to test the database connection: </li>
+</ul>
+
+<pre><code>sqlplus &lt;user name&gt;/&lt;password&gt;@&lt;TNS Name&gt;
+</code></pre>
+
+<h3>
+<a id="user-content-hub-store-installation" class="anchor" href="#hub-store-installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hub Store Installation</h3>
+
+<p>First we have to extract  <code>MDM 9.7.1 Hotfix1 Database Files.zip</code>, the file is stored in the <code>~/Downloads/mdm</code> directory.</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm
+unzip Informatica_MDM_9.7.1_HF1_DATABASE_FILES.zip
+<span class="pl-s3">cd</span> database/bin</pre></div>
+
+<p>Zipped files are not marked as exutable after the eztratction so we have to flag all sh file in the extracted db dir as executable</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm
+find <span class="pl-s3">.</span> -name <span class="pl-s1"><span class="pl-pds">"</span>*.sh<span class="pl-pds">"</span></span> <span class="pl-k">|</span> xargs  chmod +x 
+<span class="pl-s3">cd</span> database/bin
+./sip_ant.sh -projecthelp</pre></div>
+
+<p>You should get following output</p>
+
+<pre><code>infa@psvlxprof2 ~/Downloads/mdm/database/bin 
+&gt; $ ./sip_ant.sh -projecthelp                                
+------------------------------------------------------------------
+Current folder : /home/infa/Downloads/mdm/database/bin
+Current script : /home/infa/Downloads/mdm/database/bin/sip_ant.sh
+Parameters :
+Siperian Home : /home/infa/Downloads/mdm/database/bin/..
+Java Home : /usr/java/jdk1.7.0_71
+Classpath : /home/infa/Downloads/mdm/database/bin/../lib/ant.jar:/home/infa/Downloads/mdm/database/bin/../lib/xml-apis.jar:/home/infa/Downloads/mdm/database/bin/../lib/xercesImpl.jar:/home/infa/Downloads/mdm/database/bin/../lib/log4j-1.2.16.jar:/home/infa/Downloads/mdm/database/bin/../lib/siperian-common.jar:/home/infa/Downloads/mdm/database/bin/../lib/ant-apache-log4j.jar:/usr/java/jdk1.7.0_71/lib/rt.jar:/usr/java/jdk1.7.0_71/lib/i18n.jar
+------------------------------------------------------------------
+Buildfile: /home/infa/Downloads/mdm/database/bin/build.xml
+     [echo] sip.home = /home/infa/Downloads/mdm/database
+
+Main targets:
+
+ create_db             Target to create empty db2 database.
+ create_ors            Target to create empty ors database schema.
+ create_system         Target to create empty system database schema.
+ debug_print_install   MSSQL specific target - creates debug_print procedure for DB logging inside MSSQL database.
+ debug_print_setup     target - configure debug_print procedure for DB logging inside database.
+ drop_db               Target to create empty db2 database.
+ export_ors            Target to export ors database schema.
+ export_system         Target to export system database schema.
+ import_ors            Target to import ors database schema.
+ import_system         Target to import system database schema.
+ localize_ors          Target to localize ORS schema.
+ refresh_triggers      
+ set_local_db2_native  Target to create empty db2 database.
+ updatedatabase        Target to update master and ors database schema.
+ updatemasterdatabase  Target to update master database schema.
+ updateorsdatabase     Target to update ors database schema.
+Default target: usage
+</code></pre>
+
+<h3>
+<a id="user-content-create-master-database" class="anchor" href="#create-master-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Master Database</h3>
+
+<p>After you install Oracle, you must create an MDM Hub Master Database. 
+The default name of the MDM Hub Master Database is CMX_SYSTEM.
+Navigate to the following location in the distribution directory and run following command</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm/database/bin
+./sip_ant.sh create_system</pre></div>
+
+<p>Following is the output example:
+Provide onscreen information (For details please refer to <code>~/Downloads/mdm/MDM_971_OracleInstallationGuideFor[JBoss]_en.pdf</code>)</p>
+
+<pre><code>infa@psvlxprof2 ~/Downloads/mdm/database/bin
+&gt; $ ./sip_ant.sh -projecthelp  
+------------------------------------------------------------------
+Current folder : /home/infa/Downloads/mdm/database/bin
+Current script : /home/infa/Downloads/mdm/database/bin/sip_ant.sh
+Parameters :
+Siperian Home : /home/infa/Downloads/mdm/database/bin/..
+Java Home : /usr/java/jdk1.7.0_71
+Classpath : /home/infa/Downloads/mdm/database/bin/../lib/ant.jar:/home/infa/Downloads/mdm/database/bin/../lib/xml-apis.jar:/home/infa/Downloads/mdm/database/bin/../lib/xercesImpl.jar:/home/infa/Downloads/mdm/database/bin/../lib/log4j-1.2.16.jar:/home/infa/Downloads/mdm/database/bin/../lib/siperian-common.jar:/home/infa/Downloads/mdm/database/bin/../lib/ant-apache-log4j.jar:/usr/java/jdk1.7.0_71/lib/rt.jar:/usr/java/jdk1.7.0_71/lib/i18n.jar
+------------------------------------------------------------------
+Buildfile: /home/infa/Downloads/mdm/database/bin/build.xml
+     [echo] sip.home = /home/infa/Downloads/mdm/database
+
+defenvironment:
+     [echo] Define the target database type
+[propertyprompt] Enter database type (ORACLE,MSSQL,DB2) [] : 
+ORACLE
+
+create_system:
+     [echo] 
+     [echo] ==========================================================
+     [echo] CREATE_SYSTEM  start: 2014 November 05 13:46:09
+
+db.info:
+[propertyprompt] Enter Oracle Connection Type (service, sid). [service] : 
+sid
+[propertyprompt] Enter the DB hostname. [localhost] : 
+[propertyprompt] Enter the DB port number. [1521] : 
+[propertyprompt] Enter DB SID. [orcl] : 
+ORCLPCHC                       
+[propertyprompt] Enter Oracle Net connect identifier (TNS Name). [orcl] : 
+ORCLPCHC
+[localizeEcho] DB Connect URL: "jdbc:oracle:thin:@localhost:1521:ORCLPCHC".
+db.create.sys.info:
+create_system:
+[localizeEcho] MDM master DB user name (schema name): "cmx_system"
+[propertyprompt] Enter master DB user password. [] : 
+[propertyprompt] Enter locale name from list: de, en_US, fr, ja, ko, zh_CN. [en_US] : 
+[propertyprompt] Enter the DBA username. [sys] : 
+[propertyprompt] Enter the DBA password. [] : 
+[propertyprompt] Enter the name of the MDM index tablespace [CMX_INDX] : 
+[propertyprompt] Enter the name of the MDM temporary tablespace [CMX_TEMP] : 
+[propertyprompt] Enter the name of the Oracle temporary tablespace [TEMP] : 
+
+     [exec] 
+     [exec] SQL*Plus: Release 11.2.0.4.0 Production on Wed Nov 5 13:48:39 2014
+     [exec] 
+     [exec] Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+     [exec] 
+     [exec] ERROR:
+     [exec] ORA-12541: TNS:no listener
+     [exec] 
+     [exec] 
+     [exec] Enter user-name: 
+     [echo] CREATE_SYSTEM  end: 2014 November 05 13:49:01
+
+BUILD SUCCESSFUL
+Total time: 2 minutes 51 seconds
+</code></pre>
+
+<p>After you create the MDM Hub Master Database, review sip_ant.log in the following directory</p>
+
+<div class="highlight highlight-shell"><pre>more <span class="pl-k">~</span>/Downloads/mdm/database/bin/sip_ant.log</pre></div>
+
+<h3>
+<a id="user-content-create-an-operational-reference-store" class="anchor" href="#create-an-operational-reference-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create an Operational Reference Store</h3>
+
+<p>The default name of the Operational Reference Store is CMX_ORS.
+Navigate to the following location in the distribution directory </p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm/database/bin
+./sip_ant.sh create_ors</pre></div>
+
+<p>Provide onscreen information (For details please refer to MDM_971_OracleInstallationGuideFor[JBoss]_en.pdf)
+Following is an example of sript output</p>
+
+<pre><code>infa@psvlxprof2 ~/Downloads/mdm/database/bin
+&gt; $ ./sip_ant.sh create_ors
+------------------------------------------------------------------
+Current folder : /home/infa/Downloads/mdm/database/bin
+Current script : /home/infa/Downloads/mdm/database/bin/sip_ant.sh
+Parameters :
+Siperian Home : /home/infa/Downloads/mdm/database/bin/..
+Java Home : /usr/java/jdk1.7.0_71
+Classpath : /home/infa/Downloads/mdm/database/bin/../lib/ant.jar:/home/infa/Downloads/mdm/database/bin/../lib/xml-apis.jar:/home/infa/Downloads/mdm/database/bin/../lib/xercesImpl.jar:/home/infa/Downloads/mdm/database/bin/../lib/log4j-1.2.16.jar:/home/infa/Downloads/mdm/database/bin/../lib/siperian-common.jar:/home/infa/Downloads/mdm/database/bin/../lib/ant-apache-log4j.jar:/usr/java/jdk1.7.0_71/lib/rt.jar:/usr/java/jdk1.7.0_71/lib/i18n.jar
+------------------------------------------------------------------
+Buildfile: /home/infa/Downloads/mdm/database/bin/build.xml
+     [echo] sip.home = /home/infa/Downloads/mdm/database
+
+defenvironment:
+     [echo] Define the target database type
+[propertyprompt] Enter database type (ORACLE,MSSQL,DB2) [] : 
+ORACLE
+
+create_ors:
+     [echo] 
+     [echo] ==========================================================
+     [echo] CREATE_ORS  start: 2014 November 05 16:14:49
+
+db.ors.info:
+  [taskdef] Could not load definitions from resource net/sf/antcontrib/antcontrib.properties. It could not be found.
+[propertyprompt] Enter Oracle Connection Type (service, sid). [service] : 
+sid
+[propertyprompt] Enter the Operational Reference Store DB hostname. [localhost] : 
+
+[propertyprompt] Enter the Operational Reference Store DB port number. [1521] : 
+
+[propertyprompt] Enter the Operational Reference Store DB SID. [orcl] : 
+ORCLPCHC
+[propertyprompt] Enter Oracle Net connect identifier (TNS Name). [orcl] : 
+ORCLPCHC
+[localizeEcho] DB Connect URL: "jdbc:oracle:thin:@localhost:1521:ORCLPCHC".
+
+db.create.ors.info:
+
+create_ors:
+[propertyprompt] Enter the Operational Reference Store DB user name (schema name). [cmx_ors] : 
+[propertyprompt] Enter the Operational Reference Store DB user password. [] : 
+[propertyprompt] Enter locale name from list: de, en_US, fr, ja, ko, zh_CN. [en_US] : 
+[propertyprompt] Enter the DBA username. [sys] : 
+[propertyprompt] Enter the DBA password. [] : 
+[propertyprompt] Enter the name of the MDM index tablespace [CMX_INDX] : 
+[propertyprompt] Enter the name of the MDM temporary tablespace [CMX_TEMP] : 
+[propertyprompt] Enter the name of the Oracle temporary tablespace [TEMP] : 
+     [exec] 
+     [exec] SQL*Plus: Release 11.2.0.4.0 Production on Wed Nov 5 16:15:54 2014
+     [exec] 
+     [exec] Copyright (c) 1982, 2013, Oracle.  All rights reserved.
+     [exec] 
+     [exec] 
+     [exec] Connected to:
+     [exec] Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+     [exec] With the Partitioning, OLAP, Data Mining and Real Application Testing options
+     [exec] 
+     [exec] Name of the MDM Operational Reference Store user is [cmx_ors]
+     [exec] Name of the MDM data tablespace: [CMX_DATA]
+     [exec] Name of the MDM index tablespace is [CMX_INDX]:
+     [exec] Name of the MDM temporary tablespace (Not an Oracle temporary tablespace) is [CMX_TEMP]:
+     [exec] Name of the Oracle temporary tablespace is [TEMP]:
+     [exec] 
+     [exec] Creating user cmx_ors -- About to drop and create user. cmx_ors
+     [exec] DROP USER cmx_ors CASCADE
+     [exec]           *
+     [exec] ERROR at line 1:
+     [exec] ORA-01918: user 'CMX_ORS' does not exist
+     [exec] 
+     [exec] 
+     [exec] 
+     [exec] User created.
+     [exec] 
+     [exec] 
+     [exec] User altered.
+     [exec] 
+     [exec] 
+     [exec] User altered.
+     [exec] 
+     [exec] 
+     [exec] User altered.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Grant succeeded.
+     [exec] 
+     [exec] 
+     [exec] Setting up Oracle Java security for "cmx_ors" user.
+     [exec] 
+     [exec] 
+     [exec] PL/SQL procedure successfully completed.
+     [exec] 
+     [exec] empty user cmx_ors is created
+     [exec] 
+     [exec] 
+     [exec] PL/SQL procedure successfully completed.
+     [exec] 
+     [exec] 
+     [exec] PL/SQL procedure successfully completed.
+     [exec] 
+     [exec] Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+     [exec] With the Partitioning, OLAP, Data Mining and Real Application Testing options
+     [echo] CREATE_ORS  end: 2014 November 05 16:16:04
+
+BUILD SUCCESSFUL
+Total time: 1 minute 16 seconds
+
+</code></pre>
+
+<h3>
+<a id="user-content-import-hub-store-master-database" class="anchor" href="#import-hub-store-master-database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import Hub Store Master Database</h3>
+
+<p>After you create the MDM Hub Master Database, import the seed into the MDM Hub Master Database. The seed contains the initial metadata such as REPOS tables, and other objects that the MDM Hub requires in the Hub Store.</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm/database/bin
+./sip_ant.sh import_system</pre></div>
+
+<h3>
+<a id="user-content-import-operational-reference-store" class="anchor" href="#import-operational-reference-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import Operational Reference Store</h3>
+
+<p>After you create the Operational Reference Store, import the seed into the Operational Reference Store. The seed contains the initial metadata such as REPOS tables, and other objects that the MDM Hub requires in the Hub Store.</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm/database/bin
+./sip_ant.sh import_system</pre></div>
+
+<h3>
+<a id="user-content-install-mrm-server" class="anchor" href="#install-mrm-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install MRM Server</h3>
+
+<p>We will use silent method to install the server. There is already prepared silent install file in the ~/Downloads/mdm/mrmserver/silentInstallServer_dev.properties
+Wiew the file to see the configuration details</p>
+
+<div class="highlight highlight-properties"><pre><span class="pl-c">## Command to run silent install</span>
+<span class="pl-c">## For Windows: hub_install.exe -f &lt;property_file&gt;</span>
+<span class="pl-c">## For Unix: hub_install.bin -f &lt;property_file&gt;</span>
+
+<span class="pl-k">INSTALLER_UI</span>=silent
+
+<span class="pl-c">## Hub Server Install directory.</span>
+<span class="pl-k">USER_INSTALL_DIR</span>=/opt/mdm/hub/server
+
+<span class="pl-c">## License path and filename</span>
+<span class="pl-k">SIP.LICENSE.PATH</span>=/home/infa/Downloads/mdm/
+<span class="pl-k">SIP.LICENSE.FILENAME</span>=INFA_Jaroslav_Brazda_Internal_MDM_96_MDM_96_10-27-2014_2-50-32_PM.license
+
+
+<span class="pl-c">## Following are the properties for application servers JBoss, WebSphere, WebLogic.</span>
+<span class="pl-c">## Properties for only one applicaton server should  be set.</span>
+
+<span class="pl-c">## Properties for JBoss 7 application server</span>
+<span class="pl-k">SIP.AS.CHOICE</span>=<span class="pl-s1"><span class="pl-pds">"</span>JBoss<span class="pl-pds">"</span></span>
+<span class="pl-k">SIP.AS.HOME</span>=/opt/jboss
+<span class="pl-k">JBOSS.AS.PORT_1</span>=4447
+<span class="pl-k">SIP.JBOSS.CONFIGURATION_NAME</span>=standalone
+
+<span class="pl-c">## Following are the properties for Oracle and db2 database servers.</span>
+<span class="pl-c">## Properties for only one database server should  be set.</span>
+
+<span class="pl-c">## Properties for Oracle server</span>
+<span class="pl-k">SIP.DB.CHOICE</span>=<span class="pl-s1"><span class="pl-pds">"</span>Oracle<span class="pl-pds">"</span></span>
+
+<span class="pl-c">## Oracle connection type should be SID or Service Name</span>
+<span class="pl-c">## set following to make Oracle connection type Service Name.</span>
+<span class="pl-c">## For connection type SID, the value of following variable should be 0.</span>
+<span class="pl-k">SERVICE_NAME_SELECTED_RESULT</span>=0
+
+<span class="pl-k">SIP.DB.SERVER</span>=localhost
+<span class="pl-k">SIP.DB.PORT</span>=1521
+
+<span class="pl-c">## if SIP.ORACLE.CONNECTION.TYPE is "SID", then SIP.DB.SID should be Oracle sid;</span>
+<span class="pl-c">## otherwise, value of SIP.DB.SID should be oracle service name</span>
+<span class="pl-k">SIP.DB.SID</span>=ORCLPCHC
+<span class="pl-k">SIP.DB.SCHEMA_NAME</span>=cmx_system
+<span class="pl-k">SIP.DB.PASSWORD</span>=cmx_system
+
+<span class="pl-c">## only when Oracle connection type is Service Name and if you want to customize</span>
+<span class="pl-c">## JDBC Connection URL, set SIP.ORACLE.CONNECTION.CUSTOMIZATION.YES to 1.</span>
+<span class="pl-c">## Otherwise, either don't use this variable in this file or set it to 0.</span>
+<span class="pl-c">#SIP.ORACLE.CONNECTION.CUSTOMIZATION.YES=1</span>
+
+<span class="pl-c">## only when SIP.ORACLE.CONNECTION.CUSTOMIZATION is set to 'Yes', SIP.DB.URL_SILENT need to be set to </span>
+<span class="pl-c">## a customized database url.</span>
+<span class="pl-c">## The value of SIP.DB.URL_SILENT should start with "jdbc:oracle:thin:@", and this veriable will be used only when</span>
+<span class="pl-c">## SIP.ORACLE.CONNECTION.CUSTOMIZATION=Yes for oracle in "Service Name" connection type.</span>
+<span class="pl-c">#SIP.DB.URL_SILENT=</span>
+
+<span class="pl-c">## If you want to run postInstallSetup as a part of silent install, then set following property.</span>
+<span class="pl-c">##    set RUN_DEPLOYMENT_FLAG to 1 if you want to run postInstallSetup</span>
+<span class="pl-c">## or set RUN_DEPLOYMENT_FLAG to 0 if you do not want to run postInstallSetup</span>
+<span class="pl-k">RUN_DEPLOYMENT_FLAG</span>=1</pre></div>
+
+<p>Before we start installtion we have to create target directory for mdm server in the <code>/opt/mdm/hub</code></p>
+
+<div class="highlight highlight-shell"><pre>sudo mkdir -p /opt/mdm/hub/server
+sudo chown -R infa:infa /opt/mdm</pre></div>
+
+<p>Start the Jboss server</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> /opt/jboss/bin
+./standalone.sh -c standalone-full.xml -b 0.0.0.0</pre></div>
+
+<p>Now we can run Installer</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm/mrmserver
+./hub_install.bin -f silentInstallServer_dev.properties</pre></div>
+
+<p>Check jboss server log for errors</p>
+
+<p>To start the MDM hub console use http://localhost:8080/cmx and clik the run icon, browser will prompt you to download Java Web Start jnlp file, save it nthge download folder, to start the client on Linux just run following command from the console</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads
+javaws siperian-console.jnlp </pre></div>
+
+<blockquote>
+<p>NOTE: If you want to run console on the Host machine that hosts the VM you have to install Apple Bonjour protocol (Multicast DNS) which is already enabled on this linux server host. This will allow you to connect to the server using hostname.local name without using IP adress which may change based on you VMWare installation. You can download apple Bonjour here 
+You will also have to enable inbound calls to the TCP remoting port on jboss which is by default 4447</p>
+</blockquote>
+
+<div class="highlight highlight-shell"><pre>sudo iptables -A INPUT -p tcp -m tcp --dport 4447 -j ACCEPT
+sudo service network restart</pre></div>
+
+<h3>
+<a id="user-content-registering-an-operational-reference-store" class="anchor" href="#registering-an-operational-reference-store" aria-hidden="true"><span class="octicon octicon-link"></span></a>Registering an Operational Reference Store</h3>
+
+<p>After you create an Operational Reference Store, you must register it. You can register an Operational Reference Store through the Hub Console. </p>
+
+<p><strong>Registering cmx_ors</strong>
+We will register cmx_ors database which we had created while installing the hub store.</p>
+
+<p>From Hub Console acquire lock from “Write Lock -&gt; Acquire Lock”
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/set_write_lock.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/set_write_lock.png" alt="Write Lock" title="Set the Write Lock" style="max-width:100%;"></a></p>
+
+<p>Workbenches -&gt; Configuration -&gt; Databases and click on “+” to register a database</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_00.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_00.png" alt="Add DB Step 1" title="Add ORS Database" style="max-width:100%;"></a>  </p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_01.png" alt="Add DB Step 1" title="Add ORS Database Step 1" style="max-width:100%;"></a></p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_02.png" alt="Add DB Step 2" title="Add ORS Database Step 2" style="max-width:100%;"></a></p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_03.png" alt="Add DB Step 3" title="Add ORS Database Step 3" style="max-width:100%;"></a></p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_04.png" alt="Add DB Step 4" title="Add ORS Database Step 4" style="max-width:100%;"></a></p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_05.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/add_database_05.png" alt="Add DB Step 5" title="Add ORS Database Step 5" style="max-width:100%;"></a></p>
+
+<h3>
+<a id="user-content-install-process-server-and-hub-cleanse-components" class="anchor" href="#install-process-server-and-hub-cleanse-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Process Server and Hub Cleanse Components</h3>
+
+<p>We will use silent method to install the clense server. There is already prepared silent install file in the ~/Downloads/mdm/mrmcleanse/silentInstallCleanse_sample_dev.properties</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/mdm/mrmcleanse
+./hub_cleanse_install.bin -f silentInstallCleanse_sample_dev.properties</pre></div>
+
+<h3>
+<a id="user-content-configuring-jboss-security" class="anchor" href="#configuring-jboss-security" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring JBoss Security</h3>
+
+<blockquote>
+<p>NOTE: We will currently skip akip this step and retur to it one the MDM comopnents are installed and eployed. </p>
+</blockquote>
+
+<p>You can configure EJB security at the JBoss application server level or at the Hub Server level to prevent unauthorized access to data and other resources in the MDM Hub. To configure EJB security at the JBoss application server level, enable the JBoss remoting-connector security.</p>
+
+<ol>
+<li>Log in to the Hub Console and change the Hub Console password to a password that adheres to the JBoss password policy.
+Note: Ensure that the password that you set adheres to the JBoss password policy, as well as the MDM Hub global password policy that you set. This is important because the same password needs to be set for the Hub Console and for JBoss</li>
+<li>Change the Hub Console password to adhere to the JBoss password policy
+
+<ol>
+<li> Log in to the Hub Console, change the database to the MDM Hub Master Database and click Connect</li>
+<li> Select the Users tool under Configuration workbenches and acquire a write lock</li>
+<li> Select the admin user under the User tab, and click the Change password icon</li>
+<li> The Change Password dialog box appears</li>
+<li> Change the password to adhere to the JBoss password policy, and click OK</li>
+</ol>
+</li>
+<li> Create user <code>admin</code> under Jboss</li>
+</ol>
+
+<pre><code>infa@psvlxprof2 /opt/jboss/bin
+&gt; $ ./add-user.sh
+What type of user do you wish to add? 
+ a) Management User (mgmt-users.properties) 
+ b) Application User (application-users.properties)
+(a): b
+
+Enter the details of the new user to add.
+Using realm 'ApplicationRealm' as discovered from the existing property files.
+Username : admin
+The username 'admin' is easy to guess
+Are you sure you want to add user 'admin' yes/no? yes
+Password : 
+Re-enter Password : 
+What groups do you want this user to belong to? (Please enter a comma separated list, or leave blank for none)[  ]: hubconsole,abAdmin,abTaskClient
+About to add user 'admin' for realm 'ApplicationRealm'
+Is this correct yes/no? yes
+Added user 'admin' to file '/opt/java/jboss/jboss-eap-6.2/standalone/configuration/application-users.properties'
+Added user 'admin' to file '/opt/java/jboss/jboss-eap-6.2/domain/configuration/application-users.properties'
+Added user 'admin' with groups hubconsole,abAdmin,abTaskClient to file '/opt/java/jboss/jboss-eap-6.2/standalone/configuration/application-roles.properties'
+Added user 'admin' with groups hubconsole,abAdmin,abTaskClient to file '/opt/java/jboss/jboss-eap-6.2/domain/configuration/application-roles.properties'
+Is this new user going to be used for one AS process to connect to another AS process? 
+e.g. for a slave host controller connecting to the master or for a Remoting connection for server to server EJB calls.
+yes/no? no
+
+</code></pre>
+
+<ol>
+<li> Enable the remoting-connector security: Navigate to 
+<code>/opt/jbooss/standalone/configuration/standalone-full.xml</code> and add the security-realm attribute as shown in the following code</li>
+</ol>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">subsystem</span> <span class="pl-e">xmlns</span>=<span class="pl-s1"><span class="pl-pds">"</span>urn:jboss:domain:remoting:1.1<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">connector</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>remoting-connector<span class="pl-pds">"</span></span> <span class="pl-e">socket-binding</span>=<span class="pl-s1"><span class="pl-pds">"</span>remoting<span class="pl-pds">"</span></span> <span class="pl-e">security-realm</span>=<span class="pl-s1"><span class="pl-pds">"</span>ApplicationRealm<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">subsystem</span>&gt;</pre></div>
+
+<ol>
+<li> Enable JBoss security on the Hub Server: Open cmxserver.properties in the following directory <code>/opt/mdm/hub/server/resources</code> and uncomment the following property in the <code>cmxserver.properties</code> file
+<code>#cmx.jboss7.security.enabled=true</code>
+</li>
+<li> Run the following command to repackage the <code>siperian-mrm-server.ear</code> file: <code>/opt/mdm/hub/server/bin/sip_ant.sh</code> repackage</li>
+<li> Deploy the <code>siperian-mrm-server.ear</code> file using following command from directory </li>
+</ol>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> /opt/mdm/hub/server
+./postinstallsetup.sh -Ddatabase.password=cmx_system</pre></div>
+
+<p>Admin user Attributes under JBOSS</p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Name:</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>Password:</td>
+<td>infa!234</td>
+</tr>
+<tr>
+<td>User Type:</td>
+<td>Application User</td>
+</tr>
+<tr>
+<td>Group Membership:</td>
+<td>hubconsole,abAdmin,abTaskClient</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>Note: <code>hubconsole</code> role is required to access the MDM Hub Console, and the <code>abAdmin</code> and <code>abTaskClient</code> Roles are granting access to ActiveVOS Admin Console, ActiveVOS Central and Workflow task procesing.</p>
+</blockquote>
+
+<h3>
+<a id="user-content-install-mdm-sample-data" class="anchor" href="#install-mdm-sample-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install MDM Sample Data</h3>
+
+<p>You can optionally install sample database, follow theses steps to load the database.</p>
+
+<p>Create New Database User and set permissions</p>
+
+<div class="highlight highlight-sql"><pre><span class="pl-k">CREATE</span> <span class="pl-k">USER</span> <span class="pl-en">mdm_sample</span> IDENTIFIED BY mdm_sample;
+<span class="pl-k">GRANT</span> CREATE SESSION TO mdm_sample;
+<span class="pl-k">GRANT</span> CREATE PROCEDURE TO mdm_sample;
+<span class="pl-k">GRANT</span> CREATE ROLE TO mdm_sample;
+<span class="pl-k">GRANT</span> CREATE SEQUENCE TO mdm_sample;
+<span class="pl-k">GRANT</span> CREATE SESSION TO mdm_sample;
+<span class="pl-k">GRANT</span> CREATE TABLE TO mdm_sample;
+<span class="pl-k">GRANT</span> CREATE VIEW TO mdm_sample;
+
+<span class="pl-k">ALTER</span> <span class="pl-k">USER</span> mdm_sample quota unlimited <span class="pl-k">on</span> Users;
+<span class="pl-k">ALTER</span> <span class="pl-k">USER</span> mdm_sample quota unlimited <span class="pl-k">on</span> CMX_DATA;
+<span class="pl-k">ALTER</span> <span class="pl-k">USER</span> mdm_sample quota unlimited <span class="pl-k">on</span> CMX_INDX;
+<span class="pl-k">ALTER</span> <span class="pl-k">USER</span> mdm_sample quota unlimited <span class="pl-k">on</span> CMX_TEMP;
+<span class="pl-c">-- this is necessary to handle XA transactions correctly</span>
+<span class="pl-k">GRANT</span> <span class="pl-k">SELECT</span> <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">dba_pending_transactions</span> TO mdm_sample;
+<span class="pl-k">GRANT</span> <span class="pl-k">SELECT</span> <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">pending_trans</span>$ TO mdm_sample;
+<span class="pl-k">GRANT</span> <span class="pl-k">SELECT</span> <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">dba_2pc_pending</span> TO mdm_sample;
+<span class="pl-k">GRANT</span> EXECUTE <span class="pl-k">ON</span> <span class="pl-c1">sys</span>.<span class="pl-c1">dbms_xa</span> TO mdm_sample;
+<span class="pl-k">GRANT</span> FORCE ANY TRANSACTION TO mdm_sample;</pre></div>
+
+<p>We have placed above script into the <code>~/workpace/mdm/create_sample_data_user.sql</code>. You can alternatively run following command to execute the script </p>
+
+<div class="highlight highlight-shell"><pre>sqlplus sys/Ter4Lyte@ORCLPCHC as sysdba @/home/infa/workpace/mdm/create_sample_data_user.sql</pre></div>
+
+<p>Extract Sample Dump File it located in the <code>/opt/mdm/hub/server/resources/database/oracle</code></p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> /opt/mdm/hub/server/resources/database/oracle
+unzip mdm_sample.zip
+
+imp system/Ter4Lyte@ORCLPCHC file=mdm_sample.dmp fromuser=mdm_sample touser=mdm_sample</pre></div>
+
+<p>Follow the same steps which were used to register blank cmx_ors in the earlier section 
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/register_sample_db.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/register_sample_db.png" alt="register sample DB" title="Register Sample DB" style="max-width:100%;"></a></p>
+
+<h2>
+<a id="user-content-install-activevos-server" class="anchor" href="#install-activevos-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install ActiveVOS Server</h2>
+
+<p>Create  the ActiveVOS DB Schema user</p>
+
+<div class="highlight highlight-sql"><pre><span class="pl-k">CREATE</span> <span class="pl-k">USER</span> <span class="pl-en">AVOS924</span> IDENTIFIED BY avos924
+  DEFAULT TABLESPACE <span class="pl-s1"><span class="pl-pds">"</span>USERS<span class="pl-pds">"</span></span>
+  TEMPORARY TABLESPACE <span class="pl-s1"><span class="pl-pds">"</span>TEMP<span class="pl-pds">"</span></span>;
+
+<span class="pl-k">GRANT</span> CREATE SESSION TO AVOS924;
+<span class="pl-k">GRANT</span> CREATE PROCEDURE TO AVOS924;
+<span class="pl-k">GRANT</span> CREATE ROLE TO AVOS924;
+<span class="pl-k">GRANT</span> CREATE SEQUENCE TO AVOS924;
+<span class="pl-k">GRANT</span> CREATE SESSION TO AVOS924;
+<span class="pl-k">GRANT</span> CREATE TABLE TO AVOS924;
+<span class="pl-k">GRANT</span> CREATE VIEW TO AVOS924;
+
+<span class="pl-k">ALTER</span> <span class="pl-k">USER</span> AVOS924 quota unlimited <span class="pl-k">on</span> USERS;</pre></div>
+
+<p>Download ActiveVOS server from the Informatica MySupport site <a href="https://mysupport.informatica.com/downloadsView.jspa">https://mysupport.informatica.com/downloadsView.jspa</a> (you can skip this step the installer is already downloade in the <code>~/Downloads/avos</code> Directory)
+Utar the distribution file</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/avos
+tar xvfvz ActiveVOS_Server_unix_9.2.4.tar.gz</pre></div>
+
+<p><strong>Run the installer</strong></p>
+
+<blockquote>
+<p><strong>NOTE:</strong> The Installation of ActiveVOS can be done using three modes
+1. gui wizard mode
+2. console mode
+3. silent mode</p>
+
+<p>Below descibed steps are using console intercative mode, both interactive modes save the used properties in the <code>/opt/ActiveVOS/9.2.4/Server/server-enterprise/jboss_config/bin/install.properties</code> This property file is used by the silent installation method. This image has the install properties already configured. and you can just simply run the following commands to re-install activeVOS server.</p>
+
+<p><strong>WARNING:</strong> this command will also set activevos database to "factory settings". if you wish to preserve the database and just re-build and re-deploy activevos ears and wars, edit following property in the install properties and set it to false <code>install.database.schema=true</code></p>
+</blockquote>
+
+<p>Run activeVOS config_deploy in silent mode:</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> /opt/ActiveVOS/9.2.4/Server/server-enterprise/jboss_config/bin
+./config_deploy.sh silent</pre></div>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> <span class="pl-k">~</span>/Downloads/avos
+chmod +x ActiveVOS_Server_unix_9.2.4.sh
+./ActiveVOS_Server_unix_9.2.4.sh -c</pre></div>
+
+<p>Fill-in the install paramters as follows</p>
+
+<pre><code>infa@psvlxprof2 ~/Downloads/avos
+&gt; $ sudo ./ActiveVOS_Server_unix_9.2.4.sh -c
+[sudo] password for infa: 
+testing JVM in /usr ...
+Starting Installer ...
+This will install ActiveVOS Server on your computer.
+OK [o, Enter], Cancel [c]
+
+Which components should be installed?
+1: ActiveVOS for Tomcat
+2: ActiveVOS for JBoss
+3: ActiveVOS for Websphere
+4: ActiveVOS for Weblogic
+Please enter a comma-separated list of the selected values or [Enter] for the default selection:
+2
+Where should ActiveVOS Server be installed?
+[/opt/ActiveVOS/Server]
+/opt/ActiveVOS/9.2.4/Server
+Create symlinks?
+Yes [y, Enter], No [n]
+y
+Select the folder where you would like ActiveVOS Server to create symlinks, then click Next.
+[/usr/local/bin]
+
+Extracting files ...
+                           this                                                
+Setup has finished installing ActiveVOS Server on your computer.
+View quick start guide?
+Yes [y, Enter], No [n]
+n
+Finishing installation ...
+</code></pre>
+
+<p>transfer the onership of the ActiveVOS Dir to the <code>infa</code> user</p>
+
+<div class="highlight highlight-shell"><pre>sudo chown -R infa:infa /opt/ActiveVOS</pre></div>
+
+<p>Run ActiveVOS Config Deploy tool (we will use console mode) <strong>Make Sure that the JBOSS server is stopped before you run the activevos Config Deploy tool</strong></p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-s3">cd</span> 
+./config-deploy.sh console</pre></div>
+
+<p>The configuration wizard can perform the following operations.  Please select the operations you would like to perform. Before you proceed please review the Prerequisite section of the documentation.</p>
+
+<pre><code>Configure ActiveVOS Server:   [default:true]
+Configure ActiveVOS Central:   [default:true]
+Configure Database:   [default:true]
+Deploy Applications and Resources:   [default:true]
+</code></pre>
+
+<p>Please provide the information required for ActiveVOS to access your database server. </p>
+
+<pre><code>Database:
+  view available options
+  1) DB2
+  2) MySQL [default]
+  3) Oracle
+  4) SQLServer
+  Enter a number
+3
+
+</code></pre>
+
+<p>Please provide the JNDI names for the following resources. </p>
+
+<pre><code>Database JNDI:   [default:jdbc/ActiveVOS]
+
+</code></pre>
+
+<p>Security Configuration - ActiveVOS can be deployed in a secured manner. Please select the security options you want to enable. </p>
+
+<pre><code>Administrative functions:   [default:false]
+true
+Process services:   [default:false]
+ActiveVOS Identity Service Consumer:   [default:false]
+Security Domain:   [default:ActiveVOS]
+</code></pre>
+
+<p>The ActiveVOS Central Application needs access to services provided by ActiveVOS Server.  Please enter the connection information. </p>
+
+<pre><code>Session Timeout (Minutes):   [default:30]
+
+ActiveVOS Central AeTaskService URL:   [default:http://[hostname.domainname]:[port]/active-bpel/services/AeB4PTaskClient-taskOperations]
+http://psvlxprof2.local:8080/active-bpel/services/AeB4PTaskClient-taskOperations  
+</code></pre>
+
+<p>DB Connection Parameters - Please provide the information that will be used to complete the configuration of ActiveVOS database datasource. </p>
+
+<pre><code>Driver class:   [default:]
+oracle.jdbc.OracleDriver
+Driver url:   [default:]
+jdbc:oracle:thin:@psvlxprof2.local:1521:ORCLPCHC
+Database name:   [default:ActiveVOS]
+avos924
+Driver jar:    [default:]
+/home/infa/Downloads/avos/ojdbc6.jar
+Username:   [default:bpeluser]
+avos924
+Password:   [default:bpel]
+avos924
+Connection Timeout:   [default:15]
+Minimum Connections:   [default:10]
+Maximum Connections:   [default:100]
+Validate Connection:   [default:true]
+</code></pre>
+
+<p>Deployment Options - Please select your deployment options. </p>
+
+<pre><code>Install database schema   [default:false]
+true
+
+Install database descriptor   [default:true]
+Deploy ActiveVOS   [default:true]
+Deploy ActiveVOS Central   [default:true]
+</code></pre>
+
+<p>Application Server Path - Please select your application server. This is required to determine the version of JBoss beng used. You should pint to the deplyments directory in case of Standalone server deplyment.</p>
+
+<pre><code>Directory:    [default:]
+/opt/jboss/standalone/deployments
+</code></pre>
+
+<p>Press enter on the last screen. Wait until <code>finished</code>  message is displayed on the screen. please inspect the <code>/opt/ActiveVOS/9.2.4/Server/server-enterprise/jboss_config/bin/logs/install.log</code> for errors</p>
+
+<p>Edit /opt/jboss/standalone/conf/standalone-full.xml file to update the subsystem urn:jboss:domain:security . Change the login-module section from </p>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">security-domain</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>ActiveVOS<span class="pl-pds">"</span></span>&gt;
+   &lt;<span class="pl-ent">authentication</span>&gt;
+      &lt;<span class="pl-ent">login-module</span> <span class="pl-e">code</span>=<span class="pl-s1"><span class="pl-pds">"</span>org.jboss.security.auth.spi.IdentityLoginModule<span class="pl-pds">"</span></span> <span class="pl-e">flag</span>=<span class="pl-s1"><span class="pl-pds">"</span>required<span class="pl-pds">"</span></span>&gt;
+         &lt;<span class="pl-ent">module-option</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>principal<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>aeadmin<span class="pl-pds">"</span></span>/&gt;
+         &lt;<span class="pl-ent">module-option</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>roles<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>abAdmin,abTaskClient<span class="pl-pds">"</span></span>/&gt;
+      &lt;/<span class="pl-ent">login-module</span>&gt;
+   &lt;/<span class="pl-ent">authentication</span>&gt;
+&lt;/<span class="pl-ent">security-domain</span>&gt;</pre></div>
+
+<p>To </p>
+
+<div class="highlight highlight-xml"><pre>&lt;<span class="pl-ent">security-domain</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>ActiveVOS<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">authentication</span>&gt;
+        &lt;<span class="pl-ent">login-module</span> <span class="pl-e">code</span>=<span class="pl-s1"><span class="pl-pds">"</span>UsersRoles<span class="pl-pds">"</span></span> <span class="pl-e">flag</span>=<span class="pl-s1"><span class="pl-pds">"</span>required<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">module-option</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>usersProperties<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>${jboss.server.config.dir}/users.properties<span class="pl-pds">"</span></span>/&gt;
+            &lt;<span class="pl-ent">module-option</span> <span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>rolesProperties<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s1"><span class="pl-pds">"</span>${jboss.server.config.dir}/roles.properties<span class="pl-pds">"</span></span>/&gt;
+        &lt;/<span class="pl-ent">login-module</span>&gt;
+    &lt;/<span class="pl-ent">authentication</span>&gt;
+&lt;/<span class="pl-ent">security-domain</span>&gt;</pre></div>
+
+<p>Example listing of the users.properties</p>
+
+<pre><code>admin=infa!234
+
+# Sample user names and passwords for logging in to ActiveVOS Console
+aeadmin=aeadmin
+
+# Sample user names and passwords for logging in to ActiveVOS Central
+BusinessAdmin1=BusinessAdmin1
+dev_user1=dev_user1
+marketing_user1=marketing_user1
+packg_user1=packg_user1
+regaff_user1=regaff_user1
+mgr1=mgr1
+srmgr1=srmgr1
+datastew_user1=datastew_user1
+</code></pre>
+
+<p>Example  listong of the roles.properties file</p>
+
+<pre><code>admin=hubconsole,abTaskClient,abAdmin,Development
+
+# aeadmin has abAdmin and abDeployer roles respectively for logging in to ActiveVOS Console
+aeadmin=abAdmin,abDeployer,abTaskClient
+
+# The following are the sample roles for logging in to ActiveVOS Central
+BusinessAdmin1=abTaskClient,BusinessAdmin
+dev_user1=abTaskClient,Development,abServiceConsumer,abIdentityListConsumer,abAdmin,DataSteward,Manager,SrManager
+marketing_user1=abTaskClient,Marketing
+packg_user1=abTaskClient,Packaging
+regaff_user1=abTaskClient,RegulatoryAffairs
+mgr1=abTaskClient,Manager
+srmgr1=abTaskClient,SrManager
+datastew_user1=abTaskClient,DataSteward
+</code></pre>
+
+<p><strong>Import the ActiveVOS License</strong>
+there are essentially two ways, start the server and import the license using ActiveVOS admin console another option is just to insert the license to the db using sql. 
+login to the avos database as avos924 user</p>
+
+<div class="highlight highlight-sql"><pre><span class="pl-c">-- remove any existing license</span>
+<span class="pl-k">DELETE</span> <span class="pl-k">FROM</span> AeLicense;
+<span class="pl-c">-- Inserting screenflow  enabled license</span>
+<span class="pl-k">INSERT INTO</span> AeLicense (LicenseId, License) <span class="pl-k">VALUES</span> (<span class="pl-c1">1</span>, <span class="pl-s1"><span class="pl-pds">'</span>U2hvd0JpbGxib2FyZHM9Tm8KUHJvZHVjdD1BY3RpdmVCUEVMIFNlcnZlcgpUeXBlPUZ1bGwKU2NlbmFyaW9UZXN0aW5nPVllcwpJbnRlcmFjdGlvbldpemFyZD1ZZXMKTXVsdGlUZW5hbnQ9Tm8KUG9qbz1ZZXMKQ2x1c3RlcmVkPVllcwpKTVM9WWVzCk9yZ2FuaXphdGlvbj1JTkZBIElOVEVSTkFMIE9OTFkgLSBETyBOT1QgU0hBUkUKUkVTVD1ZZXMKRXNwZXI9Tm8KRWRpdGlvbj1FRQpBdXRvbWF0aW9uRm9yQW5hbHlzdD1ObwpFbmdpbmVNb25pdG9yaW5nPVllcwpNdWx0aUNsdXN0ZXJlZD1ObwpWZXJzaW9uPTkuKgpBcHBTZXJ2ZXI9QWxsClNvY3JhdGVzPVllcwpFY2xhcnVzQXJjaGl0ZWN0PU5vCk51bUNQVXM9NApXYXJuT249Ti9BCkV4cGlyYXRpb249bmV2ZXIKU2VyaWFsTnVtYmVyPTE2MS0xMzUtMDg0LTI0MwoKU2lnbmF0dXJlPTMwMkMwMjE0NDcyRjc0OUQwREVGMENEMTY2RERFNUI1NkUxQ0E3QjZFQzBCMTBFNDAyMTQ3ODRGQjFBMUI0RTY1NkVEMUFCRjkxNDVEMjY5RkM4QUZGQzk4MkQ4<span class="pl-pds">'</span></span>);
+</pre></div>
+
+<blockquote>
+<p>Note that the license number is base 64 encoded string with license options and signature string </p>
+</blockquote>
+
+<p>You can install license also using the following command</p>
+
+<div class="highlight highlight-shell"><pre>sqlplus avos924/avos924 @/home/infa/workpace/activevos/sql/license.sql</pre></div>
+
+<h2>
+<a id="user-content-configure-users-and-roles" class="anchor" href="#configure-users-and-roles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure Users and Roles</h2>
+
+<p>The MDM Demo is designeed to use local users and we won't use LDAP security provided which would be a rcommended for a typical customer solution.
+We have to configure the same users and theyr respective mapping in both jboss and the MDM Console.</p>
+
+<h3>
+<a id="user-content-configure-mdm-users-and-roles" class="anchor" href="#configure-mdm-users-and-roles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure MDM Users and roles</h3>
+
+<h2>
+<a id="user-content-enable-activevos-identity-service" class="anchor" href="#enable-activevos-identity-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enable ActiveVOS Identity Service</h2>
+
+<p>Use included pre configured users.xml located at <code>~/Downloads/avos/configuration/users.xml</code>
+copy it to the <code>/opt/jboss/standalone/configuration</code> directoory
+Go to <a href="http://psvlxprof2.local:8080/activevos/idas_service.action">http://psvlxprof2.local:8080/activevos/idas_service.action</a> 
+Set the configuration of identity service as follows
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/ActiveVOS-IdentityService.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/mdm/ActiveVOS-IdentityService.png" alt="Identity Service" title="Identity Service" style="max-width:100%;"></a>
+Use fllowing path <code>/opt/jboss/standalone/configuration/users.xml</code></p>
+
+<h2>
+<a id="user-content-configure-urn-mappings" class="anchor" href="#configure-urn-mappings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure URN Mappings</h2>
+
+<p>make sure following urns are set as desribed</p>
+
+<blockquote>
+<p>Make sure that the java:comp/env/jdbc/ActiveVOS URN is updated as listed below, without that the ActiveVOS Central won't work properly, also note that the <code>ae:internal-reporting</code> and <code>ae:task-inbox</code> should use the real hostname of the server </p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>URN</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>urn:MDMHost:InfaMDM</td>
+<td><a href="http://psvlxprof2.local:8080/cmx/services/SifService">http://psvlxprof2.local:8080/cmx/services/SifService</a></td>
+</tr>
+<tr>
+<td>java:comp/env/jdbc/ActiveVOS</td>
+<td>java:/jdbc/ActiveVOS</td>
+</tr>
+<tr>
+<td>ae:internal-reporting</td>
+<td><a href="http://psvlxprof2.local:8080/activevos/internalreports">http://psvlxprof2.local:8080/activevos/internalreports</a></td>
+</tr>
+<tr>
+<td>ae:task-inbox</td>
+<td><a href="http://psvlxprof2.local:8080/activevos-central/avc">http://psvlxprof2.local:8080/activevos-central/avc</a></td>
+</tr>
+</tbody>
+</table>
+</article></body></html>

@@ -1,0 +1,1600 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #fff;
+}
+
+.markdown-body .highlight .h {
+  color: #333;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.markdown-body .highlight .mf,
+.markdown-body .highlight .mh,
+.markdown-body .highlight .mi,
+.markdown-body .highlight .mo,
+.markdown-body .highlight .il,
+.markdown-body .highlight .m {
+  color: #945277;
+}
+
+.markdown-body .highlight .s,
+.markdown-body .highlight .sb,
+.markdown-body .highlight .sc,
+.markdown-body .highlight .sd,
+.markdown-body .highlight .s2,
+.markdown-body .highlight .se,
+.markdown-body .highlight .sh,
+.markdown-body .highlight .si,
+.markdown-body .highlight .sx,
+.markdown-body .highlight .s1 {
+  color: #df5000;
+}
+
+.markdown-body .highlight .kc,
+.markdown-body .highlight .kd,
+.markdown-body .highlight .kn,
+.markdown-body .highlight .kp,
+.markdown-body .highlight .kr,
+.markdown-body .highlight .kt,
+.markdown-body .highlight .k,
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #458;
+}
+
+.markdown-body .highlight .c,
+.markdown-body .highlight .cm,
+.markdown-body .highlight .c1 {
+  color: #998;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp,
+.markdown-body .highlight .cs,
+.markdown-body .highlight .cp .h {
+  color: #999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cs {
+  font-style: italic;
+}
+
+.markdown-body .highlight .n {
+  color: #333;
+}
+
+.markdown-body .highlight .na,
+.markdown-body .highlight .nv,
+.markdown-body .highlight .vc,
+.markdown-body .highlight .vg,
+.markdown-body .highlight .vi {
+  color: #008080;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086B3;
+}
+
+.markdown-body .highlight .nc {
+  color: #458;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: #094e99;
+}
+
+.markdown-body .highlight .ni {
+  color: #800080;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #945277;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555;
+}
+
+.markdown-body .highlight .nt {
+  color: #000080;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .gd {
+  color: #000;
+  background-color: #fdd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000;
+  background-color: #faa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000;
+  background-color: #dfd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000;
+  background-color: #afa;
+}
+
+.markdown-body .highlight .go {
+  color: #888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbb;
+}
+
+.markdown-body .highlight .sr {
+  color: #017936;
+}
+
+.markdown-body .highlight .ss {
+  color: #8b467f;
+}
+
+.markdown-body .highlight .bp {
+  color: #999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #000;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+}
+
+.markdown-body .highlight .pl-coc,
+.markdown-body .highlight .pl-entm,
+.markdown-body .highlight .pl-eoa,
+.markdown-body .highlight .pl-mai .pl-sf,
+.markdown-body .highlight .pl-pdv,
+.markdown-body .highlight .pl-sc,
+.markdown-body .highlight .pl-sr,
+.markdown-body .highlight .pl-v,
+.markdown-body .highlight .pl-vpf {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .pl-eoac,
+.markdown-body .highlight .pl-mdht,
+.markdown-body .highlight .pl-mi1,
+.markdown-body .highlight .pl-mri,
+.markdown-body .highlight .pl-va,
+.markdown-body .highlight .pl-vpu {
+  color: #008080;
+}
+
+.markdown-body .highlight .pl-c,
+.markdown-body .highlight .pl-pdc {
+  color: #b4b7b4;
+  font-style: italic;
+}
+
+.markdown-body .highlight .pl-k,
+.markdown-body .highlight .pl-ko,
+.markdown-body .highlight .pl-kolp,
+.markdown-body .highlight .pl-mc,
+.markdown-body .highlight .pl-mr,
+.markdown-body .highlight .pl-ms,
+.markdown-body .highlight .pl-s,
+.markdown-body .highlight .pl-sok,
+.markdown-body .highlight .pl-st {
+  color: #6e5494;
+}
+
+.markdown-body .highlight .pl-ef,
+.markdown-body .highlight .pl-enf,
+.markdown-body .highlight .pl-enm,
+.markdown-body .highlight .pl-entc,
+.markdown-body .highlight .pl-eoi,
+.markdown-body .highlight .pl-sf,
+.markdown-body .highlight .pl-smc {
+  color: #d12089;
+}
+
+.markdown-body .highlight .pl-ens,
+.markdown-body .highlight .pl-eoai,
+.markdown-body .highlight .pl-kos,
+.markdown-body .highlight .pl-mh .pl-pdh,
+.markdown-body .highlight .pl-mp,
+.markdown-body .highlight .pl-pde,
+.markdown-body .highlight .pl-stp {
+  color: #458;
+}
+
+.markdown-body .highlight .pl-enti {
+  color: #d12089;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-cce,
+.markdown-body .highlight .pl-enc,
+.markdown-body .highlight .pl-kou,
+.markdown-body .highlight .pl-mq {
+  color: #f93;
+}
+
+.markdown-body .highlight .pl-mp1 .pl-sf {
+  color: #458;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-cos,
+.markdown-body .highlight .pl-ent,
+.markdown-body .highlight .pl-md,
+.markdown-body .highlight .pl-mdhf,
+.markdown-body .highlight .pl-ml,
+.markdown-body .highlight .pl-pdc1,
+.markdown-body .highlight .pl-pds,
+.markdown-body .highlight .pl-s1,
+.markdown-body .highlight .pl-scp,
+.markdown-body .highlight .pl-sol {
+  color: #df5000;
+}
+
+.markdown-body .highlight .pl-c1,
+.markdown-body .highlight .pl-cn,
+.markdown-body .highlight .pl-pse,
+.markdown-body .highlight .pl-pse .pl-s2,
+.markdown-body .highlight .pl-vi {
+  color: #a31515;
+}
+
+.markdown-body .highlight .pl-mb,
+.markdown-body .highlight .pl-pdb {
+  color: #df5000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-mi,
+.markdown-body .highlight .pl-pdi {
+  color: #6e5494;
+  font-style: italic;
+}
+
+.markdown-body .highlight .pl-ms1 {
+  background-color: #f5f5f5;
+}
+
+.markdown-body .highlight .pl-mdh,
+.markdown-body .highlight .pl-mdi {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-mdr {
+  color: #0086b3;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .pl-s2 {
+  color: #333;
+}
+
+.markdown-body .highlight .pl-ii {
+  background-color: #df5000;
+  color: #fff;
+}
+
+.markdown-body .highlight .pl-ib {
+  background-color: #f93;
+}
+
+.markdown-body .highlight .pl-id {
+  background-color: #a31515;
+  color: #fff;
+}
+
+.markdown-body .highlight .pl-iu {
+  background-color: #b4b7b4;
+}
+
+.markdown-body .highlight .pl-mo {
+  color: #969896;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  float: left;
+  margin: 0.3em 0 0.25em -1.6em;
+  vertical-align: middle;
+}</style><title>Install_ActiveVOS_on_Websphere_win</title></head><body><article class="markdown-body"><p>s</p>
+
+<h1>
+<a id="user-content-installation-of-activevos-on-websphere-cluster" class="anchor" href="#installation-of-activevos-on-websphere-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation of ActiveVOS on Websphere Cluster</h1>
+
+<table>
+<thead>
+<tr>
+<th>Document Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author:</td>
+<td><a href="mailto:jbrazda@informatica.com"> Jaroslav Brazda </a></td>
+</tr>
+<tr>
+<td>Release Date:</td>
+<td>December 2014</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#ibm-websphere-terminology">IBM WebSphere Terminology</a></li>
+<li>
+<a href="#installation-checklist">Installation Checklist</a>
+
+<ul>
+<li><a href="#hardware">Hardware</a></li>
+<li><a href="#software">Software</a></li>
+<li><a href="#license-information">License Information</a></li>
+<li><a href="#database-information">Database Information</a></li>
+<li><a href="#server-container-information">Server Container Information</a></li>
+</ul>
+</li>
+<li><a href="#software-used-in-this-guide">Software used in this Guide</a></li>
+<li><a href="#prepare-database-for-activevos">Prepare Database for ActiveVOS</a></li>
+<li><a href="#install-ibm-websphere-application-server-network-deployment">Install IBM WebSphere Application Server Network Deployment</a></li>
+<li>
+<a href="#configure-ibm-websphere-network-deployment-components">Configure IBM WebSphere Network Deployment Components</a>
+
+<ul>
+<li><a href="#create-deployment-manager">Create Deployment Manager</a></li>
+<li><a href="#create-cluster">Create Cluster</a></li>
+<li><a href="#create-managed-servers">Create Managed Servers</a></li>
+<li><a href="#configure-activevos-data-sources">Configure ActiveVOS Data Sources</a></li>
+<li><a href="#install-and-configure-was-web-server-plugins">Install and Configure WAS Web Server Plugins</a></li>
+<li><a href="#configuring-the-nodeagent-to-start-as-a-windows-service">Configuring the NodeAgent to start as a Windows Service</a></li>
+</ul>
+</li>
+<li>
+<a href="#install-activevos">Install ActiveVOS</a>
+
+<ul>
+<li><a href="#install-activevos-config-deploy-tool">Install ActiveVOS Config Deploy Tool</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+<h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>This document summarizes the steps of deploying ActiveVOS on the IBM WebSphere Platform. This guide focus on the installation on the Network Deployment Application Server clustered deployment using Oracle 11g, ActiveVOS 9.2.4 and Windows 7 Host machine.</p>
+
+<h2>
+<a id="user-content-ibm-websphere-terminology" class="anchor" href="#ibm-websphere-terminology" aria-hidden="true"><span class="octicon octicon-link"></span></a>IBM WebSphere Terminology</h2>
+
+<p>During the WebSphere installation, you may encounter a mix of standard and non-standard technical terms from the Application Server technology space. IBM WebSphere currently offers three versions of their application server product.</p>
+
+<ul>
+<li>
+<strong>IBM WebSphere Express</strong> is a slimmed down version of the product which offers no EJB container, embedded messaging support or JCA resource adapters. Also, there is no central administration or workload management.A mid-level offering is the <strong>IBM WebSphere Application Server</strong> product which contains an EJB container, embedded messaging and JCA resource adapter. However it still does not contain a central administration or workload management facility.The third offering is a <strong>Network Deployment Application Server</strong> which contains a central administration and workload management facility. It also contains a Web Services UDDI Registry and Web Services Gateway.</li>
+</ul>
+
+<p>The following is a list of some of the terms you may encounter as well as well as an explanation of each:</p>
+
+<ul>
+<li>
+<strong>Cell</strong> - a grouping of nodes into a single administrative domain. In the Base and Express configurations, a cell contains one node. That node may have multiple servers, but the configuration files for each server are stored and maintained individually. In a Network Deployment version the configuration and application files for all nodes in the cell are centralized into a cell master configuration repository.</li>
+<li>
+<strong>Network Deployment</strong> - configuration offers central administration and workload management. A Network Deployment environment consists of one or more Base installations and a Deployment Manager installation. The Base application servers are added to the cell and managed by the Deployment Manager.</li>
+<li>
+<strong>Node Agent</strong> - As you move up through the more advanced IBM WebSphere Application Server configurations, the concepts of configuring multiple nodes from one common administration server and workload distribution among nodes are introduced. In these centralized management configurations, each node has a node agent that works with a Deployment Manager to manage administration processes.</li>
+<li>
+<strong>Nodes</strong> - A node is a logical grouping of IBM WebSphere-managed server processes that share common configuration and operational control. A node is generally associated with one physical installation of IBM WebSphere Application Server.</li>
+<li>
+<strong>Cluster</strong> - A cluster is a logical collection of application server processes, with the sole purpose of providing workload balancing. Application servers that belong to a cluster are "members" of that cluster and must all have identical application components deployed on them. Other than the applications configured to run on them, cluster members do not have to share any other configuration data.</li>
+<li>
+<strong>Application Servers</strong> - provide the runtime environment for application code. They provide containers and services that specialize in enabling the execution of specific Java application components.</li>
+<li>
+<strong>IBM HTTP Server (IHS)</strong> - an Apache based web server which can provided Load balancing and integrated communication within the WAS Network server deployment. Together with the Websphere Application Server plugin it provides seamles scalability and load balancing acrros the WAS server nodes and instances.ss</li>
+</ul>
+
+<h2>
+<a id="user-content-installation-checklist" class="anchor" href="#installation-checklist" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation Checklist</h2>
+
+<p>This section provides a list of most of the items that you should either have completed or information noted prior to attempting to install ActiveVOS Server.</p>
+
+<h3>
+<a id="user-content-hardware" class="anchor" href="#hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware</h3>
+
+<ul>
+<li>Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.</li>
+<li>At least 1 GB of disk space is required to install the ActiveVOS Server application.</li>
+</ul>
+
+<h3>
+<a id="user-content-software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h3>
+
+<ul>
+<li>See a Product Availability Matrix, which is available on the My Support pages for each version of ActiveVOS. <a href="https://mysupport.informatica.com/servlet/JiveServlet/downloadBody/12771-102-1-17705/ActiveVOS%209.2.4%20PAM.xlsx">ActiveVOS 9.24 PAM</a>
+</li>
+<li>See a <a href="http://www-01.ibm.com/support/docview.wss?uid=swg27038218">Websphere AS System Requirements</a>
+</li>
+<li>A user account with administrative rights to install or manage all required software including the application and database servers and the ActiveVOS Server.</li>
+<li>The supported Server container installed on each machine intended to host ActiveVOS Server.</li>
+<li>JVM Memory arguments have been added to your JAVA_OPTS environment variable: <code>-Xms256m -Xmx1024m -XX:MaxPermSize=384m</code>. <a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/doc.server_install/websphere/html/Prereqs.html">See Prerequisites</a>
+</li>
+<li>Make sure that your Identity Service (JDBC, LDAP, or XML), has all the roles defined especially important is to add abTaskClient role to each ActiveVOS Central user. This security role, described in the web.xml file, is required for access to ActiveVOS Central.</li>
+<li>On the URN Mappings page of the Administration Console, update the host and port for ActiveVOS Central to match your installation, In clustered install in this URL should point to your load balancer <code>http://[host]:[port]/activevos-central/avc</code> if needed. The default address is http://localhost:8080/activevos-central/avc.</li>
+</ul>
+
+<h3>
+<a id="user-content-license-information" class="anchor" href="#license-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>License Information</h3>
+
+<ul>
+<li> Valid license keys for the total number of sockets intended to host ActiveVOS Server.</li>
+</ul>
+
+<h3>
+<a id="user-content-database-information" class="anchor" href="#database-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database Information</h3>
+
+<ul>
+<li>A supported database server installed and accessible.</li>
+<li>Permissions must be set for ActiveVOS to access your schema. </li>
+<li>For WebLogic and WebSphere, configuration of a JNDI data source.</li>
+<li>The JDBC URL to use to connect to the ActiveVOS database.</li>
+<li>The database user name and password to be used by ActiveVOS Server to connect to the database.</li>
+<li>If you are using an Oracle database the ActiveVOS table-space created.</li>
+<li>A JDBC database driver that provides the required functionality.</li>
+<li>The class name of the JDBC database driver.</li>
+</ul>
+
+<h3>
+<a id="user-content-server-container-information" class="anchor" href="#server-container-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Container Information</h3>
+
+<ul>
+<li>Installation Directories</li>
+<li>WAS Administrator User Accounts</li>
+<li>Desired Cluster Topology</li>
+</ul>
+
+<h2>
+<a id="user-content-software-used-in-this-guide" class="anchor" href="#software-used-in-this-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software used in this Guide</h2>
+
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version</th>
+<th>Download Page Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM WebSphere Application Server Network Deployment</td>
+<td>8.5.5</td>
+<td><a href="http://www.ibm.com/developerworks/downloads/ws/wasnetwork/">Download</a></td>
+</tr>
+<tr>
+<td>Oracle</td>
+<td>11g</td>
+<td><a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">Download</a></td>
+</tr>
+<tr>
+<td>ActiveVOS Server</td>
+<td>9.2.4</td>
+<td><a href="https://mysupport.informatica.com/downloadsView.jspa">Download</a></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>(1) this guide uses Oracle XE but you can use any of the supported databases</p>
+</blockquote>
+
+<h2>
+<a id="user-content-prepare-database-for-activevos" class="anchor" href="#prepare-database-for-activevos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prepare Database for ActiveVOS</h2>
+
+<p>We assume that the database is already installed in our case it was installed on the same machine as application server and ActiveVOS. 
+We created user and grated the user following permissions</p>
+
+<p>Please see configuration details for Oracle and other databases </p>
+
+<ul>
+<li><a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/doc.server_install/websphere/html/config/ConfigWizard_ConfigDatabase.html">JDBC Configuration Parameters</a></li>
+</ul>
+
+<blockquote>
+<p>Note that Activevos Installer (Config Deploy Tool) can create the database schema or just connect to existing one previously created by the DBA. 
+All supported database DDL scripts are included in the config deploy tool as described in this <a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/topic/doc.server_install/websphere/html/Configuration_wizard.html#newdb">documentation page</a> This guide will use method where the tables are created by the "Config Deploy" tool</p>
+</blockquote>
+
+<p>Create  the ActiveVOS DB Schema user (You will have to login as SYSTEM user on Oracle)</p>
+
+<div class="highlight highlight-sql"><pre>CREATE USER <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span> IDENTIFIED BY <span class="pl-k">&lt;</span>PASSWORD<span class="pl-k">&gt;</span>
+  DEFAULT TABLESPACE <span class="pl-s1"><span class="pl-pds">"</span>USERS<span class="pl-pds">"</span></span>
+  TEMPORARY TABLESPACE <span class="pl-s1"><span class="pl-pds">"</span>TEMP<span class="pl-pds">"</span></span>;
+
+<span class="pl-k">GRANT</span> CREATE SESSION TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+<span class="pl-k">GRANT</span> CREATE PROCEDURE TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+<span class="pl-k">GRANT</span> CREATE ROLE TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+<span class="pl-k">GRANT</span> CREATE SEQUENCE TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+<span class="pl-k">GRANT</span> CREATE SESSION TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+<span class="pl-k">GRANT</span> CREATE TABLE TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+<span class="pl-k">GRANT</span> CREATE VIEW TO <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span>;
+
+<span class="pl-k">ALTER</span> <span class="pl-k">USER</span> <span class="pl-k">&lt;</span>USERNAME<span class="pl-k">&gt;</span> quota unlimited <span class="pl-k">on</span> USERS;</pre></div>
+
+<blockquote>
+<p>Please replace username and password with your own values and not them down. We will use these later during installation</p>
+</blockquote>
+
+<p>We used:</p>
+
+<ul>
+<li><code>&lt;USERNAME&gt; =  av924was</code></li>
+<li><code>&lt;PASSWORD&gt; =  av924was</code></li>
+</ul>
+
+<blockquote>
+<p>Note that we used default USERS and TEMP tablespace for the ActiveVOS Database, in you case the tablespace may be different</p>
+</blockquote>
+
+<h2>
+<a id="user-content-install-ibm-websphere-application-server-network-deployment" class="anchor" href="#install-ibm-websphere-application-server-network-deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install IBM WebSphere Application Server Network Deployment</h2>
+
+<p>We used Trial version of Webspehere Application server downloaded from <a href="http://www.ibm.com/developerworks/downloads/ws/wasnetwork/">Download</a>. The Distribution file <code>NDTRIAL.agent.installer.win32.win32.x86_64.zip</code> contains IBM Installation Manager which allows you to download and select all the required and optional components
+You will need IBM User ID and password to use this method of installation. You will need to register on <a href="https://www.ibm.com/developerworks/dwwi/jsp/Register.jsp">IBM Developer Support Site</a>.</p>
+
+<blockquote>
+<p>NOTE: If you plan on installing IBM WebSphere to run as a service, you must logon to the target machine using an account which has the following rights:</p>
+
+<ul>
+<li>Act as part of the operating system</li>
+<li>Log on as a service</li>
+</ul>
+</blockquote>
+
+<p>Once you retrieve the installer unzip it to a directory of your choice. In our case we unzipped it into <code>&lt;USERHOME&gt;/Downloads/was</code> directory.
+Run the Installer </p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_01_installer.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_01_installer.png" alt="Installer" title="IBM Installation Manager" style="max-width:100%;"></a></p>
+
+<p>On the First Run you will be prompted to enter your IBM Support ID Credentials
+On the next step you will see options for a Web Sphere Installation components. 
+Make sure you select following components:</p>
+
+<ul>
+<li>IBM HTTP Server for WebSphere Application Server (ILAN)</li>
+<li>IBM WebSphere Application Server Network Deployment</li>
+<li>Web Server Plug-ins for IBM WebSphere Application Server</li>
+<li>WebSphere Customization Toolbox (ILAN)</li>
+</ul>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_02_components.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_02_components.png" alt="Component Selection" title="Components Selection" style="max-width:100%;"></a></p>
+
+<blockquote>
+<p>Note: We will use built-in IBM Java SDK 1.6 which is included within Websphere Application server installation. It is not necessary to install the 1.7 JDK unless it is required by some other componsnts installed on the WAS Server.</p>
+</blockquote>
+
+<p>Optionally you can select patches available for the release (we selected none)</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_03_patches.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_03_patches.png" alt="Patches Selection" title="Patches Selection" style="max-width:100%;"></a></p>
+
+<p>On the next Step: You have to agree with IBM License Agreement</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_04_license_agreement.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_04_license_agreement.png" alt="License Agreementt" title="License Agreement" style="max-width:100%;"></a></p>
+
+<p>On the next Step: Select A Target Directory. You may see a following message on Windows 7/8 64bit</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_05_program_files_warning.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_05_program_files_warning.png" alt="Program files Warning" title="Program files Warning" style="max-width:100%;"></a></p>
+
+<p>Use Othen Program files Directory to install the product components
+We used <code>C:\opt\ibm</code> as an installation base for all components.
+Following screen-shot shows the C:\ibm as a target installation root</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_06_target_dir.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_06_target_dir.png" alt="Target Dir" title="Target Dir" style="max-width:100%;"></a></p>
+
+<p>On the next step: select primary language and optional translations (We used only English)
+On the next Step: Check final summary of to be installed components and that you have sufficient space on ypur HDD (You will need proximately 3GB of space to install all required WAS components and ActiveVOS)</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_07_summary.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_07_summary.png" alt="Summary" title="Summary" style="max-width:100%;"></a></p>
+
+<p>Set the IBM HTTP Server port (use default 80) or optionally choose diferent one if it conflicts with some existing http server on your machine.</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_08_http_server_params.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_08_http_server_params.png" alt="HTTP Server Params" title="HTTP Server Parameters" style="max-width:100%;"></a></p>
+
+<p>Finish the wizard by running the installation. It will take some time to download and install all the components depending on your network bandwidth</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_09_run_install.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_09_run_install.png" alt="Run Install" title="Run Install" style="max-width:100%;"></a></p>
+
+<p>Once installation is complete, you will be prompted to setup profiles for the IBM WebSphere installation, which you should run at this time.</p>
+
+<h2>
+<a id="user-content-configure-ibm-websphere-network-deployment-components" class="anchor" href="#configure-ibm-websphere-network-deployment-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure IBM WebSphere Network Deployment Components</h2>
+
+<p>We will use Websphere Customization Toolbox &gt; Profile Management Tool which is automatically started after the successful Websphere components installation. Alternatively you can also start it using Start &gt; IBM Websphere &gt; Websphere Customization Toolbox</p>
+
+<h3>
+<a id="user-content-create-deployment-manager" class="anchor" href="#create-deployment-manager" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Deployment Manager</h3>
+
+<p>Run Websphere Customization Toolbox and select</p>
+
+<p>You may accept the name defaults for the deployment manager and cells, or optionally change them if you desire.</p>
+
+<h3>
+<a id="user-content-create-cluster" class="anchor" href="#create-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Cluster</h3>
+
+<p>TBD</p>
+
+<h3>
+<a id="user-content-create-managed-servers" class="anchor" href="#create-managed-servers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Managed Servers</h3>
+
+<p>TBD</p>
+
+<h3>
+<a id="user-content-configure-activevos-data-sources" class="anchor" href="#configure-activevos-data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure ActiveVOS Data Sources</h3>
+
+<p>Use following steps to create create a data source for a clustered environment
+The first part of this task defines a JDBC provider with a cluster scope setting. Be aware that all members of your cluster must run at least Version 6 of WebSphere Application Server to use this scope setting for the cluster. (See Administrative console scope settings for more information about scope settings in general.)
+The cluster scope has a precedence over the node and cell scopes. Create a data source for a cluster if you want the data source to:</p>
+
+<ul>
+<li>Be available for all the members of this cluster to use</li>
+<li>Override any resource factories that have the same JNDI name that is defined within the cell scope</li>
+</ul>
+
+<h4>
+<a id="user-content-set-driver_paths" class="anchor" href="#set-driver_paths" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set DRIVER_PATHS</h4>
+
+<ul>
+<li>Open the WAS administrative console.</li>
+<li>Click WebSphere Variables.</li>
+<li>Check if the <code>ORACLE_JDBC_DRIVER_PATH</code> variable exists for the Cluster Nodes</li>
+<li>For each node/cluster, create or edit symbolic variable used in the class path of your JDBC provider, and provide a value that is appropriate for the selected node. For example, we placed the oracle jdbc drive under <code>C:\opt\java\library\jdbc\oracle</code>
+</li>
+<li>Apply and change settings after you finished setting the variables</li>
+</ul>
+
+<blockquote>
+<p>NOTE: This DRIVER variable must be defined on each node within the cluster.
+List of variables can be quite long, use filtering as shown on following screenshot <a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_variables01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_variables01.png" alt="Variables" title="Variables" style="max-width:100%;"></a></p>
+</blockquote>
+
+<h4>
+<a id="user-content-register-j2c-user-credential-for-database-authentication" class="anchor" href="#register-j2c-user-credential-for-database-authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Register J2C User Credential for Database Authentication</h4>
+
+<p>Before We Create the data source, we have to save user credentials which will be used to connect to the ActiveVOS database</p>
+
+<ul>
+<li>Open the WAS administrative console.</li>
+<li>Click <code>Security &gt; Global Security</code>
+</li>
+<li>Click + to expand <code>Java Authentication and Authorization Service</code> menu item
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c.png" alt="JAAS" title="JASS" style="max-width:100%;"></a>
+</li>
+<li>Create a New J2C Alias
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" alt="New Alias" title="New Alias" style="max-width:100%;"></a>
+</li>
+<li>Create Set Username and password
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" alt="Provide Credentials" title="Provide Credentials" style="max-width:100%;"></a>
+</li>
+<li>Make sure that you save and synchronize changes to the cluster</li>
+</ul>
+
+<blockquote>
+<p>NOTE: Node Agent and Cell deployment manager may need to be restarted to apply the changes and make the new credentials alias available to the cluster nodes. Otherwise you may not be able to validate the data source connection.</p>
+</blockquote>
+
+<h4>
+<a id="user-content-register-jdbc-provider" class="anchor" href="#register-jdbc-provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Register JDBC Provider</h4>
+
+<ul>
+<li>Open the WAS administrative console.</li>
+<li>Click <code>Resources &gt; JDBC Providers</code> . In the Scope section, note that the default scope setting is at the node level.</li>
+<li>Select the cluster for which you want to define a data source. In our case this is <code>ActiveVOS_Cluster</code> which you going to slect in the Scope List.</li>
+<li>Click New to create a new JDBC provider at the cluster level. The class path for your new JDBC provider is already filled in; part of that class path is specified using a symbolic variable, for example: <code>${ORACLE_JDBC_DRIVER_PATH}/ojdbc6.jar</code>. Leave it at the default.</li>
+<li>Finish creating the JDBC provider.</li>
+</ul>
+
+<h4>
+<a id="user-content-create-activevos-data-source" class="anchor" href="#create-activevos-data-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create ActiveVOS Data Source</h4>
+
+<ul>
+<li>Open the WAS Administration Console</li>
+<li>Click <code>Resources &gt; Data sources</code>.</li>
+<li>Select the Cluster Scope <code>ActiveVOS_CLuster</code>
+</li>
+<li>Click <code>New</code> button to create a new data source
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_01.png" alt="New Data Source" title="Optional title" style="max-width:100%;"></a>
+</li>
+<li>Specify DS Name and JNDI Name
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_02.png" alt="DS Name" title="Optional title" style="max-width:100%;"></a>
+</li>
+<li>Specify JDBC Provider - In our case we are selection previously created Oracle JDBC Driver
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_03.png" alt="JDBC Provider" title="JDBC Provider" style="max-width:100%;"></a>
+</li>
+<li>Specify JDBC URL (it will be different in your environment)
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_04.png" alt="JDBC URL" title="JDBC URL" style="max-width:100%;"></a>
+</li>
+<li>Select Security Aliases Previously defined in the Register J2C User Credential for Database Authentication Step
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_05.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_05.png" alt="Security Aliases" title="Security Aliases" style="max-width:100%;"></a>
+</li>
+<li>Review and finish your setting
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_06.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_06.png" alt="Review DS Settings" title="Review DS Settings" style="max-width:100%;"></a>
+</li>
+<li>Make sure you save and synchronize your changes to the cluster nodes.</li>
+<li>Test the database connection
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_07.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_07.png" alt="Test Connection" title="Test Connection" style="max-width:100%;"></a>
+</li>
+</ul>
+
+<p>Data Source Parameters List Summary:</p>
+
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>cells:maw180674Cell01:clusters:ActiveVOS_Cluster</td>
+</tr>
+<tr>
+<td>Data source name</td>
+<td>ActiveVOS</td>
+</tr>
+<tr>
+<td>JNDI name</td>
+<td>jdbc/ActiveVOS</td>
+</tr>
+<tr>
+<td>Select an existing JDBC provider</td>
+<td>Oracle JDBC Driver</td>
+</tr>
+<tr>
+<td>Implementation class name</td>
+<td>oracle.jdbc.pool.OracleConnectionPoolDataSource</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>jdbc:oracle:thin:@localhost:1521:XE</td>
+</tr>
+<tr>
+<td>Data store helper class name</td>
+<td>com.ibm.websphere.rsadapter.Oracle11gDataStoreHelper</td>
+</tr>
+<tr>
+<td>Use this data source in container managed persistence (CMP)</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Component-managed authentication alias</td>
+<td>maw180674CellManager01/activevosdb</td>
+</tr>
+<tr>
+<td>Mapping-configuration alias</td>
+<td>(none)</td>
+</tr>
+<tr>
+<td>Container-managed authentication alias</td>
+<td>maw180674CellManager01/activevosdb</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>NOTE: Activevos does not require XA enabled data source unles Required by the processes that you nay deploy. Regular data source should be suffcient for most of the use cases.</p>
+</blockquote>
+
+<h3>
+<a id="user-content-install-and-configure-was-web-server-plugins" class="anchor" href="#install-and-configure-was-web-server-plugins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install and Configure WAS Web Server Plugins</h3>
+
+<p>Web server Plugin is not configured on the IHS Server by Default. WebSphere Customization Toolbox is neded to perform the post-install configuration of the WAS web server plug-in, it contains the configuration tool for the web server plug-in. </p>
+
+<ul>
+<li>Run the Customization Toolbox Plug-in Configuration Tool
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_toolbox.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_toolbox.png" alt="Start Toolbox" title="Start Toolbox" style="max-width:100%;"></a>
+</li>
+<li>Once is the Toolbox Started Add new server Runtime location pointing your Server Location
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_01.png" alt="Add Plugin" title="Add Plugin" style="max-width:100%;"></a>
+</li>
+<li>on the next sceen you will be prompted to speciy your server location
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_02.png" alt="Server location" title="Server Locatiom" style="max-width:100%;"></a>
+</li>
+<li>In the lower section under 'Web Server Plug-in Configurations' click on the create button.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_03.png" alt="Add Plugin Configuration" title="Add Plugin Configuration" style="max-width:100%;"></a>
+</li>
+<li>You will be prompted to select the web server you wish to configure on the first screen. Choose 'IBM HTTP Server 8.5' and click next.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_04.png" alt="Web Server Type" title="Web Server type" style="max-width:100%;"></a>
+</li>
+<li>On the next screen point to your IBM HTTP Server configuration file (httpd.conf) and specify the port your web server is going to listen on and click Finish
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_05.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_05.png" alt="Config Location" title="Config Location" style="max-width:100%;"></a>
+</li>
+<li>Setup the Administration Server, check the box 'Setup IBM HTTP Server Administration Server' and specify the port. Default is 8008. Click Next. You can also create a user name and password on this screen, or leave it open and configure the authentication later.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_06.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_06.png" alt="Admin Server" title="Admin Server" style="max-width:100%;"></a>
+</li>
+<li>Next sreen will prompty you for optional Windows service Creation. You can keep the default settings and choose the manual startup option which may be more desirable when you install server in your development sandbox environment.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_07.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_07.png" alt="Admin Server as a Service" title="Admin Server as a Service" style="max-width:100%;"></a>
+</li>
+<li>On the Web Server Definition Name screen, you will want to specify your web server name. If you have already created this via WebSphere you will want this name to match what you see under web servers in the WebSphere console. In our case we chose webserver1, If no web server exists in the WebSphere console you can enter another name.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_08.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_08.png" alt="Web Server Name" title="Web Server Name" style="max-width:100%;"></a>
+</li>
+<li>On the 'Configuration Scenario Selection' screen, choose if you are doing a local configuration or a remote. If your Application Server exists on a different machine then your web server you will want to choose remote and enter in the Host Name or IP of the Application Server. For this example our Application server is on the same system so we chose 'Local' and pointed to our Application server directory.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_09.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_09.png" alt="Config Type" title="Config Type" style="max-width:100%;"></a>
+</li>
+<li>On the last screen of the configuration choose your Application Server profile, click Next and review the information then click Configure.
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_10.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_10.png" alt="Config Type" title="Config Type" style="max-width:100%;"></a>
+</li>
+<li>Your configuration Wizard screen should now look like you see below. You can close this out now and continue with the last step of the configuration.</li>
+<li>The last step to the profile configuration is to run the script created from the configuration wizard above. It is located in <code>IBM\WebSphere\Plugins\bin\configure&lt;server_name&gt;.bat</code> you will get prompt for inputting your WebSphere admin username and password. Once done the output will show 'Configuration save is complete' If you named your web server something different the batch file name will reflect the name you chose and not webserver1.</li>
+</ul>
+
+<p>Example Configure Web Server Output</p>
+
+<pre><code>C:\opt\ibm\WebSphere\Plugins\bin&gt;configurewebserver1.bat
+WASX7209I: Connected to process "dmgr" on node maw180674CellManager01 using SOAP connector;  The type of process is: DeploymentManager
+WASX7303I: The following options are passed to the scripting environment and are available as arguments that are stored in the argv variable: "[webserver1, IHS, C:\\opt\\ibm\\HTTPServer, C:\\opt\\ibm\\HTTPServer\\conf\\httpd.conf, 80, MAP_ALL, C:\\opt\\ibm\\WebSphere\\Plugins, managed, maw180674Node01, new-host-4.home, windows, 8008, admin, admin, IBM HTTP Server V8.5]"
+
+Input parameters:
+
+   Web server name             - webserver1
+   Web server type             - IHS
+   Web server install location - C:\opt\ibm\HTTPServer
+   Web server config location  - C:\opt\ibm\HTTPServer\conf\httpd.conf
+   Web server port             - 80
+   Map Applications            - MAP_ALL
+   Plugin install location     - C:\opt\ibm\WebSphere\Plugins
+   Web server node type        - managed
+   Web server node name        - maw180674Node01
+   IHS Admin port              - 8008
+   IHS Admin user ID           - admin
+   IHS Admin password          - admin
+   IHS service name            - IBM HTTP Server V8.5
+
+Creating the web server definition for webserver1 on node maw180674Node01.
+Parameters for administering IHS web server can also be updated using wsadmin script or admin console.
+Web server definition for webserver1 is created.
+
+Start computing the plugin properties ID.
+Plugin properties ID is computed.
+
+Start updating the plugin install location.
+Plugin install location is updated.
+
+Start updating the plugin log file location.
+Plugin log file location is updated.
+
+Start updating the RemoteConfigFilename location.
+Plugin remote config file location is updated.
+
+Start updating the RemoteKeyRingFileName location.
+Plugin remote keyring file location is updated.
+
+Start saving the configuration.
+
+Configuration save is complete.
+
+Computed the list of installed applications.
+
+Processing the application ActiveVOS Central.
+Get the current target mapping for the application ActiveVOS Central.
+Computed the current target mapping for the application ActiveVOS Central.
+Start updating the target mappings for the application ActiveVOS Central.
+ADMA5075I: Editing of application ActiveVOS Central started.
+ADMA5058I: Application and module versions are validated with versions of deployment targets.
+ADMA5005I: The application ActiveVOS Central is configured in the WebSphere Application Server repository.
+ADMA5005I: The application ActiveVOS Central is configured in the WebSphere Application Server repository.
+ADMA5005I: The application ActiveVOS Central is configured in the WebSphere Application Server repository.
+ADMA5005I: The application ActiveVOS Central is configured in the WebSphere Application Server repository.
+ADMA5113I: Activation plan created successfully.
+ADMA5011I: The cleanup of the temp directory for application ActiveVOS Central is complete.
+ADMA5076I: Application ActiveVOS Central edited successfully. The application or its web modules may require a restart when a save is performed.
+Target mapping is updated for the application ActiveVOS Central.
+
+Processing the application ActiveVOS Enterprise Server.
+Get the current target mapping for the application ActiveVOS Enterprise Server.
+Computed the current target mapping for the application ActiveVOS Enterprise Server.
+Start updating the target mappings for the application ActiveVOS Enterprise Server.
+ADMA5075I: Editing of application ActiveVOS Enterprise Server started.
+ADMA5058I: Application and module versions are validated with versions of deployment targets.
+ADMA5005I: The application ActiveVOS Enterprise Server is configured in the WebSphere Application Server repository.
+ADMA5005I: The application ActiveVOS Enterprise Server is configured in the WebSphere Application Server repository.
+ADMA5005I: The application ActiveVOS Enterprise Server is configured in the WebSphere Application Server repository.
+ADMA5005I: The application ActiveVOS Enterprise Server is configured in the WebSphere Application Server repository.
+ADMA5113I: Activation plan created successfully.
+ADMA5011I: The cleanup of the temp directory for application ActiveVOS Enterprise Server is complete.
+ADMA5076I: Application ActiveVOS Enterprise Server edited successfully. The application or its web modules may require a restart when a save is performed.
+Target mapping is updated for the application ActiveVOS Enterprise Server.
+
+Start saving the configuration.
+
+Configuration save is complete.
+</code></pre>
+
+<h3>
+<a id="user-content-configuring-the-nodeagent-to-start-as-a-windows-service" class="anchor" href="#configuring-the-nodeagent-to-start-as-a-windows-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the NodeAgent to start as a Windows Service</h3>
+
+<blockquote>
+<p>NOTE: these steps does not seem to work right, need to figure out why, I can successfully create the service which actually starts but it is not starting the node manager server.</p>
+</blockquote>
+
+<p>By default, a Network Deployment installation creates a Windows service for the deployment manager but not the node agent. A Network Deployment application server profile is not fully functional until the NodeAgent for the application server has been started. Starting Node Agent manually is not very desirable. We have the ability to create a Windows Service to automatically start the NodeAgent. </p>
+
+<ol>
+<li>Open a command prompt window</li>
+<li>Change the current directory to <code>&lt;instal_root&gt;WebSphere\AppServer\profiles\Node01\bin</code>
+</li>
+<li>Execute the following command to create the NodeAgent service.</li>
+</ol>
+
+<blockquote>
+<p>Note: you should replace 'Node01' IBM_HOME username and password with your own parameters. Also make sure WASService.exe and WASServiceMsg.dll exist in this directory. </p>
+</blockquote>
+
+<pre><code>SETLOCAL
+SET IBM_HOME=C:\opt\ibm
+SET WAS_HOME=%IBM_HOME%\WebSphere\AppServer
+SET PROFILE_PATH=%WAS_HOME%\WebSphere\AppServer\profiles\Node01
+SET LOG_ROOT=%PROFILE_PATH%\logs\nodeagent
+SET LOG_FILE=%LOG_ROOT%/startServer.log
+SET SERVICE_START_TYPE=automatic
+SET SERVICE_NAME=nodeAgent
+SET STOP_ARGS=-username admin -password admin
+WASService -add %SERVICE_NAME% -servername nodeagent -profilePath "%PROFILE_PATH%" -wasHome "%WAS_HOME%" -stopArgs "%STOP_ARGS%" -logfile "%LOG_FILE%" -logRoot "%LOG_ROOT%" -restart true -startType %SERVICE_START_TYPE%
+ENDLOCAL
+</code></pre>
+
+<p>EXAMPLE Console Output</p>
+
+<pre><code>C:\opt\ibm\WebSphere\AppServer\bin&gt;SETLOCAL
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET IBM_HOME=C:\opt\ibm
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET WAS_HOME=%IBM_HOME%\WebSphere\AppServer
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET PROFILE_PATH=%WAS_HOME%\WebSphere\AppServer\profiles\Node01
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET LOG_ROOT=%PROFILE_PATH%\logs\nodeagent
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET LOG_FILE=%LOG_ROOT%nodeAgentService.log
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET SERVICE_START_TYPE=automatic
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET SERVICE_NAME=nodeAgent
+C:\opt\ibm\WebSphere\AppServer\bin&gt;SET STOP_ARGS=-username admin -password admin
+C:\opt\ibm\WebSphere\AppServer\bin&gt;WASService -add %SERVICE_NAME% -servername nodeagent -profilePath "%PROFILE_PATH%" -wasHome "%WAS_HOME%" -stopArgs "%STOP_ARGS%" -logfile "%LOG_FILE%" -logRoot "%LOG_ROOT%" -restart true -startType %SERVICE_START_TYPE%
+Adding Service: nodeAgent
+        Config Root: C:\opt\ibm\WebSphere\AppServer\WebSphere\AppServer\profiles\Node01\config
+        Server Name: nodeagent
+        Profile Path: C:\opt\ibm\WebSphere\AppServer\WebSphere\AppServer\profiles\Node01
+        Was Home: C:\opt\ibm\WebSphere\AppServer\
+        Start Args:
+        Restart: 1
+IBM WebSphere Application Server V8.5 - nodeAgent service successfully added.
+</code></pre>
+
+<p>Start the service</p>
+
+<pre><code>WASService -start nodeAgent
+</code></pre>
+
+<p>Stop the service</p>
+
+<pre><code>WASService -stop nodeAgent
+</code></pre>
+
+<p>Remove the service</p>
+
+<pre><code>WASService -remove nodeAgent
+</code></pre>
+
+<h2>
+<a id="user-content-install-activevos" class="anchor" href="#install-activevos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install ActiveVOS</h2>
+
+<h3>
+<a id="user-content-install-activevos-config-deploy-tool" class="anchor" href="#install-activevos-config-deploy-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install ActiveVOS Config Deploy Tool</h3>
+
+<p><a href="https://mysupport.informatica.com/downloadsView.jspa">Download</a> ActiveVOS from Informatica My Support Page. Download a distributions for your target platform </p>
+
+<ul>
+<li>Windows - <code>ActiveVOSWindows924.zip</code>
+</li>
+<li>UNIX/Linux - <code>ActiveVOSUnix924.zip</code>
+</li>
+</ul>
+
+<p>Extract the distribution file to a directory of your choice
+Windows Distribution contains two files</p>
+
+<ul>
+<li>Designer Installer - <code>ActiveVOS_Designer_windows_9.2.4.exe</code>
+</li>
+<li>Server Installer - <code>ActiveVOS_Server_windows_9.2.4.exe</code>
+</li>
+</ul>
+
+<p>Run ActiveVOS_Server_windows_9.2.4.exe it will install ActiveVOS Configuration and Deployment Tool (config_deploy)</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_01.png" alt="Start Config Deploy" title="Start Config Deploy" style="max-width:100%;"></a></p>
+
+<p>Select Websphere on the Next Step</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_02.png" alt="Select Server Type" title="Select Server Type" style="max-width:100%;"></a></p>
+
+<p>As with Websphere do not use Program Files Default target location. You can use <code>C:\ActiveVOS\Server</code> 
+We have used <code>C:\opt\ae\9.2.4\server</code></p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_03.png" alt="Select Target Dir" title="Select Target Dir" style="max-width:100%;"></a></p>
+
+<blockquote>
+<p>NOTE: When Installing on Windows 2008 or 2012 Server, make sure that the user running the installation or later run config deploy tool has full permissions to the directory and all its children, otherwise You may have permissions issues when the ActiveVOS EARs and WARs are generated by the config deploy tool.</p>
+</blockquote>
+
+<p>You can accept creation of the Start Menu shortcuts
+<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" alt="Create Shortcuts" title="Create Shortcuts" style="max-width:100%;"></a></p>
+
+<p>You will be prompted to open a Quick Start Guide</p>
+
+<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" alt="Quick Start" title="Quick Start" style="max-width:100%;"></a></p>
+
+<p>Read the Quick Start Guide. and keep the link for future reference.
+Finish the Installer</p>
+</article></body></html>
