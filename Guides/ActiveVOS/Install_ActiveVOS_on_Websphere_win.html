@@ -860,9 +860,7 @@ body .markdown-body
   float: left;
   margin: 0.3em 0 0.25em -1.6em;
   vertical-align: middle;
-}</style><title>Install_ActiveVOS_on_Websphere_win</title></head><body><article class="markdown-body"><p>s</p>
-
-<h1>
+}</style><title>Install_ActiveVOS_on_Websphere_win</title></head><body><article class="markdown-body"><h1>
 <a id="user-content-installation-of-activevos-on-websphere-cluster" class="anchor" href="#installation-of-activevos-on-websphere-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation of ActiveVOS on Websphere Cluster</h1>
 
 <table>
@@ -920,6 +918,7 @@ body .markdown-body
 
 <ul>
 <li><a href="#install-activevos-config-deploy-tool">Install ActiveVOS Config Deploy Tool</a></li>
+<li><a href="#run-activevos-config-deploy-tool">Run ActiveVOS Config Deploy Tool</a></li>
 </ul>
 </li>
 </ul>
@@ -969,8 +968,8 @@ body .markdown-body
 <a id="user-content-hardware" class="anchor" href="#hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware</h3>
 
 <ul>
-<li>Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.</li>
-<li>At least 1 GB of disk space is required to install the ActiveVOS Server application.</li>
+<li>[] Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.</li>
+<li>[] At least 1 GB of disk space is required to install the ActiveVOS Server application.</li>
 </ul>
 
 <h3>
@@ -1119,7 +1118,7 @@ You will need IBM User ID and password to use this method of installation. You w
 <p>Once you retrieve the installer unzip it to a directory of your choice. In our case we unzipped it into <code>&lt;USERHOME&gt;/Downloads/was</code> directory.
 Run the Installer </p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_01_installer.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_01_installer.png" alt="Installer" title="IBM Installation Manager" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_01_installer.png" target="_blank"><img src="images/was_install/install_01_installer.png" alt="Installer" title="IBM Installation Manager" style="max-width:100%;"></a></p>
 
 <p>On the First Run you will be prompted to enter your IBM Support ID Credentials
 On the next step you will see options for a Web Sphere Installation components. 
@@ -1132,7 +1131,7 @@ Make sure you select following components:</p>
 <li>WebSphere Customization Toolbox (ILAN)</li>
 </ul>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_02_components.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_02_components.png" alt="Component Selection" title="Components Selection" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_02_components.png" target="_blank"><img src="images/was_install/install_02_components.png" alt="Component Selection" title="Components Selection" style="max-width:100%;"></a></p>
 
 <blockquote>
 <p>Note: We will use built-in IBM Java SDK 1.6 which is included within Websphere Application server installation. It is not necessary to install the 1.7 JDK unless it is required by some other componsnts installed on the WAS Server.</p>
@@ -1140,34 +1139,34 @@ Make sure you select following components:</p>
 
 <p>Optionally you can select patches available for the release (we selected none)</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_03_patches.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_03_patches.png" alt="Patches Selection" title="Patches Selection" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_03_patches.png" target="_blank"><img src="images/was_install/install_03_patches.png" alt="Patches Selection" title="Patches Selection" style="max-width:100%;"></a></p>
 
 <p>On the next Step: You have to agree with IBM License Agreement</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_04_license_agreement.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_04_license_agreement.png" alt="License Agreementt" title="License Agreement" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_04_license_agreement.png" target="_blank"><img src="images/was_install/install_04_license_agreement.png" alt="License Agreementt" title="License Agreement" style="max-width:100%;"></a></p>
 
 <p>On the next Step: Select A Target Directory. You may see a following message on Windows 7/8 64bit</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_05_program_files_warning.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_05_program_files_warning.png" alt="Program files Warning" title="Program files Warning" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_05_program_files_warning.png" target="_blank"><img src="images/was_install/install_05_program_files_warning.png" alt="Program files Warning" title="Program files Warning" style="max-width:100%;"></a></p>
 
 <p>Use Othen Program files Directory to install the product components
 We used <code>C:\opt\ibm</code> as an installation base for all components.
 Following screen-shot shows the C:\ibm as a target installation root</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_06_target_dir.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_06_target_dir.png" alt="Target Dir" title="Target Dir" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_06_target_dir.png" target="_blank"><img src="images/was_install/install_06_target_dir.png" alt="Target Dir" title="Target Dir" style="max-width:100%;"></a></p>
 
 <p>On the next step: select primary language and optional translations (We used only English)
 On the next Step: Check final summary of to be installed components and that you have sufficient space on ypur HDD (You will need proximately 3GB of space to install all required WAS components and ActiveVOS)</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_07_summary.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_07_summary.png" alt="Summary" title="Summary" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_07_summary.png" target="_blank"><img src="images/was_install/install_07_summary.png" alt="Summary" title="Summary" style="max-width:100%;"></a></p>
 
 <p>Set the IBM HTTP Server port (use default 80) or optionally choose diferent one if it conflicts with some existing http server on your machine.</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_08_http_server_params.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_08_http_server_params.png" alt="HTTP Server Params" title="HTTP Server Parameters" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_08_http_server_params.png" target="_blank"><img src="images/was_install/install_08_http_server_params.png" alt="HTTP Server Params" title="HTTP Server Parameters" style="max-width:100%;"></a></p>
 
 <p>Finish the wizard by running the installation. It will take some time to download and install all the components depending on your network bandwidth</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_09_run_install.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_install/install_09_run_install.png" alt="Run Install" title="Run Install" style="max-width:100%;"></a></p>
+<p><a href="images/was_install/install_09_run_install.png" target="_blank"><img src="images/was_install/install_09_run_install.png" alt="Run Install" title="Run Install" style="max-width:100%;"></a></p>
 
 <p>Once installation is complete, you will be prompted to setup profiles for the IBM WebSphere installation, which you should run at this time.</p>
 
@@ -1219,7 +1218,7 @@ The cluster scope has a precedence over the node and cell scopes. Create a data 
 
 <blockquote>
 <p>NOTE: This DRIVER variable must be defined on each node within the cluster.
-List of variables can be quite long, use filtering as shown on following screenshot <a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_variables01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_variables01.png" alt="Variables" title="Variables" style="max-width:100%;"></a></p>
+List of variables can be quite long, use filtering as shown on following screenshot <a href="images/was_config/was_variables01.png" target="_blank"><img src="images/was_config/was_variables01.png" alt="Variables" title="Variables" style="max-width:100%;"></a></p>
 </blockquote>
 
 <h4>
@@ -1232,13 +1231,13 @@ List of variables can be quite long, use filtering as shown on following screens
 <li>Click <code>Security &gt; Global Security</code>
 </li>
 <li>Click + to expand <code>Java Authentication and Authorization Service</code> menu item
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c.png" alt="JAAS" title="JASS" style="max-width:100%;"></a>
+<a href="images/was_config/was_security_j2c.png" target="_blank"><img src="images/was_config/was_security_j2c.png" alt="JAAS" title="JASS" style="max-width:100%;"></a>
 </li>
 <li>Create a New J2C Alias
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" alt="New Alias" title="New Alias" style="max-width:100%;"></a>
+<a href="images/was_config/was_security_j2c_01.png" target="_blank"><img src="images/was_config/was_security_j2c_01.png" alt="New Alias" title="New Alias" style="max-width:100%;"></a>
 </li>
 <li>Create Set Username and password
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_security_j2c_01.png" alt="Provide Credentials" title="Provide Credentials" style="max-width:100%;"></a>
+<a href="images/was_config/was_security_j2c_01.png" target="_blank"><img src="images/was_config/was_security_j2c_01.png" alt="Provide Credentials" title="Provide Credentials" style="max-width:100%;"></a>
 </li>
 <li>Make sure that you save and synchronize changes to the cluster</li>
 </ul>
@@ -1267,26 +1266,26 @@ List of variables can be quite long, use filtering as shown on following screens
 <li>Select the Cluster Scope <code>ActiveVOS_CLuster</code>
 </li>
 <li>Click <code>New</code> button to create a new data source
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_01.png" alt="New Data Source" title="Optional title" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_01.png" target="_blank"><img src="images/was_config/ae_ds_create_01.png" alt="New Data Source" title="Optional title" style="max-width:100%;"></a>
 </li>
 <li>Specify DS Name and JNDI Name
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_02.png" alt="DS Name" title="Optional title" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_02.png" target="_blank"><img src="images/was_config/ae_ds_create_02.png" alt="DS Name" title="Optional title" style="max-width:100%;"></a>
 </li>
 <li>Specify JDBC Provider - In our case we are selection previously created Oracle JDBC Driver
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_03.png" alt="JDBC Provider" title="JDBC Provider" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_03.png" target="_blank"><img src="images/was_config/ae_ds_create_03.png" alt="JDBC Provider" title="JDBC Provider" style="max-width:100%;"></a>
 </li>
 <li>Specify JDBC URL (it will be different in your environment)
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_04.png" alt="JDBC URL" title="JDBC URL" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_04.png" target="_blank"><img src="images/was_config/ae_ds_create_04.png" alt="JDBC URL" title="JDBC URL" style="max-width:100%;"></a>
 </li>
 <li>Select Security Aliases Previously defined in the Register J2C User Credential for Database Authentication Step
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_05.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_05.png" alt="Security Aliases" title="Security Aliases" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_05.png" target="_blank"><img src="images/was_config/ae_ds_create_05.png" alt="Security Aliases" title="Security Aliases" style="max-width:100%;"></a>
 </li>
 <li>Review and finish your setting
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_06.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_06.png" alt="Review DS Settings" title="Review DS Settings" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_06.png" target="_blank"><img src="images/was_config/ae_ds_create_06.png" alt="Review DS Settings" title="Review DS Settings" style="max-width:100%;"></a>
 </li>
 <li>Make sure you save and synchronize your changes to the cluster nodes.</li>
 <li>Test the database connection
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_07.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/ae_ds_create_07.png" alt="Test Connection" title="Test Connection" style="max-width:100%;"></a>
+<a href="images/was_config/ae_ds_create_07.png" target="_blank"><img src="images/was_config/ae_ds_create_07.png" alt="Test Connection" title="Test Connection" style="max-width:100%;"></a>
 </li>
 </ul>
 
@@ -1358,37 +1357,37 @@ List of variables can be quite long, use filtering as shown on following screens
 
 <ul>
 <li>Run the Customization Toolbox Plug-in Configuration Tool
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_toolbox.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_toolbox.png" alt="Start Toolbox" title="Start Toolbox" style="max-width:100%;"></a>
+<a href="images/was_config/was_toolbox.png" target="_blank"><img src="images/was_config/was_toolbox.png" alt="Start Toolbox" title="Start Toolbox" style="max-width:100%;"></a>
 </li>
 <li>Once is the Toolbox Started Add new server Runtime location pointing your Server Location
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_01.png" alt="Add Plugin" title="Add Plugin" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_01.png" target="_blank"><img src="images/was_config/was_plugin_01.png" alt="Add Plugin" title="Add Plugin" style="max-width:100%;"></a>
 </li>
 <li>on the next sceen you will be prompted to speciy your server location
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_02.png" alt="Server location" title="Server Locatiom" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_02.png" target="_blank"><img src="images/was_config/was_plugin_02.png" alt="Server location" title="Server Locatiom" style="max-width:100%;"></a>
 </li>
 <li>In the lower section under 'Web Server Plug-in Configurations' click on the create button.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_03.png" alt="Add Plugin Configuration" title="Add Plugin Configuration" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_03.png" target="_blank"><img src="images/was_config/was_plugin_03.png" alt="Add Plugin Configuration" title="Add Plugin Configuration" style="max-width:100%;"></a>
 </li>
 <li>You will be prompted to select the web server you wish to configure on the first screen. Choose 'IBM HTTP Server 8.5' and click next.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_04.png" alt="Web Server Type" title="Web Server type" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_04.png" target="_blank"><img src="images/was_config/was_plugin_04.png" alt="Web Server Type" title="Web Server type" style="max-width:100%;"></a>
 </li>
 <li>On the next screen point to your IBM HTTP Server configuration file (httpd.conf) and specify the port your web server is going to listen on and click Finish
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_05.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_05.png" alt="Config Location" title="Config Location" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_05.png" target="_blank"><img src="images/was_config/was_plugin_05.png" alt="Config Location" title="Config Location" style="max-width:100%;"></a>
 </li>
 <li>Setup the Administration Server, check the box 'Setup IBM HTTP Server Administration Server' and specify the port. Default is 8008. Click Next. You can also create a user name and password on this screen, or leave it open and configure the authentication later.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_06.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_06.png" alt="Admin Server" title="Admin Server" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_06.png" target="_blank"><img src="images/was_config/was_plugin_06.png" alt="Admin Server" title="Admin Server" style="max-width:100%;"></a>
 </li>
 <li>Next sreen will prompty you for optional Windows service Creation. You can keep the default settings and choose the manual startup option which may be more desirable when you install server in your development sandbox environment.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_07.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_07.png" alt="Admin Server as a Service" title="Admin Server as a Service" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_07.png" target="_blank"><img src="images/was_config/was_plugin_07.png" alt="Admin Server as a Service" title="Admin Server as a Service" style="max-width:100%;"></a>
 </li>
 <li>On the Web Server Definition Name screen, you will want to specify your web server name. If you have already created this via WebSphere you will want this name to match what you see under web servers in the WebSphere console. In our case we chose webserver1, If no web server exists in the WebSphere console you can enter another name.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_08.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_08.png" alt="Web Server Name" title="Web Server Name" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_08.png" target="_blank"><img src="images/was_config/was_plugin_08.png" alt="Web Server Name" title="Web Server Name" style="max-width:100%;"></a>
 </li>
 <li>On the 'Configuration Scenario Selection' screen, choose if you are doing a local configuration or a remote. If your Application Server exists on a different machine then your web server you will want to choose remote and enter in the Host Name or IP of the Application Server. For this example our Application server is on the same system so we chose 'Local' and pointed to our Application server directory.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_09.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_09.png" alt="Config Type" title="Config Type" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_09.png" target="_blank"><img src="images/was_config/was_plugin_09.png" alt="Config Type" title="Config Type" style="max-width:100%;"></a>
 </li>
 <li>On the last screen of the configuration choose your Application Server profile, click Next and review the information then click Configure.
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_10.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/was_config/was_plugin_10.png" alt="Config Type" title="Config Type" style="max-width:100%;"></a>
+<a href="images/was_config/was_plugin_10.png" target="_blank"><img src="images/was_config/was_plugin_10.png" alt="Config Type" title="Config Type" style="max-width:100%;"></a>
 </li>
 <li>Your configuration Wizard screen should now look like you see below. You can close this out now and continue with the last step of the configuration.</li>
 <li>The last step to the profile configuration is to run the script created from the configuration wizard above. It is located in <code>IBM\WebSphere\Plugins\bin\configure&lt;server_name&gt;.bat</code> you will get prompt for inputting your WebSphere admin username and password. Once done the output will show 'Configuration save is complete' If you named your web server something different the batch file name will reflect the name you chose and not webserver1.</li>
@@ -1496,18 +1495,17 @@ Configuration save is complete.
 <p>Note: you should replace 'Node01' IBM_HOME username and password with your own parameters. Also make sure WASService.exe and WASServiceMsg.dll exist in this directory. </p>
 </blockquote>
 
-<pre><code>SETLOCAL
-SET IBM_HOME=C:\opt\ibm
-SET WAS_HOME=%IBM_HOME%\WebSphere\AppServer
-SET PROFILE_PATH=%WAS_HOME%\WebSphere\AppServer\profiles\Node01
-SET LOG_ROOT=%PROFILE_PATH%\logs\nodeagent
-SET LOG_FILE=%LOG_ROOT%/startServer.log
-SET SERVICE_START_TYPE=automatic
-SET SERVICE_NAME=nodeAgent
-SET STOP_ARGS=-username admin -password admin
-WASService -add %SERVICE_NAME% -servername nodeagent -profilePath "%PROFILE_PATH%" -wasHome "%WAS_HOME%" -stopArgs "%STOP_ARGS%" -logfile "%LOG_FILE%" -logRoot "%LOG_ROOT%" -restart true -startType %SERVICE_START_TYPE%
-ENDLOCAL
-</code></pre>
+<div class="highlight highlight-batchfile"><pre><span class="pl-k">SETLOCAL</span>
+<span class="pl-k">SET</span> IBM_HOME=C:\opt\ibm
+<span class="pl-k">SET</span> WAS_HOME=%IBM_HOME%\WebSphere\AppServer
+<span class="pl-k">SET</span> PROFILE_PATH=%WAS_HOME%\WebSphere\AppServer\profiles\Node01
+<span class="pl-k">SET</span> LOG_ROOT=%PROFILE_PATH%\logs\nodeagent
+<span class="pl-k">SET</span> LOG_FILE=%LOG_ROOT%/startServer.log
+<span class="pl-k">SET</span> SERVICE_START_TYPE=automatic
+<span class="pl-k">SET</span> SERVICE_NAME=nodeAgent
+<span class="pl-k">SET</span> STOP_ARGS=-username admin -password admin
+WASService -add %SERVICE_NAME% -servername nodeagent -profilePath <span class="pl-s1"><span class="pl-pds">"</span>%PROFILE_PATH%<span class="pl-pds">"</span></span> -wasHome <span class="pl-s1"><span class="pl-pds">"</span>%WAS_HOME%<span class="pl-pds">"</span></span> -stopArgs <span class="pl-s1"><span class="pl-pds">"</span>%STOP_ARGS%<span class="pl-pds">"</span></span> -logfile <span class="pl-s1"><span class="pl-pds">"</span>%LOG_FILE%<span class="pl-pds">"</span></span> -logRoot <span class="pl-s1"><span class="pl-pds">"</span>%LOG_ROOT%<span class="pl-pds">"</span></span> -restart true -startType %SERVICE_START_TYPE%
+<span class="pl-k">ENDLOCAL</span></pre></div>
 
 <p>EXAMPLE Console Output</p>
 
@@ -1554,12 +1552,9 @@ IBM WebSphere Application Server V8.5 - nodeAgent service successfully added.
 
 <p><a href="https://mysupport.informatica.com/downloadsView.jspa">Download</a> ActiveVOS from Informatica My Support Page. Download a distributions for your target platform </p>
 
-<ul>
-<li>Windows - <code>ActiveVOSWindows924.zip</code>
-</li>
-<li>UNIX/Linux - <code>ActiveVOSUnix924.zip</code>
-</li>
-</ul>
+<pre><code>Windows    - `ActiveVOSWindows924.zip`
+UNIX/Linux - `ActiveVOSUnix924.zip`
+</code></pre>
 
 <p>Extract the distribution file to a directory of your choice
 Windows Distribution contains two files</p>
@@ -1573,28 +1568,77 @@ Windows Distribution contains two files</p>
 
 <p>Run ActiveVOS_Server_windows_9.2.4.exe it will install ActiveVOS Configuration and Deployment Tool (config_deploy)</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_01.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_01.png" alt="Start Config Deploy" title="Start Config Deploy" style="max-width:100%;"></a></p>
+<p><a href="images/config_deploy/config_deploy_01.png" target="_blank"><img src="images/config_deploy/config_deploy_01.png" alt="Start Config Deploy" title="Start Config Deploy" style="max-width:100%;"></a></p>
 
 <p>Select Websphere on the Next Step</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_02.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_02.png" alt="Select Server Type" title="Select Server Type" style="max-width:100%;"></a></p>
+<p><a href="images/config_deploy/config_deploy_02.png" target="_blank"><img src="images/config_deploy/config_deploy_02.png" alt="Select Server Type" title="Select Server Type" style="max-width:100%;"></a></p>
 
 <p>As with Websphere do not use Program Files Default target location. You can use <code>C:\ActiveVOS\Server</code> 
 We have used <code>C:\opt\ae\9.2.4\server</code></p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_03.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_03.png" alt="Select Target Dir" title="Select Target Dir" style="max-width:100%;"></a></p>
+<p><a href="images/config_deploy/config_deploy_03.png" target="_blank"><img src="images/config_deploy/config_deploy_03.png" alt="Select Target Dir" title="Select Target Dir" style="max-width:100%;"></a></p>
 
 <blockquote>
 <p>NOTE: When Installing on Windows 2008 or 2012 Server, make sure that the user running the installation or later run config deploy tool has full permissions to the directory and all its children, otherwise You may have permissions issues when the ActiveVOS EARs and WARs are generated by the config deploy tool.</p>
 </blockquote>
 
 <p>You can accept creation of the Start Menu shortcuts
-<a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" alt="Create Shortcuts" title="Create Shortcuts" style="max-width:100%;"></a></p>
+<a href="images/config_deploy/config_deploy_04.png" target="_blank"><img src="images/config_deploy/config_deploy_04.png" alt="Create Shortcuts" title="Create Shortcuts" style="max-width:100%;"></a></p>
 
 <p>You will be prompted to open a Quick Start Guide</p>
 
-<p><a href="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" target="_blank"><img src="///C://Users/jbrazda/Box%20Sync/Guides/ActiveVOS/images/config_deploy/config_deploy_04.png" alt="Quick Start" title="Quick Start" style="max-width:100%;"></a></p>
+<p><a href="images/config_deploy/config_deploy_04.png" target="_blank"><img src="images/config_deploy/config_deploy_04.png" alt="Quick Start" title="Quick Start" style="max-width:100%;"></a></p>
 
 <p>Read the Quick Start Guide. and keep the link for future reference.
 Finish the Installer</p>
+
+<h3>
+<a id="user-content-run-activevos-config-deploy-tool" class="anchor" href="#run-activevos-config-deploy-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run ActiveVOS Config Deploy Tool</h3>
+
+<p>Before you start config Deploy tool, following steps must be completed </p>
+
+<ul>
+<li><a href="#install-ibm-websphere-application-server-network-deployment">Install IBM WebSphere Application Server Network Deployment</a></li>
+<li>
+<a href="#configure-ibm-websphere-network-deployment-components">Configure IBM WebSphere Network Deployment Components</a>
+
+<ul>
+<li><a href="#create-deployment-manager">Create Deployment Manager</a></li>
+<li><a href="#create-cluster">Create Cluster</a></li>
+<li><a href="#create-managed-servers">Create Managed Servers</a></li>
+<li><a href="#configure-activevos-data-sources">Configure ActiveVOS Data Sources</a></li>
+</ul>
+</li>
+</ul>
+
+<p>Node Agent and and Deployment manager server must be running before you start Config Deploy Tool</p>
+
+<p><strong>Start Node Agent:</strong><br>
+go to <code>&lt;WAS_HOME&gt;\AppServer\profiles\Node01\bin</code> and run</p>
+
+<div class="highlight highlight-batchfile"><pre>startNode.bat</pre></div>
+
+<p>or start service previously created in the <a href="#configuring-the-nodeagent-to-start-as-a-windows-service">Configuring the NodeAgent to start as a Windows Service</a></p>
+
+<p><strong>Start Deployment Manager for the Cell:</strong>
+start service previously created the Profile Manager 
+go to <code>&lt;WAS_HOME&gt;AppServer\profiles\Dmgr01\bin</code> and run</p>
+
+<div class="highlight highlight-batchfile"><pre>net <span class="pl-k">start</span> <span class="pl-s1"><span class="pl-pds">"</span>IBMWAS85Service - &lt;ManagerServerName&gt;<span class="pl-pds">"</span></span>
+
+or  
+<span class="pl-k">cd</span> %WAS_HOME%\AppServer\bin
+WASService -<span class="pl-k">start</span> <span class="pl-k">&lt;</span>ManagerServerName<span class="pl-k">&gt;</span></pre></div>
+
+<blockquote>
+<p>Note: In our case the <code>&lt;ManagerServerNAme&gt; = maw180674CellManager01</code></p>
+</blockquote>
+
+<pre><code>C:\opt\ibm\WebSphere\AppServer\bin&gt;WASService -start maw180674CellManager01
+Starting Service: maw180674CellManager01
+Successfully started service.
+</code></pre>
+
+<p>You can also start the service using the <code>services.msc</code></p>
 </article></body></html>

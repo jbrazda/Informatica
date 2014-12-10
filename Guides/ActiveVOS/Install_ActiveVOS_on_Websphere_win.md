@@ -29,6 +29,7 @@
     - [Configuring the NodeAgent to start as a Windows Service](#configuring-the-nodeagent-to-start-as-a-windows-service)
 - [Install ActiveVOS](#install-activevos)
     - [Install ActiveVOS Config Deploy Tool](#install-activevos-config-deploy-tool)
+    - [Run ActiveVOS Config Deploy Tool](#run-activevos-config-deploy-tool)
 
 <!-- /MarkdownTOC -->
 
@@ -57,8 +58,8 @@ This section provides a list of most of the items that you should either have co
 
 ### Hardware
 
-* Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.
-* At least 1 GB of disk space is required to install the ActiveVOS Server application.
+- [] Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.
+- [] At least 1 GB of disk space is required to install the ActiveVOS Server application.
 
 ### Software
 * See a Product Availability Matrix, which is available on the My Support pages for each version of ActiveVOS. [ActiveVOS 9.24 PAM](https://mysupport.informatica.com/servlet/JiveServlet/downloadBody/12771-102-1-17705/ActiveVOS%209.2.4%20PAM.xlsx)
@@ -280,6 +281,7 @@ Data Source Parameters List Summary:
 | Mapping-configuration alias                                 | (none)                                               |
 | Container-managed authentication alias                      | maw180674CellManager01/activevosdb                   |
 
+
 > NOTE: Activevos does not require XA enabled data source unles Required by the processes that you nay deploy. Regular data source should be suffcient for most of the use cases.
 
 ### Install and Configure WAS Web Server Plugins
@@ -403,7 +405,7 @@ By default, a Network Deployment installation creates a Windows service for the 
 
 > Note: you should replace 'Node01' IBM_HOME username and password with your own parameters. Also make sure WASService.exe and WASServiceMsg.dll exist in this directory. 
 
-```
+```batchfile
 SETLOCAL
 SET IBM_HOME=C:\opt\ibm
 SET WAS_HOME=%IBM_HOME%\WebSphere\AppServer
@@ -460,8 +462,8 @@ WASService -remove nodeAgent
 ### Install ActiveVOS Config Deploy Tool
 [Download](https://mysupport.informatica.com/downloadsView.jspa) ActiveVOS from Informatica My Support Page. Download a distributions for your target platform 
 
-* Windows - `ActiveVOSWindows924.zip`
-* UNIX/Linux - `ActiveVOSUnix924.zip`
+    Windows    - `ActiveVOSWindows924.zip`
+    UNIX/Linux - `ActiveVOSUnix924.zip`
 
 Extract the distribution file to a directory of your choice
 Windows Distribution contains two files
@@ -492,3 +494,53 @@ You will be prompted to open a Quick Start Guide
 
 Read the Quick Start Guide. and keep the link for future reference.
 Finish the Installer
+
+### Run ActiveVOS Config Deploy Tool
+Before you start config Deploy tool, following steps must be completed 
+- [Install IBM WebSphere Application Server Network Deployment](#install-ibm-websphere-application-server-network-deployment)
+- [Configure IBM WebSphere Network Deployment Components](#configure-ibm-websphere-network-deployment-components)
+    - [Create Deployment Manager](#create-deployment-manager)
+    - [Create Cluster](#create-cluster)
+    - [Create Managed Servers](#create-managed-servers)
+    - [Configure ActiveVOS Data Sources](#configure-activevos-data-sources)
+
+Node Agent and and Deployment manager server must be running before you start Config Deploy Tool
+
+__Start Node Agent:__  
+go to `<WAS_HOME>\AppServer\profiles\Node01\bin` and run
+```batchfile
+startNode.bat
+```
+
+or start service previously created in the [Configuring the NodeAgent to start as a Windows Service](#configuring-the-nodeagent-to-start-as-a-windows-service)
+
+__Start Deployment Manager for the Cell:__
+start service previously created the Profile Manager 
+go to `<WAS_HOME>AppServer\profiles\Dmgr01\bin` and run
+```batchfile
+net start "IBMWAS85Service - <ManagerServerName>"
+
+or  
+cd %WAS_HOME%\AppServer\bin
+WASService -start <ManagerServerName>
+```
+
+> Note: In our case the `<ManagerServerNAme> = maw180674CellManager01`
+
+```
+C:\opt\ibm\WebSphere\AppServer\bin>WASService -start maw180674CellManager01
+Starting Service: maw180674CellManager01
+Successfully started service.
+```
+
+You can also start the service using the `services.msc`
+
+
+
+
+
+
+
+
+
+
