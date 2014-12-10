@@ -909,6 +909,7 @@ body .markdown-body
 <li><a href="#create-cluster">Create Cluster</a></li>
 <li><a href="#create-managed-servers">Create Managed Servers</a></li>
 <li><a href="#configure-activevos-data-sources">Configure ActiveVOS Data Sources</a></li>
+<li><a href="#set-up-jaas-application-logins">Set up JAAS Application Logins</a></li>
 <li><a href="#install-and-configure-was-web-server-plugins">Install and Configure WAS Web Server Plugins</a></li>
 <li><a href="#configuring-the-nodeagent-to-start-as-a-windows-service">Configuring the NodeAgent to start as a Windows Service</a></li>
 </ul>
@@ -919,6 +920,7 @@ body .markdown-body
 <ul>
 <li><a href="#install-activevos-config-deploy-tool">Install ActiveVOS Config Deploy Tool</a></li>
 <li><a href="#run-activevos-config-deploy-tool">Run ActiveVOS Config Deploy Tool</a></li>
+<li><a href="#what-resources-will-config-deploy-createupdate-on-was-server">WHat resources will Config Deploy create/update on WAS Server?</a></li>
 </ul>
 </li>
 </ul>
@@ -968,8 +970,8 @@ body .markdown-body
 <a id="user-content-hardware" class="anchor" href="#hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware</h3>
 
 <ul>
-<li>[] Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.</li>
-<li>[] At least 1 GB of disk space is required to install the ActiveVOS Server application.</li>
+<li>Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.</li>
+<li>At least 1 GB of disk space is required to install the ActiveVOS Server application.</li>
 </ul>
 
 <h3>
@@ -1107,7 +1109,7 @@ All supported database DDL scripts are included in the config deploy tool as des
 You will need IBM User ID and password to use this method of installation. You will need to register on <a href="https://www.ibm.com/developerworks/dwwi/jsp/Register.jsp">IBM Developer Support Site</a>.</p>
 
 <blockquote>
-<p>NOTE: If you plan on installing IBM WebSphere to run as a service, you must logon to the target machine using an account which has the following rights:</p>
+<p><strong>NOTE:</strong> If you plan on installing IBM WebSphere to run as a service, you must logon to the target machine using an account which has the following rights:</p>
 
 <ul>
 <li>Act as part of the operating system</li>
@@ -1134,7 +1136,7 @@ Make sure you select following components:</p>
 <p><a href="images/was_install/install_02_components.png" target="_blank"><img src="images/was_install/install_02_components.png" alt="Component Selection" title="Components Selection" style="max-width:100%;"></a></p>
 
 <blockquote>
-<p>Note: We will use built-in IBM Java SDK 1.6 which is included within Websphere Application server installation. It is not necessary to install the 1.7 JDK unless it is required by some other componsnts installed on the WAS Server.</p>
+<p><strong>NOTE:</strong> We will use built-in IBM Java SDK 1.6 which is included within Websphere Application server installation. It is not necessary to install the 1.7 JDK unless it is required by some other componsnts installed on the WAS Server.</p>
 </blockquote>
 
 <p>Optionally you can select patches available for the release (we selected none)</p>
@@ -1217,7 +1219,7 @@ The cluster scope has a precedence over the node and cell scopes. Create a data 
 </ul>
 
 <blockquote>
-<p>NOTE: This DRIVER variable must be defined on each node within the cluster.
+<p><strong>NOTE:</strong> This DRIVER variable must be defined on each node within the cluster.
 List of variables can be quite long, use filtering as shown on following screenshot <a href="images/was_config/was_variables01.png" target="_blank"><img src="images/was_config/was_variables01.png" alt="Variables" title="Variables" style="max-width:100%;"></a></p>
 </blockquote>
 
@@ -1243,7 +1245,7 @@ List of variables can be quite long, use filtering as shown on following screens
 </ul>
 
 <blockquote>
-<p>NOTE: Node Agent and Cell deployment manager may need to be restarted to apply the changes and make the new credentials alias available to the cluster nodes. Otherwise you may not be able to validate the data source connection.</p>
+<p><strong>NOTE:</strong> Node Agent and Cell deployment manager may need to be restarted to apply the changes and make the new credentials alias available to the cluster nodes. Otherwise you may not be able to validate the data source connection.</p>
 </blockquote>
 
 <h4>
@@ -1261,7 +1263,7 @@ List of variables can be quite long, use filtering as shown on following screens
 <a id="user-content-create-activevos-data-source" class="anchor" href="#create-activevos-data-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create ActiveVOS Data Source</h4>
 
 <ul>
-<li>Open the WAS Administration Console</li>
+<li>Open the WAS Administration Console.</li>
 <li>Click <code>Resources &gt; Data sources</code>.</li>
 <li>Select the Cluster Scope <code>ActiveVOS_CLuster</code>
 </li>
@@ -1346,8 +1348,75 @@ List of variables can be quite long, use filtering as shown on following screens
 </tbody>
 </table>
 
+<h3>
+<a id="user-content-set-up-jaas-application-logins" class="anchor" href="#set-up-jaas-application-logins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set up JAAS Application Logins</h3>
+
+<p>ActiveVOS cluster implementation on IBM WebSphere uses JMX API <em>MBeans</em>. ActiveVOS cluster uses MBeans to to communicate betwenn claster nodes when it sends status updates, monitors node health, running deployments, migrating proceses from node to node or creationg deployment lock during bpr deployment and in many other scenarios. When WAS global security is turned on the current thread needs to have access to the MBeans. There are two option to setup the security to provide access to the JMX MBeans:</p>
+
+<ul>
+<li>ActiveVOS Provided User – we will provide a username/password which will be used anytime we need to use the mbean regardless of what the subject was on the executing thread. This user will need monitor rights (if you don’t override the cluster mbean security).</li>
+<li>ActiveVOSIdentityAssertion – re-asserts the current identity this is a workaround to a work manager issue on IBM WebSphere where even when you say to inherit security on work manager setup you need to reassert it in order for the credentials to be processed correctly. When using this by default (if you don’t override the cluster mbean security) all abServiceConsumers users must have monitor rights on the server.</li>
+</ul>
+
+<p>We will use the first method
+Define JASS Login User <strong>ActiveVOS Provided User</strong></p>
+
+<ul>
+<li>Open the WAS administrative console. </li>
+<li>Click on  <code>Users and Groups &gt; Manage Users</code>
+<a href="images/was_config/was_jass_user_01.png" target="_blank"><img src="images/was_config/was_jass_user_01.png" alt="Manage Users" title="Manage Users" style="max-width:100%;"></a>
+</li>
+<li>Add user avmonitor
+<a href="images/was_config/was_jass_user_02.png" target="_blank"><img src="images/was_config/was_jass_user_02.png" alt="Create User" title="Create User" style="max-width:100%;"></a>
+</li>
+<li>Click on  <code>Users and Groups &gt; Administrative user roles</code>
+<a href="images/was_config/was_jass_role_01.png" target="_blank"><img src="images/was_config/was_jass_role_01.png" alt="Manage Roles" title="Manage Roles" style="max-width:100%;"></a>
+</li>
+<li>Add avmonitor user to the Monitor Role
+<a href="images/was_config/was_jass_role_02.png" target="_blank"><img src="images/was_config/was_jass_role_02.png" alt="Add Role" title="Add Role" style="max-width:100%;"></a>
+</li>
+<li>Open <code>Security &gt; Global security &gt; JAAS - Application logins</code>
+<a href="images/was_config/was_jass_alias_00.png" target="_blank"><img src="images/was_config/was_jass_alias_00.png" alt="Login Alias" title="Login Alias" style="max-width:100%;"></a>
+</li>
+<li>Go to JAAS login module section and add new Alias entry 'ActiveVOSProvidedUser'
+
+<ul>
+<li>com.activee.rt.websphere.trustvalidation.AeBasicLoginModule</li>
+<li>Add custom properties for this module to specify
+
+<ul>
+<li>username =&gt; {user}</li>
+<li>password =&gt; {password}
+<a href="images/was_config/was_jass_alias_01.png" target="_blank"><img src="images/was_config/was_jass_alias_01.png" alt="Login Alias" title="Login Alias" style="max-width:100%;"></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Save changes</li>
+</ul>
+
 <blockquote>
-<p>NOTE: Activevos does not require XA enabled data source unles Required by the processes that you nay deploy. Regular data source should be suffcient for most of the use cases.</p>
+<p>NOTE You can also optionally add following roles to the  abAdmin, abDeveloper to the avmonitor user but this is only needed if you want to allow this user to login to the ActiveVOS admin console.</p>
+</blockquote>
+
+<p><strong>Second method ActiveVOSIdentityAssertion</strong></p>
+
+<ul>
+<li>From the Admin console go to Global Security, under JAAS Configurations select "Application login configuration"</li>
+<li>Add new application login for <code>ActiveBPELIdentityAssertion</code>
+</li>
+<li>Go to JAAS login module section and add following entries in following order
+
+<ul>
+<li><code>com.activee.rt.websphere.trustvalidation.AeIdentityAssertionLoginModule</code></li>
+<li><code>com.ibm.wsspi.security.common.auth.module.IdentityAssertionLoginModule</code></li>
+</ul>
+</li>
+</ul>
+
+<blockquote>
+<p><strong>NOTE:</strong> Activevos does not require XA enabled data source unles Required by the processes that you nay deploy. Regular data source should be suffcient for most of the use cases.</p>
 </blockquote>
 
 <h3>
@@ -1479,7 +1548,7 @@ Configuration save is complete.
 <a id="user-content-configuring-the-nodeagent-to-start-as-a-windows-service" class="anchor" href="#configuring-the-nodeagent-to-start-as-a-windows-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the NodeAgent to start as a Windows Service</h3>
 
 <blockquote>
-<p>NOTE: these steps does not seem to work right, need to figure out why, I can successfully create the service which actually starts but it is not starting the node manager server.</p>
+<p><strong>NOTE:</strong> these steps does not seem to work right, need to figure out why, I can successfully create the service which actually starts but it is not starting the node manager server.</p>
 </blockquote>
 
 <p>By default, a Network Deployment installation creates a Windows service for the deployment manager but not the node agent. A Network Deployment application server profile is not fully functional until the NodeAgent for the application server has been started. Starting Node Agent manually is not very desirable. We have the ability to create a Windows Service to automatically start the NodeAgent. </p>
@@ -1492,7 +1561,7 @@ Configuration save is complete.
 </ol>
 
 <blockquote>
-<p>Note: you should replace 'Node01' IBM_HOME username and password with your own parameters. Also make sure WASService.exe and WASServiceMsg.dll exist in this directory. </p>
+<p><strong>NOTE:</strong> you should replace 'Node01' IBM_HOME username and password with your own parameters. Also make sure WASService.exe and WASServiceMsg.dll exist in this directory. </p>
 </blockquote>
 
 <div class="highlight highlight-batchfile"><pre><span class="pl-k">SETLOCAL</span>
@@ -1580,7 +1649,7 @@ We have used <code>C:\opt\ae\9.2.4\server</code></p>
 <p><a href="images/config_deploy/config_deploy_03.png" target="_blank"><img src="images/config_deploy/config_deploy_03.png" alt="Select Target Dir" title="Select Target Dir" style="max-width:100%;"></a></p>
 
 <blockquote>
-<p>NOTE: When Installing on Windows 2008 or 2012 Server, make sure that the user running the installation or later run config deploy tool has full permissions to the directory and all its children, otherwise You may have permissions issues when the ActiveVOS EARs and WARs are generated by the config deploy tool.</p>
+<p><strong>NOTE:</strong> When Installing on Windows 2008 or 2012 Server, make sure that the user running the installation or later run config deploy tool has full permissions to the directory and all its children, otherwise You may have permissions issues when the ActiveVOS EARs and WARs are generated by the config deploy tool.</p>
 </blockquote>
 
 <p>You can accept creation of the Start Menu shortcuts
@@ -1604,7 +1673,7 @@ Finish the Installer</p>
 <a href="#configure-ibm-websphere-network-deployment-components">Configure IBM WebSphere Network Deployment Components</a>
 
 <ul>
-<li><a href="#create-deployment-manager">Create Deployment Manager</a></li>
+<li>[Create Deployment Manager](#create-deployment-</li>
 <li><a href="#create-cluster">Create Cluster</a></li>
 <li><a href="#create-managed-servers">Create Managed Servers</a></li>
 <li><a href="#configure-activevos-data-sources">Configure ActiveVOS Data Sources</a></li>
@@ -1632,13 +1701,73 @@ or
 WASService -<span class="pl-k">start</span> <span class="pl-k">&lt;</span>ManagerServerName<span class="pl-k">&gt;</span></pre></div>
 
 <blockquote>
-<p>Note: In our case the <code>&lt;ManagerServerNAme&gt; = maw180674CellManager01</code></p>
+<p><strong>NOTE:</strong> In our case the <code>&lt;ManagerServerNAme&gt; = maw180674CellManager01</code></p>
 </blockquote>
 
-<pre><code>C:\opt\ibm\WebSphere\AppServer\bin&gt;WASService -start maw180674CellManager01
+<pre><code>C:\opt\ibm\WebSphere\AppServer\bin&gt;WASService manager-start maw180674CellManager01
 Starting Service: maw180674CellManager01
 Successfully started service.
 </code></pre>
 
 <p>You can also start the service using the <code>services.msc</code></p>
+
+<p><strong>Run the Config Deploy Tool</strong> </p>
+
+<blockquote>
+<p><strong>NOTE:</strong> The Installation of ActiveVOS can be done using three modes
+1. gui wizard mode
+2. console mode
+3. silent mode</p>
+</blockquote>
+
+<p>We will use the Wizard Mode this time
+AV_HOME is the the directory eher you installed the ActiveVOS Config Deploy Tool in oure case it is <code>C:\opt\ae\9.2.4\Server</code></p>
+
+<ul>
+<li>go to the \server-enterprise\websphere_config\bin</li>
+<li>run <code>config_deploy.bat</code>
+</li>
+<li>First step will propmt yu for INstallation Options, typically you want to keep default settings where all options are checked.
+<a href="images/config_deploy/config_deploy_was_01_options.png" target="_blank"><img src="images/config_deploy/config_deploy_was_01_options.png" alt="Install Options" title="Install Options" style="max-width:100%;"></a>
+</li>
+<li>On the next step select your ActiveVOS Baxked Database type, in our case it is Oracle.
+<a href="images/config_deploy/config_deploy_was_02_db_type.png" target="_blank"><img src="images/config_deploy/config_deploy_was_02_db_type.png" alt="DB Type" title="DB Type" style="max-width:100%;"></a>
+</li>
+<li>On the next step: Accept the default setting for JNDI names of the resources used by the ActiveVOS
+<a href="images/config_deploy/config_deploy_was_03_jndi.png" target="_blank"><img src="images/config_deploy/config_deploy_was_03_jndi.png" alt="JNDI Names" title="JNDI NAmes" style="max-width:100%;"></a>
+</li>
+<li>Set the Global security Options. Note that the name of the Security Provider must Match the Alias name specified in the <a href="#set-up-jaas-application-logins">Set up JAAS Application Logins</a> Step
+<a href="images/config_deploy/config_deploy_was_04_global_security.png" target="_blank"><img src="images/config_deploy/config_deploy_was_04_global_security.png" alt="Global Security" title="Global Security" style="max-width:100%;"></a>
+</li>
+<li>Set JAAS Login Options, username and password must match the values that you provided in the  <a href="#set-up-jaas-application-logins">Set up JAAS Application Logins</a> Step
+<a href="images/config_deploy/config_deploy_was_05_jaas_login.png" target="_blank"><img src="images/config_deploy/config_deploy_was_05_jaas_login.png" alt="JAAS Login" title="JAAS Login" style="max-width:100%;"></a>
+</li>
+<li>Set The Security Configuration options. In or case we are only securing the Admin Console, Note that ActiveVOS Central requires Authentication/Authorization regardless any of these settings.
+<a href="images/config_deploy/config_deploy_was_06_security_configuration.png" target="_blank"><img src="images/config_deploy/config_deploy_was_06_security_configuration.png" alt="Security Configuration" title="Security Configuration" style="max-width:100%;"></a>
+</li>
+<li>You can accept default values on the the Thread pool sizing, but typically in real environments these values should be adjusted for expected volumes of request and estimated concurrency
+<a href="images/config_deploy/config_deploy_was_07_thread_pools_1.png" target="_blank"><img src="images/config_deploy/config_deploy_was_07_thread_pools_1.png" alt="Thread Pools 1" title="Thread pools 1" style="max-width:100%;"></a>
+</li>
+<li>Accept the provided minimum Thread Pool Size.
+<a href="images/config_deploy/config_deploy_was_08_thread_pools_2.png" target="_blank"><img src="images/config_deploy/config_deploy_was_08_thread_pools_2.png" alt="Thread Pools 2" title="Thread pools 2" style="max-width:100%;"></a>
+</li>
+<li>YOu can leave the session timeout for ActivevVOS Central at default Value. The ActiveVOS Central Task Service URL must point the Cluster Load Balancer. If you want to use built in WAS SSO or external provider SSO Solution such as Web Seal, Apache CAS You would need to use URl Which point to ActiveVOS Central Certificate Secured Endpoint. See more Details on SSO support in this Presentation <a href="http://www.activevos.com/cp/46/ctot-40-single-sign-on-for-accessing-task-lists">http://www.activevos.com/cp/46/ctot-40-single-sign-on-for-accessing-task-lists</a>
+<a href="images/config_deploy/config_deploy_was_09_avcentral_config.png" target="_blank"><img src="images/config_deploy/config_deploy_was_09_avcentral_config.png" alt="AVC" title="AVC" style="max-width:100%;"></a>
+</li>
+<li>Select the Deployment Options, the first check-box <code>Install database schema</code> should be enabled only the first time you run this wizard against particular app server instance. If you re run the wizards later to change any of the configurations especially when you just need to turn/off/on security, you don't want to re- crate the database schema once the database was already created and initialized or when the db tables were created by the DBA. Note that this option enables the run of the DDL script that creates the database tables and views used by the ActiveVOS. Also note that the user defined later in the database connection parameters must have permissions described in the <a href="#prepare-database-for-activevos">Prepare Database for ActiveVOS</a> step. If you want to separate owner and connection user of the database you will have to create db tables manually first and unchecked the option <code>Install database schema</code>.
+<a href="images/config_deploy/config_deploy_was_10_deployment_options.png" target="_blank"><img src="images/config_deploy/config_deploy_was_10_deployment_options.png" alt="Deployment Options" title="Deployment Options" style="max-width:100%;"></a>
+</li>
+<li>Database COnnection Options are only requested When you select the <code>Install database schema</code> options. These are only used to Create Database Schema. IT is assumed that at this point you already defined WAS data Source for ActiveVOS in the WL CLuster as Described in the <a href="#configure-activevos-data-sources">Configure ActiveVOS Data Sources</a> step of this guide.
+<a href="images/config_deploy/config_deploy_was_11_db_connection.png" target="_blank"><img src="images/config_deploy/config_deploy_was_11_db_connection.png" alt="DB Options" title="DB Options" style="max-width:100%;"></a>
+</li>
+<li>On the Next step you will be prompted for Details of you WAS Server Parameters which Are used to connect to the WAS server and Deploy ActiveVOS Components
+<a href="images/config_deploy/config_deploy_was_11_was_server.png" target="_blank"><img src="images/config_deploy/config_deploy_was_11_was_server.png" alt="WAS Options" title="WAS Options" style="max-width:100%;"></a>
+</li>
+<li>Run the Install, Optionally you can click on the Show Details to monitor the progress of the Installation and server configuration.
+<a href="images/config_deploy/config_deploy_was_13_run_install_details.png" target="_blank"><img src="images/config_deploy/config_deploy_was_13_run_install_details.png" alt="Run Install" title="Run Install" style="max-width:100%;"></a>
+</li>
+</ul>
+
+<h3>
+<a id="user-content-what-resources-will-config-deploy-createupdate-on-was-server" class="anchor" href="#what-resources-will-config-deploy-createupdate-on-was-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>WHat resources will Config Deploy create/update on WAS Server?</h3>
 </article></body></html>
