@@ -58,8 +58,8 @@ This section provides a list of most of the items that you should either have co
 
 ### Hardware
 
-- [] Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.
-- [] At least 1 GB of disk space is required to install the ActiveVOS Server application.
+- [ ] Server hardware must meet the requirements listed for each third-party application, including server container, database server and Java environment.
+- [ ] At least 1 GB of disk space is required to install the ActiveVOS Server application.
 
 ### Software
 * See a Product Availability Matrix, which is available on the My Support pages for each version of ActiveVOS. [ActiveVOS 9.24 PAM](https://mysupport.informatica.com/servlet/JiveServlet/downloadBody/12771-102-1-17705/ActiveVOS%209.2.4%20PAM.xlsx)
