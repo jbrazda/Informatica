@@ -885,7 +885,10 @@ body .markdown-body
 
 
 <ul>
-<li><a href="#overview">Overview</a></li>
+<li>
+<a href="#overview">Overview</a>
+
+<ul>
 <li><a href="#ibm-websphere-terminology">IBM WebSphere Terminology</a></li>
 <li>
 <a href="#installation-checklist">Installation Checklist</a>
@@ -906,8 +909,15 @@ body .markdown-body
 
 <ul>
 <li><a href="#create-deployment-manager">Create Deployment Manager</a></li>
+<li><a href="#set-jvm-arguments-in-the-administration-console-for-websphere-application-servers">Set JVM arguments in the administration console for WebSphere Application Servers.</a></li>
+</ul>
+</li>
+<li>
+<a href="#first-steps-guide">First Steps Guide</a>
+
+<ul>
+<li><a href="#create-cell-node">Create Cell Node</a></li>
 <li><a href="#create-cluster">Create Cluster</a></li>
-<li><a href="#create-managed-servers">Create Managed Servers</a></li>
 <li><a href="#configure-activevos-data-sources">Configure ActiveVOS Data Sources</a></li>
 <li><a href="#set-up-jaas-application-logins">Set up JAAS Application Logins</a></li>
 <li><a href="#install-and-configure-was-web-server-plugins">Install and Configure WAS Web Server Plugins</a></li>
@@ -920,7 +930,18 @@ body .markdown-body
 <ul>
 <li><a href="#install-activevos-config-deploy-tool">Install ActiveVOS Config Deploy Tool</a></li>
 <li><a href="#run-activevos-config-deploy-tool">Run ActiveVOS Config Deploy Tool</a></li>
-<li><a href="#what-resources-will-config-deploy-createupdate-on-was-server">WHat resources will Config Deploy create/update on WAS Server?</a></li>
+<li><a href="#configure-application-security">Configure Application Security</a></li>
+<li><a href="#resources-created-by-config-deploy-was-server">Resources Created by Config Deploy WAS Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#appendices">Appendices</a>
+
+<ul>
+<li><a href="#profile-management-tip">Profile Management Tip</a></li>
+<li><a href="#ssl-and-sso-configuration-tips">SSL and SSO Configuration Tips</a></li>
 </ul>
 </li>
 </ul>
@@ -958,7 +979,7 @@ body .markdown-body
 <li>
 <strong>Application Servers</strong> - provide the runtime environment for application code. They provide containers and services that specialize in enabling the execution of specific Java application components.</li>
 <li>
-<strong>IBM HTTP Server (IHS)</strong> - an Apache based web server which can provided Load balancing and integrated communication within the WAS Network server deployment. Together with the Websphere Application Server plugin it provides seamles scalability and load balancing acrros the WAS server nodes and instances.ss</li>
+<strong>IBM HTTP Server (IHS)</strong> - an Apache based web server which can provided Load balancing and integrated communication within the WAS Network server deployment. Together with the Websphere Application Server plug-in, it provides seamless scalability and load balancing across the WAS server nodes and instances.</li>
 </ul>
 
 <h2>
@@ -984,7 +1005,7 @@ body .markdown-body
 </li>
 <li>A user account with administrative rights to install or manage all required software including the application and database servers and the ActiveVOS Server.</li>
 <li>The supported Server container installed on each machine intended to host ActiveVOS Server.</li>
-<li>JVM Memory arguments have been added to your JAVA_OPTS environment variable: <code>-Xms256m -Xmx1024m -XX:MaxPermSize=384m</code>. <a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/doc.server_install/websphere/html/Prereqs.html">See Prerequisites</a>
+<li>JVM Memory arguments have been adjusted following are minimal JVM Sizing parameters: <code>-Xms256m -Xmx1024m -XX:MaxPermSize=384m</code>. <a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/doc.server_install/websphere/html/Prereqs.html">See Prerequisites</a>
 </li>
 <li>Make sure that your Identity Service (JDBC, LDAP, or XML), has all the roles defined especially important is to add abTaskClient role to each ActiveVOS Central user. This security role, described in the web.xml file, is required for access to ActiveVOS Central.</li>
 <li>On the URN Mappings page of the Administration Console, update the host and port for ActiveVOS Central to match your installation, In clustered install in this URL should point to your load balancer <code>http://[host]:[port]/activevos-central/avc</code> if needed. The default address is http://localhost:8080/activevos-central/avc.</li>
@@ -1008,7 +1029,7 @@ body .markdown-body
 <li>The database user name and password to be used by ActiveVOS Server to connect to the database.</li>
 <li>If you are using an Oracle database the ActiveVOS table-space created.</li>
 <li>A JDBC database driver that provides the required functionality.</li>
-<li>The class name of the JDBC database driver.</li>
+<li>The class name of the JDBC database driver</li>
 </ul>
 
 <h3>
@@ -1038,7 +1059,7 @@ body .markdown-body
 <td><a href="http://www.ibm.com/developerworks/downloads/ws/wasnetwork/">Download</a></td>
 </tr>
 <tr>
-<td>Oracle</td>
+<td>Oracle (1)</td>
 <td>11g</td>
 <td><a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">Download</a></td>
 </tr>
@@ -1067,7 +1088,7 @@ We created user and grated the user following permissions</p>
 </ul>
 
 <blockquote>
-<p>Note that Activevos Installer (Config Deploy Tool) can create the database schema or just connect to existing one previously created by the DBA. 
+<p>Note that ActiveVOS Installer (Config Deploy Tool) can create the database schema or just connect to existing one previously created by the DBA. 
 All supported database DDL scripts are included in the config deploy tool as described in this <a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/topic/doc.server_install/websphere/html/Configuration_wizard.html#newdb">documentation page</a> This guide will use method where the tables are created by the "Config Deploy" tool</p>
 </blockquote>
 
@@ -1109,7 +1130,7 @@ All supported database DDL scripts are included in the config deploy tool as des
 You will need IBM User ID and password to use this method of installation. You will need to register on <a href="https://www.ibm.com/developerworks/dwwi/jsp/Register.jsp">IBM Developer Support Site</a>.</p>
 
 <blockquote>
-<p><strong>NOTE:</strong> If you plan on installing IBM WebSphere to run as a service, you must logon to the target machine using an account which has the following rights:</p>
+<p><strong>NOTE:</strong> If you plan on installing IBM WebSphere to run as a service, you must log-on to the target machine using an account which has the following rights:</p>
 
 <ul>
 <li>Act as part of the operating system</li>
@@ -1136,7 +1157,7 @@ Make sure you select following components:</p>
 <p><a href="images/was_install/install_02_components.png" target="_blank"><img src="images/was_install/install_02_components.png" alt="Component Selection" title="Components Selection" style="max-width:100%;"></a></p>
 
 <blockquote>
-<p><strong>NOTE:</strong> We will use built-in IBM Java SDK 1.6 which is included within Websphere Application server installation. It is not necessary to install the 1.7 JDK unless it is required by some other componsnts installed on the WAS Server.</p>
+<p><strong>NOTE:</strong> We will use built-in IBM Java SDK 1.6 which is included within Websphere Application server installation. It is not necessary to install the 1.7 JDK unless it is required by some other components installed on the WAS Server.</p>
 </blockquote>
 
 <p>Optionally you can select patches available for the release (we selected none)</p>
@@ -1151,18 +1172,18 @@ Make sure you select following components:</p>
 
 <p><a href="images/was_install/install_05_program_files_warning.png" target="_blank"><img src="images/was_install/install_05_program_files_warning.png" alt="Program files Warning" title="Program files Warning" style="max-width:100%;"></a></p>
 
-<p>Use Othen Program files Directory to install the product components
+<p>Use other than  <code>Program Files</code> directory to install the product components
 We used <code>C:\opt\ibm</code> as an installation base for all components.
 Following screen-shot shows the C:\ibm as a target installation root</p>
 
 <p><a href="images/was_install/install_06_target_dir.png" target="_blank"><img src="images/was_install/install_06_target_dir.png" alt="Target Dir" title="Target Dir" style="max-width:100%;"></a></p>
 
 <p>On the next step: select primary language and optional translations (We used only English)
-On the next Step: Check final summary of to be installed components and that you have sufficient space on ypur HDD (You will need proximately 3GB of space to install all required WAS components and ActiveVOS)</p>
+On the next Step: Check final summary of to be installed components and that you have sufficient space on your HDD (You will need proximately 3GB of space to install all required WAS components and ActiveVOS)</p>
 
 <p><a href="images/was_install/install_07_summary.png" target="_blank"><img src="images/was_install/install_07_summary.png" alt="Summary" title="Summary" style="max-width:100%;"></a></p>
 
-<p>Set the IBM HTTP Server port (use default 80) or optionally choose diferent one if it conflicts with some existing http server on your machine.</p>
+<p>Set the IBM HTTP Server port (use default 80) or optionally choose different one if it conflicts with some existing HTTP server on your machine.</p>
 
 <p><a href="images/was_install/install_08_http_server_params.png" target="_blank"><img src="images/was_install/install_08_http_server_params.png" alt="HTTP Server Params" title="HTTP Server Parameters" style="max-width:100%;"></a></p>
 
@@ -1180,19 +1201,180 @@ On the next Step: Check final summary of to be installed components and that you
 <h3>
 <a id="user-content-create-deployment-manager" class="anchor" href="#create-deployment-manager" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Deployment Manager</h3>
 
-<p>Run Websphere Customization Toolbox and select</p>
+<p>For our example deployment we want create topology consisting of </p>
 
-<p>You may accept the name defaults for the deployment manager and cells, or optionally change them if you desire.</p>
+<ul>
+<li>Deployment manager + Node Manager
+
+<ul>
+<li>ActiveVOS Cluster
+
+<ul>
+<li>ActiveVOS01</li>
+<li>ActiveVOS02</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>Eventually you can add additional Node on separate Machine and a join them to the ActiveVOS Cluster</p>
+
+<p>We will start with Deployment Manager and then create Node, Cluster and individual server nodes</p>
+
+<ul>
+<li>Run Websphere Customization Toolbox - Profile Management tool and click the <code>Create...</code> button
+<a href="images/was_profiles/was_profile_01_new.png" target="_blank"><img src="images/was_profiles/was_profile_01_new.png" alt="New Profile" title="New Profile" style="max-width:100%;"></a>
+</li>
+<li>Select Managment Option
+<a href="images/was_profiles/was_profile_02_type_managment.png" target="_blank"><img src="images/was_profiles/was_profile_02_type_managment.png" alt="Managment Profile" title="Management Profile" style="max-width:100%;"></a>
+</li>
+<li>Select Advanced Profile Creation
+<a href="images/was_profiles/was_profile_dmgr_01.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_01.png" alt="Profile Creation Options" title="Profile Creation Options" style="max-width:100%;"></a>
+</li>
+<li>Keep Deploy Administrative Console Checked
+<a href="images/was_profiles/was_profile_dmgr_02.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_02.png" alt="Profile Creation Options" title="Profile Creation Options" style="max-width:100%;"></a>
+</li>
+<li>Accept the Default Location and Name for the Profile 
+<a href="images/was_profiles/was_profile_dmgr_03.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_03.png" alt="DMGR Name" title="DMGR Name" style="max-width:100%;"></a>
+</li>
+<li>You can Accpet the generated Node, Host and Cell Name
+<a href="images/was_profiles/was_profile_dmgr_04.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_04.png" alt="Node, Host and Cell Name" title="Node, Host and Cell Name" style="max-width:100%;"></a>
+</li>
+<li>Enable Administrative Security and define admin user name and password
+<a href="images/was_profiles/was_profile_dmgr_05.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_05.png" alt="Admin Security" title="Admin Security" style="max-width:100%;"></a>
+</li>
+<li>You can let Profile tool to generated default SSL Certificates for your node (Which is sufficient for test and development servers).  Alternatively you can also import pre-created certificates, Note that the generated certificates are signed by only by the WAS internal Certification Autority, for real environment you would want to create your certificates and let them sign by public CA your Coroporate CA.
+<a href="images/was_profiles/was_profile_dmgr_06.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_06.png" alt="Certificates 1" title="Certificates 1" style="max-width:100%;"></a>
+</li>
+<li>On a Dev or demo sandbox Server, you can accept the generated Values for HOST and default keystore password. Note that the default jeystore password is <code>WebAS</code>. It is practical to increase certificate expration date for your development environment. Follow customer Enterprice Policies to set the Expration time for production/test environments.
+<a href="images/was_profiles/was_profile_dmgr_07.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_07.png" alt="Certificates 2" title="Certificates 2" style="max-width:100%;"></a>
+</li>
+<li>Keep proposed default ports for WAS DMGR server instance
+<a href="images/was_profiles/was_profile_dmgr_08.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_08.png" alt="Ports" title="Ports" style="max-width:100%;"></a>
+</li>
+<li>Optionally Install as a Service if you installing on your machine, otherwise always enable automatic Service Start Configuration
+<a href="images/was_profiles/was_profile_dmgr_09.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_09.png" alt="Windows Service" title="Windows Service" style="max-width:100%;"></a>
+</li>
+<li>Review your Selections Summary and run the profile Creation</li>
+<li>Once the profile is created, You will get opportunity to display the first step Guide. You can finish the Guide.
+<a href="images/was_profiles/was_profile_dmgr_12.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_12.png" alt="Finish" title="Finish" style="max-width:100%;"></a>
+</li>
+</ul>
+
+<h3>
+<a id="user-content-set-jvm-arguments-in-the-administration-console-for-websphere-application-servers" class="anchor" href="#set-jvm-arguments-in-the-administration-console-for-websphere-application-servers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set JVM arguments in the administration console for WebSphere Application Servers.</h3>
+
+<p>In the Administration Console select <code>Servers &gt; Server Type &gt; WebSphere application servers</code>
+Click on the name of your server
+Expand Java and Process Management and select Process Definition.
+Under the Additional Properties section, click Java Virtual Machine.
+<a href="images/was_config/was_jvm_seetings.png" target="_blank"><img src="images/was_config/was_jvm_seetings.png" alt="JVM" title="JVM" style="max-width:100%;"></a>
+Set Max and Min heap size and Scroll down and locate the textbox for Generic JVM arguments and set the perm Gen size or any other desired parameters.
+<a href="images/was_config/was_jvm_seetings_2.png" target="_blank"><img src="images/was_config/was_jvm_seetings_2.png" alt="JVM" title="JVM" style="max-width:100%;"></a></p>
+
+<h2>
+<a id="user-content-first-steps-guide" class="anchor" href="#first-steps-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>First Steps Guide</h2>
+
+<ul>
+<li>Verify that the Deployment Manager is installed and Running</li>
+<li>You can click on Start Deployment Manager
+<a href="images/was_profiles/was_profile_dmgr_11.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_11.png" alt="First Steps" title="First Steps" style="max-width:100%;"></a> You should see following output</li>
+</ul>
+
+<pre><code>ADMU0116I: Tool information is being logged in file
+           C:\opt\ibm\WebSphere\AppServer\profiles\Dmgr01\logs\dmgr\startServer.log
+ADMU7701I: Because dmgr is registered to run as a Windows Service, the request
+           to start this server will be completed by starting the associated
+           Windows Service.
+ADMU0116I: Tool information is being logged in file
+           C:\opt\ibm\WebSphere\AppServer\profiles\Dmgr01\logs\dmgr\startServer.log
+ADMU0128I: Starting tool with the Dmgr01 profile
+ADMU3100I: Reading configuration for server: dmgr
+ADMU3200I: Server launched. Waiting for initialization status.
+ADMU3000I: Server dmgr open for e-business; process id is 7668
+</code></pre>
+
+<ul>
+<li>Try to login the Deployment manager Console
+URL <code>https://&lt;yourhost&gt;:9043/ibm/console</code>
+</li>
+</ul>
+
+<p>You may see following WARNING in your browser 
+<a href="images/ssl/CA_Invalid_01.png" target="_blank"><img src="images/ssl/CA_Invalid_01.png" alt="warning" title="Create" style="max-width:100%;"></a></p>
+
+<p>You can avoid by importing signing Root Certificate Generated by WAS or provided root certificate to your Windows CA trust store</p>
+
+<h3>
+<a id="user-content-create-cell-node" class="anchor" href="#create-cell-node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Cell Node</h3>
+
+<p>Second Step will be to create Cell Node Which will contain Your Cluster And Server Definitions</p>
+
+<ul>
+<li>We will run the Profile Manager Tool Again. This Time We will select Custom Profile
+<a href="images/was_profiles/was_profile_node_01.png" target="_blank"><img src="images/was_profiles/was_profile_node_01.png" alt="Create" title="Create" style="max-width:100%;"></a>
+</li>
+<li>Select Custom Profile
+<a href="images/was_profiles/was_profile_node_02.png" target="_blank"><img src="images/was_profiles/was_profile_node_02.png" alt="Custom" title="Custom" style="max-width:100%;"></a>
+</li>
+<li>Specify Profile name 'Node01', you can also make this profile default
+<a href="images/was_profiles/was_profile_node_03.png" target="_blank"><img src="images/was_profiles/was_profile_node_03.png" alt="Profile Name" title="Profile Name" style="max-width:100%;"></a>
+</li>
+<li>You can Accpet the Generated Node Name and host name
+<a href="images/was_profiles/was_profile_node_04.png" target="_blank"><img src="images/was_profiles/was_profile_node_04.png" alt="Node Name" title="Node Name" style="max-width:100%;"></a>
+</li>
+<li>Register the node under running Deployment Manager created in previous step
+<a href="images/was_profiles/was_profile_node_05.png" target="_blank"><img src="images/was_profiles/was_profile_node_05.png" alt="Federation" title="Federation" style="max-width:100%;"></a>
+</li>
+<li>You can re- use existing certificates Generated for Deployment manager as in this case both servers are running on the same host.
+<a href="images/was_profiles/was_profile_node_06.png" target="_blank"><img src="images/was_profiles/was_profile_node_06.png" alt="Certificates 1" title="Certificates 1" style="max-width:100%;"></a>
+</li>
+<li>Keep the Imported Certificates Values
+<a href="images/was_profiles/was_profile_node_07.png" target="_blank"><img src="images/was_profiles/was_profile_node_07.png" alt="Certificates 2" title="Certificates 2" style="max-width:100%;"></a>
+</li>
+<li>Keep proposed Ports
+<a href="images/was_profiles/was_profile_node_08.png" target="_blank"><img src="images/was_profiles/was_profile_node_08.png" alt="Ports" title="Ports" style="max-width:100%;"></a>
+</li>
+<li>Review your Selections Summary and run the profile Creation
+<a href="images/was_profiles/was_profile_node_09.png" target="_blank"><img src="images/was_profiles/was_profile_node_09.png" alt="Ports" title="Ports" style="max-width:100%;"></a>
+</li>
+<li>Once the profile is created, You will get oprtunity to display the first step Guide. You can finish the Guide.
+<a href="images/was_profiles/was_profile_dmgr_11.png" target="_blank"><img src="images/was_profiles/was_profile_dmgr_11.png" alt="Finish" title="Finish" style="max-width:100%;"></a>
+</li>
+</ul>
+
+<p>Now You should see following in the Profile Manager
+<a href="images/was_profiles/was_profile_completed.png" target="_blank"><img src="images/was_profiles/was_profile_completed.png" alt="Profile Manager" title="Profile Manager" style="max-width:100%;"></a></p>
 
 <h3>
 <a id="user-content-create-cluster" class="anchor" href="#create-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Cluster</h3>
 
-<p>TBD</p>
+<ul>
+<li>Login to your Deployment Manager WAS server Console <code>https://&lt;your_host&gt;:9043/ibm/console</code>
+</li>
+<li>go to <code>Servers &gt; Clusters &gt; WebSphere application server clusters</code>
+<a href="images/was_config/was_cluster_01.png" target="_blank"><img src="images/was_config/was_cluster_01.png" alt="Create Cluster" title="Create Cluster" style="max-width:100%;"></a>
+</li>
+<li>Create  Cluster named <code>ActiveVOS_Cluster</code>
+<a href="images/was_config/was_cluster_02.png" target="_blank"><img src="images/was_config/was_cluster_02.png" alt="Cluster Name" title="Cluster Name" style="max-width:100%;"></a>
+</li>
+<li>Create  First Cluster Node, <code>ActiveVOS01</code>
+<a href="images/was_config/was_cluster_03.png" target="_blank"><img src="images/was_config/was_cluster_03.png" alt="Cluster Node" title="Cluster Node" style="max-width:100%;"></a>
+</li>
+<li>Add Second Node, <code>ActiveVOS02</code>
+<a href="images/was_config/was_cluster_04.png" target="_blank"><img src="images/was_config/was_cluster_04.png" alt="Cluster Node" title="Cluster Node" style="max-width:100%;"></a>
+</li>
+<li>Review Cluster Summary and finish the cluster guide
+<a href="images/was_config/was_cluster_05.png" target="_blank"><img src="images/was_config/was_cluster_05.png" alt="Review" title="Review" style="max-width:100%;"></a>
+</li>
+<li>Save Your Changes
+<a href="images/was_config/was_cluster_05.png" target="_blank"><img src="images/was_config/was_cluster_05.png" alt="Save" title="Save" style="max-width:100%;"></a>
+</li>
+</ul>
 
-<h3>
-<a id="user-content-create-managed-servers" class="anchor" href="#create-managed-servers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Managed Servers</h3>
-
-<p>TBD</p>
+<p>Once You save the Cluster you shoul be abe to go to <code>Servers &gt; Clusters &gt; Cluster topology</code> and see following topology
+<a href="images/was_config/was_cluster_topology.png" target="_blank"><img src="images/was_config/was_cluster_topology.png" alt="Cluster Topology" title="Topology" style="max-width:100%;"></a></p>
 
 <h3>
 <a id="user-content-configure-activevos-data-sources" class="anchor" href="#configure-activevos-data-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure ActiveVOS Data Sources</h3>
@@ -1220,7 +1402,7 @@ The cluster scope has a precedence over the node and cell scopes. Create a data 
 
 <blockquote>
 <p><strong>NOTE:</strong> This DRIVER variable must be defined on each node within the cluster.
-List of variables can be quite long, use filtering as shown on following screenshot <a href="images/was_config/was_variables01.png" target="_blank"><img src="images/was_config/was_variables01.png" alt="Variables" title="Variables" style="max-width:100%;"></a></p>
+List of variables can be quite long, use filtering as shown on following screen shot <a href="images/was_config/was_variables01.png" target="_blank"><img src="images/was_config/was_variables01.png" alt="Variables" title="Variables" style="max-width:100%;"></a></p>
 </blockquote>
 
 <h4>
@@ -1239,7 +1421,7 @@ List of variables can be quite long, use filtering as shown on following screens
 <a href="images/was_config/was_security_j2c_01.png" target="_blank"><img src="images/was_config/was_security_j2c_01.png" alt="New Alias" title="New Alias" style="max-width:100%;"></a>
 </li>
 <li>Create Set Username and password
-<a href="images/was_config/was_security_j2c_01.png" target="_blank"><img src="images/was_config/was_security_j2c_01.png" alt="Provide Credentials" title="Provide Credentials" style="max-width:100%;"></a>
+<a href="images/was_config/was_security_j2c_02.png" target="_blank"><img src="images/was_config/was_security_j2c_02.png" alt="Provide Credentials" title="Provide Credentials" style="max-width:100%;"></a>
 </li>
 <li>Make sure that you save and synchronize changes to the cluster</li>
 </ul>
@@ -1351,11 +1533,11 @@ List of variables can be quite long, use filtering as shown on following screens
 <h3>
 <a id="user-content-set-up-jaas-application-logins" class="anchor" href="#set-up-jaas-application-logins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set up JAAS Application Logins</h3>
 
-<p>ActiveVOS cluster implementation on IBM WebSphere uses JMX API <em>MBeans</em>. ActiveVOS cluster uses MBeans to to communicate betwenn claster nodes when it sends status updates, monitors node health, running deployments, migrating proceses from node to node or creationg deployment lock during bpr deployment and in many other scenarios. When WAS global security is turned on the current thread needs to have access to the MBeans. There are two option to setup the security to provide access to the JMX MBeans:</p>
+<p>ActiveVOS cluster implementation on IBM WebSphere uses JMX API <em>MBeans</em>. ActiveVOS cluster uses MBeans to to communicate between cluster nodes when it sends status updates, monitors node health, running deployments, migrating proceses from node to node or creationg deployment lock during bpr deployment and in many other scenarios. When WAS global security is turned on the current thread needs to have access to the MBeans. There are two option to setup the security to provide access to the JMX MBeans:</p>
 
 <ul>
 <li>ActiveVOS Provided User – we will provide a username/password which will be used anytime we need to use the mbean regardless of what the subject was on the executing thread. This user will need monitor rights (if you don’t override the cluster mbean security).</li>
-<li>ActiveVOSIdentityAssertion – re-asserts the current identity this is a workaround to a work manager issue on IBM WebSphere where even when you say to inherit security on work manager setup you need to reassert it in order for the credentials to be processed correctly. When using this by default (if you don’t override the cluster mbean security) all abServiceConsumers users must have monitor rights on the server.</li>
+<li>ActiveVOSIdentityAssertion – re-asserts the current identity this is a workaround to a work manager issue on IBM WebSphere where even when you say to inherit security on work manager setup you need to reassert it in order for the credentials to be processed correctly. When using this by default (if you don't override the cluster mbean security) all abServiceConsumers users must have monitor rights on the server.</li>
 </ul>
 
 <p>We will use the first method
@@ -1416,7 +1598,7 @@ Define JASS Login User <strong>ActiveVOS Provided User</strong></p>
 </ul>
 
 <blockquote>
-<p><strong>NOTE:</strong> Activevos does not require XA enabled data source unles Required by the processes that you nay deploy. Regular data source should be suffcient for most of the use cases.</p>
+<p><strong>NOTE:</strong> Activevos does not require XA enabled data source unles Required by the processes that you nay deploy. Regular data source should be sufficient for most of the use cases.</p>
 </blockquote>
 
 <h3>
@@ -1769,5 +1951,126 @@ AV_HOME is the the directory eher you installed the ActiveVOS Config Deploy Tool
 </ul>
 
 <h3>
-<a id="user-content-what-resources-will-config-deploy-createupdate-on-was-server" class="anchor" href="#what-resources-will-config-deploy-createupdate-on-was-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>WHat resources will Config Deploy create/update on WAS Server?</h3>
+<a id="user-content-configure-application-security" class="anchor" href="#configure-application-security" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure Application Security</h3>
+
+<p>Login to the WebSphere console and  go to <code>Applications &gt; Application types &gt; WebSphere enterprise applications &gt; ActiveVOS Enterprise Server</code>
+Look for the Security role to user/group mapping group. Map the existing ActiveVOS security roles to groups. Typically these Groups would be defined in LDAP and mapped to the security roles</p>
+
+<p>You must ensure that WebSphere application security is set up correctly. 
+On the WebSphere Console navigation area, select <code>Security &gt; Secure administration, applications, and infrastructure</code>. Then select the check-box next to Enable Application Security and select Apply.
+<a href="images/was_config/was_application_security.png" target="_blank"><img src="images/was_config/was_application_security.png" alt="Aplication Security" title="Application Security" style="max-width:100%;"></a></p>
+
+<p>See more at <a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/doc.server_userguide/html/SvrUG3-4.html">http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/doc.server_userguide/html/SvrUG3-4.html</a> </p>
+
+<h3>
+<a id="user-content-resources-created-by-config-deploy-was-server" class="anchor" href="#resources-created-by-config-deploy-was-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources Created by Config Deploy WAS Server</h3>
+
+<p>ActiveVOS Deploy Tool will configure additional resources required by ActiveVOS automatically. please review that these resources are created as shown below.
+You may need to adjust some of the parameters like connection and thread pool sizing accordingly to your estimated performance requirements or as necessary based on your performance observations and server utilization </p>
+
+<h4>
+<a id="user-content-thread-pools" class="anchor" href="#thread-pools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thread Pools</h4>
+
+<p><a href="images/was_config/was_ae_work_managers.png" target="_blank"><img src="images/was_config/was_ae_work_managers.png" alt="WMs" title="WMs" style="max-width:100%;"></a></p>
+
+<ul>
+<li>Folowing Thread pools Shopuld be Created <code>Resources &gt; Asynchronous beans &gt; Work managers</code>
+
+<ul>
+<li>ActiveVOS Work Manager
+<a href="images/was_config/was_ae_work_manager.png" target="_blank"><img src="images/was_config/was_ae_work_manager.png" alt="WM" title="WM" style="max-width:100%;"></a>
+</li>
+<li>ActiveVOS Enterprise System Work Manager
+<a href="images/was_config/was_ae_system_wm.png" target="_blank"><img src="images/was_config/was_ae_system_wm.png" alt="System WM" title="System WM" style="max-width:100%;"></a>
+</li>
+</ul>
+</li>
+</ul>
+
+<h4>
+<a id="user-content-time-managers" class="anchor" href="#time-managers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time Managers</h4>
+
+<p>ActiveVOS Timer Manager
+Go to <code>Resources &gt; Asynchronous beans &gt; Timer managers</code>
+<a href="images/was_config/was_ae_timer_manager.png" target="_blank"><img src="images/was_config/was_ae_timer_manager.png" alt="Timer" title="Timer" style="max-width:100%;"></a></p>
+
+<h1>
+<a id="user-content-appendices" class="anchor" href="#appendices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Appendices</h1>
+
+<h2>
+<a id="user-content-profile-management-tip" class="anchor" href="#profile-management-tip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Profile Management Tip</h2>
+
+<p>The command line tools also the only option when you want remove or augment the profile. The <code>manageprofiles.[sh|bat]</code> script can be difficult to use and has many often confusing parameters. You can use manageprofileInteractive as an alternaive. 
+The <code>manageprofileInteractive.zip</code> file available on the page below contains the executable <code>manageprofilesInteractive.jar</code>, and launch scripts <code>run_manageprofileInteractive.[bat|sh]</code>.</p>
+
+<p><a href="http://www-01.ibm.com/support/docview.wss?uid=swg21442487">http://www-01.ibm.com/support/docview.wss?uid=swg21442487</a></p>
+
+<blockquote>
+<p><strong>NOTE:</strong> If have a problem to delete the profile using  <code>/opt/IBM/WebSphere/AppServer/bin/manageprofiles.bat -delete -profileName profile_name</code> </p>
+
+<ul>
+<li>Make sure that all WAS JVMs are shut down, including node manager.</li>
+<li>You may need to delete or rename profile_name/configuration directory to successfully delete the profile</li>
+<li>make sure you clean leftover directories after you deleted the profile 
+
+<ul>
+<li>configuration</li>
+<li>logs</li>
+<li>logs</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+<p>Example run of deleteAll script using run_manageprofileInteractive</p>
+
+<pre><code>C:\opt\ibm\WebSphere\AppServer\bin&gt;CALL "C:\opt\ibm\WebSphere\AppServer\bin\setupCmdLine.bat"
+manageprofilesInteractive-v70 V0.6.6 ~ 2011.05.10/Windows 7
+
+-----------------------------
+MANAGEPROFILES - Command Menu
+-----------------------------
+1  create
+2  augment
+3  delete
+4  unaugment
+5  unaugmentAll
+6  deleteAll
+7  listProfiles
+8  listAugments
+9  backupProfile
+10 restoreProfile
+11 getName
+12 getPath
+13 validateRegistry
+14 validateAndUpdateRegistry
+15 getDefaultName
+16 setDefaultName
+17 response
+18 help
+Select number [press "q" to quit]: 6
+deleteAll
+-----------------------------
+DELETEALL command summary:
+-----------------------------
+Press "b" to go back and make changes or "c" to continue: c
+
+Press "q" to quit, "r" add to response file, or "c" to run the command: c
+-------------------------------------
+manageprofiles.bat -deleteAll
+Created Command Log in C:/opt/ibm/WebSphere/AppServer/logs/manageprofilesInteractive.log
+Execute "deleteAll" command now
+Press [c to continue, q to quit]: c
+You may check C:/opt/ibm/WebSphere/AppServer/logs/manageprofiles/deleteAll.log for command status.
+
+  INSTCONFSUCCESS: Success: All profiles are deleted.
+
+Elapse time: 4.3055 minutes
+Done!
+</code></pre>
+
+<h2>
+<a id="user-content-ssl-and-sso-configuration-tips" class="anchor" href="#ssl-and-sso-configuration-tips" aria-hidden="true"><span class="octicon octicon-link"></span></a>SSL and SSO Configuration Tips</h2>
+
+<p><a href="https://enerosweb.wordpress.com/2010/10/12/renew-certificate-in-websphere-keystore-while-retaining-same-alias/">Renew certificate in Websphere keystore while retaining same alias</a></p>
 </article></body></html>
