@@ -60,7 +60,7 @@ The advantages of this editor for development in the comtext of Informatica Clou
 
 You can use Sublime Text for free "unlimited" evaluation period, but ythe $70 you pay for full license is well worth the money
 
-[My Install Sublime Text 3 Guide](/install_sublime.md)
+[My Install Sublime Text 3 Guide](install_sublime.md)
 
 
 
