@@ -9,7 +9,7 @@
 			],
 			[
 				"install_",
-				"install_05_program_files_warning.png	File"
+				"install_05_program_files_warning.png\tFile"
 			],
 			[
 				"d",
@@ -21,9 +21,14 @@
 	[
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -164,7 +169,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/tmp/infabpm/Guides"
+		"/C/opt/git/github/infabpm/Guides"
 	],
 	"file_history":
 	[
@@ -299,7 +304,7 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -362,7 +367,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -403,15 +408,17 @@
 	{
 		"height": 112.0
 	},
+	"pinned_build_system": "",
 	"project": "infa_guides.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -420,6 +427,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -432,6 +440,7 @@
 	"select_symbol":
 	{
 		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
