@@ -127,8 +127,6 @@ Abacus,Advanced CSV,Ant,Ant Buildfile,API Blueprint,AutoFileName,Awk,Better Comp
 ```
 
 
-
-
 ## Configure Sync Settings
 
 Use `Sync Settings` plugin which makes synchronization of setting very easy using Github
@@ -138,4 +136,6 @@ Use `Sync Settings` plugin which makes synchronization of setting very easy usin
 3. Create Access Key on https://github.com/settings/tokens Name it `Gist Sublime`
 4. Create new gist using <kbd>control</kbd> +<kbd>shift</kbd> + <kbd>P</kbd>, type "Sync Create" and select "Sync Settings: Create and Upload" action
 6. Now you an use `Sync Settings: Upload` or `Sync Settings: Download ` to backup and synchronize your setting across different Sublime Text installations
+
+
 
