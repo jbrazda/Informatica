@@ -2,16 +2,16 @@
 
 <!-- MarkdownTOC -->
 
-- [Install Informatica Tools](#install-informatica-tools)
-    - [Process Developer](#process-developer)
-- [Other Recommended Tools](#other-recommended-tools)
-    - [Developer Text Editor](#developer-text-editor)
-    - [Git Client](#git-client)
-    - [Apache Ant](#apache-ant)
-    - [Java JDK](#java-jdk)
-    - [After Installation of the tools \(your first Login to the Maintenance Machine\)](#after-installation-of-the-tools-your-first-login-to-the-maintenance-machine)
-    - [Setup SSH key](#setup-ssh-key)
-    - [Setup your Git Client](#setup-your-git-client)
+- Install Informatica Tools
+    - Process Developer
+- Other Recommended Tools
+    - Developer Text Editor
+    - Git Client
+    - Apache Ant
+    - Java JDK
+    - After Installation of the tools \(your first Login to the Maintenance Machine\)
+    - Setup SSH key
+    - Setup your Git Client
 
 <!-- /MarkdownTOC -->
 
@@ -38,7 +38,7 @@ Eclipse-based IDE that developers can download to develop processes and prepare 
 
 Good text editor that supports XML,xQuery, markdown editing and has git support if desired
 
-- [Sublime Text 3](https://www.sublimetext.com/3)
+- [Sublime Text 3](https://www.sublimetext.com)
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Atom](https://atom.io)
 
