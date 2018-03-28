@@ -1,6 +1,6 @@
 # Disaster Recovery - Informatica Cloud
 
-<!-- MarkdownTOC depth=0 -->
+<!-- MarkdownTOC -->
 
 - [Informatica Cloud Architecture](#informatica-cloud-architecture)
     - [Informatica Cloud Components](#informatica-cloud-components)
@@ -166,7 +166,7 @@ What needs to be done?
 - identify root cause
 - restart agent
 - restore operation of the failed agent
-  - In case of complete system failure system image to last know restore point
+    - In case of complete system failure system image to last know restore point
 
 #### Full Failure of a Primary Site
 

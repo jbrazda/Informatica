@@ -1,4 +1,4 @@
-<!-- MarkdownTOC  depth=0 -->
+<!-- MarkdownTOC -->
 
 - [Environment and Tools Guides](#environment-and-tools-guides)
 - [My Essential Tools](#my-essential-tools)
@@ -9,7 +9,6 @@
 
 <!-- /MarkdownTOC -->
 
-
 # Environment and Tools Guides
 
 Typical Cloud Application Integration development may span large amount technologies tools and APIs
@@ -18,12 +17,12 @@ To keep myself productive especially when given new environment or machine for d
 Most of the guides listed here assume that you as a developer have reasonable access to your machine and install software as local administratior.
 These guides inted to describe basic setup
 
-
 # My Essential Tools
 
 ## Universal (All Operating Systems)
 
 ### Git
+
 Although there is range of GUI clients for git I highly recommend to learn how to install and use command line CLI interface,
 It is not only the most effcient way of dealing with daily git tasks but you will aslo learn better how git works internally and find help in case you hit some obstacles with git commits, confict resolution etc. there is a ton of resources available for any git cli situations, not so many describing how to to complex tasks in GUI tools.
 
@@ -43,13 +42,14 @@ It is not only the most effcient way of dealing with daily git tasks but you wil
 [My Git Git Install Guide](install_git.md)
 
 ### Sublime Text 3
+
 I prefer this editor edits and in fact these guides were written in Sublime Text as well
 Download [here](https://www.sublimetext.com/3)
 I highly recommend this text ediror as general purpose editor, Although there are other choices such as Atom, Notpad++, vim, Visual Studio Code, whhich are all great editors. I never got prficient enough in using vim so my second choice of multi platform editpr is Sublime Text
 
 The advantages of this editor for development in the comtext of Informatica Cloud development
 
-- extensive set of plugins  thst include
+- extensive set of plugins thst include
     +  great Markdown editor
     +  good xquery editor
     +  good xml support
@@ -61,7 +61,3 @@ The advantages of this editor for development in the comtext of Informatica Clou
 You can use Sublime Text for free "unlimited" evaluation period, but ythe $70 you pay for full license is well worth the money
 
 [My Install Sublime Text 3 Guide](install_sublime.md)
-
-
-
-

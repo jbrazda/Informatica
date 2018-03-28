@@ -2,16 +2,16 @@
 
 # Informatica Secure Agent Installation
 
-<!-- MarkdownTOC  depth=0 -->
+<!-- MarkdownTOC -->
 
 - [Pre-Requisites](#pre-requisites)
-  - [Install Secure Agent](#install-secure-agent)
+    - [Install Secure Agent](#install-secure-agent)
 - [Install Secure Agent as a Daemon](#install-secure-agent-as-a-daemon)
-  - [Setup as a Service using systemd](#setup-as-a-service-using-systemd)
-    - [Start and Stop service](#start-and-stop-service)
-  - [Install Agent as a Service Using init.d](#install-agent-as-a-service-using-initd)
-    - [Start and Stop service](#start-and-stop-service-1)
-    - [Example Output](#example-output)
+    - [Setup as a Service using systemd](#setup-as-a-service-using-systemd)
+        - [Start and Stop service](#start-and-stop-service)
+    - [Install Agent as a Service Using init.d](#install-agent-as-a-service-using-initd)
+        - [Start and Stop service](#start-and-stop-service-1)
+        - [Example Output](#example-output)
 
 <!-- /MarkdownTOC -->
 
@@ -37,11 +37,11 @@ Make sure that the Hostname of the Machine resolves correctly to IP and vice ver
 ## Install Secure Agent
 
 1. Download the Secure Agent
-    ```
+    ```shell
     curl -o /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
     ```
     or
-    ```
+    ```she;;
     wget -O /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
     ```
     Note that the actual URL might be different based on the org you using, always make sure that you download the binary from the specific host site which your org is assigned to (app3,app2)
@@ -55,7 +55,7 @@ Make sure that the Hostname of the Machine resolves correctly to IP and vice ver
     The secure agent will be installed to the `~/infaagent` directory of the user which runs the installer
     Install agent to a different directory: `/tmp/agent64_install.bin -i silent -DUSER_INSTALL_DIR=<target directory>`
     You can run secure agent installer in interactive console mode  which will allow you to change some configuration options such as installation to different than default directory.
-    ```
+    ```text
     user@host ~ $ /tmp/agent64_install.bin -i console
     Preparing to install...
     Extracting the JRE from the installer archive...
@@ -158,7 +158,7 @@ https://www.freedesktop.org/software/systemd/man/systemd.service.html
 
 Create `infaagent.service` file in `/etc/systemd/system`
 
-```
+```ini
 [Unit]
 Description=Informatica Secure Agent Service
 
@@ -181,7 +181,7 @@ WantedBy=multi-user.target
 
 Example `infaagent.service`
 
-```
+```ini
 [Unit]
 Description=Informatica Secure Agent Service
 
@@ -210,7 +210,7 @@ sudo systemctl daemon-reload
 Enable Service
 this command will enable service and create symlink to a specific startup group
 
-```
+```shell
 sudo systemctl enable infaagent.service
 ```
 
@@ -228,7 +228,7 @@ sudo systemctl status infaagent
 Example service status after start
 Note that you can see all other child processes started by Agent core
 
-```
+```text
 [iclab@iclab] [Sep 07, 2017 17:58:34]   /home/iclab/infaagent/apps/agentcore
 $ sudo systemctl status infaagent
 * infaagent.service - Informatica Secire Agent Service
@@ -273,14 +273,14 @@ Sep 18 12:37:04 iclab systemd[1]: Started Informatica Secire Agent Service.
 
 See a documentation
 
-* [SuSe](https://www.suse.com/documentation/sles11/book_sle_admin/data/sec_boot_init.html)
-* [Debian](https://wiki.debian.org/LSBInitScripts)
+- [SuSe](https://www.suse.com/documentation/sles11/book_sle_admin/data/sec_boot_init.html)
+- [Debian](https://wiki.debian.org/LSBInitScripts)
 
 Following method should work universally on any distribution
 
-* Crete file or copy [examples/agent.initd.sh](examples/agent.initd.sh) to  /etc/initt.d as `infaagent`
-* Make sure that you edit the `WORK_DIR` variable in the file to point to actual full path to agentcore component
-* Make that you update the `DAEMON_USER` variable to refer to a user who owns and runs the secure agent (note that the secure agent can't run as root)
+- Crete file or copy [examples/agent.initd.sh](examples/agent.initd.sh) to  /etc/initt.d as `infaagent`
+- Make sure that you edit the `WORK_DIR` variable in the file to point to actual full path to agentcore component
+- Make that you update the `DAEMON_USER` variable to refer to a user who owns and runs the secure agent (note that the secure agent can't run as root)
 
 This method will work even on systems with systemd as primary service init scheduler,
 
@@ -288,7 +288,7 @@ You will have to enable this service by running  `sudo systemctl enable infaagen
 
 In such case you can also manage and check status of the service using `systemctl` command
 
-```
+```text
 ➜ [iclab@iclab] [Feb 27, 2018 12:33:00]   ~
 $ sudo systemctl status infaagent
 ● infaagent.service - LSB: Start InfaAgent.
@@ -459,7 +459,7 @@ sudo /etc/init.d/infaagent restart
 
 ### Example Output
 
-```
+```text
 [iclab@iclab] [Feb 27, 2018 11:37:55]   ~
 $ sudo /etc/init.d/infaagent stop
 Agent Script:   /home/iclab/infaagent/apps/agentcore/infaagent

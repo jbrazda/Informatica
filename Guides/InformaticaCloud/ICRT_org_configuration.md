@@ -1,7 +1,7 @@
 # ICRT Cloud Org Configuration
 
 
-<!-- MarkdownTOC depth=0 -->
+<!-- MarkdownTOC -->
 
 - [Environments](#environments)
     - [DEV](#dev)
@@ -65,7 +65,6 @@ Informatica CLoud Org Login URL
 | -- emea_agent_01               |           |
 |                                |           |
 
-
 |     Parameter     |                                    Value                                    |
 |-------------------|-----------------------------------------------------------------------------|
 | Console URL       | https://ps1w2-ics.rt.informaticacloud.com/activevos/[ORGID]                 |
@@ -80,7 +79,6 @@ Informatica CLoud Org Login URL
 | SOAP services URL | https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/[ORGID]      |
 | REST services URL | https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/REST/[ORGID] |
 
-
 ### QA Agents
 
 Example QA Orgs Layout
@@ -94,7 +92,6 @@ Example QA Orgs Layout
 | EU  (2)                        |           |
 | -- eu_agent_01                 |           |
 | -- eu_agent_02                 |           |
-
 
 ## PROD
 
@@ -131,8 +128,6 @@ Example PROD orgs layout
 | Agent installation location | /opt/informatica/infaagent |
 | Root for staging Data       | /nfs/ipaas/data            |
 
-
-
 Modified added custom files: that needs to be synchronized to Recovery Sites
 
 # Extension Files and External Libraries
@@ -141,7 +136,7 @@ Modified added custom files: that needs to be synchronized to Recovery Sites
 
 ## Extensions DEV
 
-```
+```text
 /opt/informatica/infaagent/apps/process-engine/ext
 ├── libsapjco3.so
 ├── ojdbc6_g.jar
@@ -164,7 +159,6 @@ Modified added custom files: that needs to be synchronized to Recovery Sites
                     ├── libsapjco3.so
                     └── sapjco3.jar
 ```
-
 
 ### Synchronize Agent Config and external libraries to another server
 
@@ -206,7 +200,7 @@ mkdir -p /nfs/ipaas/data/hadoop
 | urn:environment:name        | Cloud Server DEV                          | Defines Environment name for Reporting                               |
 | ae:base-uri                 | https://ps1w2-ics.rt.informaticacloud.com | Base URL of informatica cloud Pod                                    |
 
-####  Cloud Server QA
+#### Cloud Server QA
 
 |             URN             |                   VALUE                   |                               Comment                                |
 |-----------------------------|-------------------------------------------|----------------------------------------------------------------------|
@@ -214,7 +208,7 @@ mkdir -p /nfs/ipaas/data/hadoop
 | urn:environment:name        | Cloud Server QA                           | Defines Environment name for Reporting                               |
 | ae:base-uri                 | https://ps1w2-ics.rt.informaticacloud.com | Base URL of informatica cloud Pod                                    |
 
-####  Cloud Server PROD
+#### Cloud Server PROD
 
 |             URN             |                   VALUE                   |                               Comment                                |
 |-----------------------------|-------------------------------------------|----------------------------------------------------------------------|
@@ -236,7 +230,6 @@ mkdir -p /nfs/ipaas/data/hadoop
 | urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1                                     | Example API URL                                           |
 | urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq                                 | Example API credentials Encrypted                         |
 | urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name                                      | Example configurable path to Staging directory            |
-
 
 #### Agents QA
 
@@ -282,7 +275,6 @@ mkdir -p /nfs/ipaas/data/hadoop
 | From Address | Corresponding to env |
 | Username     |                      |
 | Security     | None                 |
-
 
 ### ICRT Fault Alert Service
 
@@ -363,7 +355,6 @@ https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monito
 | Number of retries        | 5                                                  | Specifies the number of retries for a closed connection                                  |
 | Retry wait period        | 3                                                  | Specifies the waiting time period in seconds before retrying                             |
 
-
 ## QA
 
 |        Parameter         |                       Value                        |                                         Comment                                          |
@@ -382,7 +373,6 @@ https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monito
 | __Write Attributes__     |                                                    |                                                                                          |
 | Number of retries        | 5                                                  | Specifies the number of retries for a closed connection                                  |
 | Retry wait period        | 3                                                  | Specifies the waiting time period in seconds before retrying                             |
-
 
 ## PROD
 
@@ -416,7 +406,6 @@ https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monito
 | Shell Service                       | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/shellcmd_service.action  | disabled       | enabled           |
 | Email Sevice                        | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/email_service.action     | disabled       | enabled           |
 
-
 # SAP BAPI Connector Configuration
 
 To support SAP Bapi Cnnector SAP Client libraries must be placed to corresponding extension directories under the secure agent as described in the [Extension Files and External Libraries](#extension-files-and-external-libraries)
@@ -425,8 +414,7 @@ In addition the Secure Engent Classpath must be updated
 
 `CLoud Administration Console > Data Integration Server > Tomcat JRE/`
 
-```
+```text
 JAVA_LIBS
 ../bin/rdtm-extra/tpl/sap/sapjco3.jar:../bin/rdtm/javalib/sap/sap-adapter-common.jar
 ```
-

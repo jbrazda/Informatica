@@ -1,6 +1,6 @@
 # Install Sublime Text 3
 
-<!-- MarkdownTOC depth=0 -->
+<!-- MarkdownTOC -->
 
 - [Download](#download)
     - [Windows](#windows)
@@ -14,11 +14,9 @@
 
 <!-- /MarkdownTOC -->
 
-
 ## Download
 
 Download and Install Sublime Text 3 for your platform
-
 
 ### Windows
 
@@ -45,7 +43,6 @@ First to configure is essential plugin - Package Control Manager which can manag
 - Follow instructions on this page https://packagecontrol.io/installation or simply select menu `Tools/Install Package Control` in the Sublime Text
 - Read the https://packagecontrol.io/docs/usage
 - Browse the available packages https://packagecontrol.io/browse
-
 
 ### Install Core set of Packages
 
@@ -106,7 +103,6 @@ Use following steps to install one or more packages
 - Win <kbd>control</kbd> +<kbd>shift</kbd> + <kbd>P</kbd>
 - Mac <kbd>&#8984;</kbd> +<kbd>shift</kbd> + <kbd>P</kbd>
 
-
 Type following to search box `package adv`, select the
 and  enter coma separated list of pagage names to be installed i.e. `Sync Settings,xpath,XQuery`
 
@@ -114,18 +110,17 @@ and  enter coma separated list of pagage names to be installed i.e. `Sync Settin
 
 ![Install Packages Example](./images/install_packages_entry.png)
 
-
 ## Install Multiple Packages
+
 use <kbd>comtrol</kbd> +<kbd>shift</kbd> + <kbd>P</kbd>  `Package Control: Advanced Install Package`
 
 > Not You might get range of errors when using this list as-is
 > There seem to be a defect in package control 'Package Control: Advanced Install Package' see https://github.com/wbond/package_control/issues/1191
 > Just click through all the pop-ups and restart Sublime after, it should be able to install all packages eventually
 
+```text
+Advanced CSV,Ant,Ant Buildfile,API Blueprint,AutoFileName,Awk,Better Completion,Bitbucket,DotFiles Syntax Highliting,File Navigator,FileBrowser,FileSystem Autocompletion,FuzzyFilePath,GenerateUUID,Gist,Git,HTMLAttributes,HTMLBeautify,ImprovedSQL,Indent XML,JavaScript Completions,JSON Reindent,JSONLint,LineEndings,LoremIpsum,Markdown Preview,MarkdownEditing,MarkdownTOC,MarkLogic,Monokai Extended,My Snippets,Pandown,ShellCommand,SideBarEnhancements,SnippetMaker,StringEncode,SublimeLinter-contrib-java,Sublimerge 3,Super Ant,Sync Settings,Table Editor,Theme - Afterglow,xml2json,xpath,XQuery
 ```
-Abacus,Advanced CSV,Ant,Ant Buildfile,API Blueprint,AutoFileName,Awk,Better Completion,Bitbucket,DotFiles Syntax Highliting,File Navigator,FileBrowser,FileSystem Autocompletion,FuzzyFilePath,GenerateUUID,Gist,Git,HTMLAttributes,HTMLBeautify,ImprovedSQL,Indent XML,JavaScript Completions,JSON Reindent,JSONLint,LineEndings,LoremIpsum,Markdown Preview,MarkdownEditing,MarkdownTOC,MarkLogic,Monokai Extended,My Snippets,Pandown,ShellCommand,SideBarEnhancements,SnippetMaker,StringEncode,SublimeLinter-contrib-java,Sublimerge 3,Super Ant,Sync Settings,Table Editor,Theme - Afterglow,xml2json,xpath,XQuery
-```
-
 
 ## Configure Sync Settings
 
@@ -136,6 +131,3 @@ Use `Sync Settings` plugin which makes synchronization of setting very easy usin
 3. Create Access Key on https://github.com/settings/tokens Name it `Gist Sublime`
 4. Create new gist using <kbd>control</kbd> +<kbd>shift</kbd> + <kbd>P</kbd>, type "Sync Create" and select "Sync Settings: Create and Upload" action
 6. Now you an use `Sync Settings: Upload` or `Sync Settings: Download ` to backup and synchronize your setting across different Sublime Text installations
-
-
-
