@@ -1,7 +1,7 @@
 # Install Process Developer
 
 This Guide is specific to Informatica Process developer currently available for download on APP2, APP3 and IICS CLoud platforms
-It is tested on following OS Versions but it should work on any Linux with any macOS 12.x and higher or Linux with 1.7.x JDK Installed
+It is tested on following OS Versions but it should work on any macOS 12.x or higher or Linux with 1.7.x JDK Installed
 
 - Ubuntu 16.04 LTS
 - macOS 10.12.6 (16G1212)
