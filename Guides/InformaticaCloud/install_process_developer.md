@@ -19,7 +19,7 @@ Process Developer Component Versions:
 
 <!-- MarkdownTOC -->
 
-- [Installations](#installations)
+- [Download Installers](#download-installers)
     - [Direct Links](#direct-links)
 - [Installation alternatives](#installation-alternatives)
     - [Direct Links - Eclipse Download](#direct-links---eclipse-download)
@@ -33,7 +33,7 @@ Process Developer Component Versions:
 
 <!-- /MarkdownTOC -->
 
-## Installations
+## Download Installers
 
 Informatica Process Developer is distributed in two ways
 
@@ -81,7 +81,7 @@ Use a specific installation for your system
 6. Run Eclipse
 7. Download the Process Developer Plug-ins
 8. Unzip the plug-ins
-9. Install the plug-ins following the
+9. Install the plug-ins following the [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
 
 Example eclipse.ini
 
@@ -113,7 +113,11 @@ openFile
 ## Installing on Mac OS
 
 Installation on Mac can be tricky as Kepler Eclipse Release is not very well supported in recent Mac OS Versions
-if you try to run Eclipse Kepler on macOS Sierra or High Sierra even with Oracle JDK installed, it will refuse to start and show following dialog
+if you try to run Eclipse Kepler on macOS Sierra or High Sierra even with Oracle JDK installed, it will refuse to start when you have JDK 1.7 or newer installed and show following dialog
+
+![Legacy Java Prompt](./images/eclipse_fail_start.png "Legacy Java Prommpt")
+
+Do not install Legacy Java as suggested it is unsafe and also broken on latest macOS High Sierra, instead use following steps:
 
 1. Download JDK
 2. Install JDK
@@ -124,9 +128,13 @@ if you try to run Eclipse Kepler on macOS Sierra or High Sierra even with Oracle
     `tar -xf eclipse-rcp-kepler-SR2-macosx-cocoa-x86_64.tar.gz -C '/Applications'`
     Be careful if you already have other versions of eclipse installed in Applications
     You may want to rename the default 'eclipse' directory to something like `ipd` or `eclipse_kepler`
-7. Edit the `/Applications/eclipse_kepler/Eclipse.app/Contents/MacOS/eclipse.ini` to set the -vm to point the Eclipse to a specific jdk
-    `-vm`
-    `/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/server/libjvm.dylib`
+7. Edit the `/Applications/eclipse_kepler/Eclipse.app/Contents/MacOS/eclipse.ini`,
+    enter the -vm  just before the -vmargs argument to point the Eclipse to a specific jdk and make sure the -vm an path are on separte lines
+    ```text
+    -vm
+    /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/server/libjvm.dylib
+    ```
+
 8. Set other jvm parameters such as xmx and xms
 9. Download the Process Developer Plug-ins
 10. Unzip the plug-ins
@@ -288,4 +296,4 @@ Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
 [eclipse mac 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-macosx-cocoa-x86_64.tar.gz
 [eclipse linux 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-linux-gtk.tar.gz
 [eclipse linux 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz
-[oracle jdk download]: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
+[oracle jdk download]: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.ht:
