@@ -11,6 +11,8 @@
 - [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
     - [Installing](#installing)
     - [Running the Designer](#running-the-designer)
+- [Process Developer Issues on macOS and Linux](#process-developer-issues-on-macos-and-linux)
+    - [Xquery Intrepreter runtime does not work](#xquery-intrepreter-runtime-does-not-work)
 
 <!-- /MarkdownTOC -->
 
@@ -172,12 +174,99 @@ Installing the Informatica Cloud Process Developer License
 - Select `OK` on the update confirmation dialog.
 - Switch to the Process Developer perspective (Window / Open Perspective / Other / Process Developer)
 
+## Process Developer Issues on macOS and Linux
+
+There Are several issues running Process Developer on Mac but I have found some workarounds
+
+### Xquery Intrepreter runtime does not work
+
+I have tried almost everything to  make the editors runtime working under macOS and Linux, but it does not work, just throwing follwoing exception when running main module
+
+```text
+Error: Could not find or load main class
+Caused by: java.lang.ClassNotFoundException:
+```
+
+Only way to workaround this was to run the xquery saxon runtime as external tool. I created xq script in ~/bin directory.
+This script runs the Saxon externally. Note that the `JAVA_HOME` and `AE_RUNTIME_LIB` can be  different in your environment depending which version of JAVA and Process Developer you have.
+
+
+```shell
+#!/bin/bash
+JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home'
+AE_RUNTIME_LIB='/Applications/eclipse_kepler/plugins/org.activebpel.enginep_9.33.0.201803021154/server/shared/lib'
+
+cygwin=false
+darwin=false
+UNAME=$(uname)
+case "$UNAME" in
+CYGWIN*) cygwin=true;;
+Darwin*) darwin=true;;
+esac
+
+# PRGDIR=$(dirname "$0")
+
+if [ -z "$AE_RUNTIME_LIB" ]; then
+    echo 'AE_RUNTIME_LIB variable must be set in order to run this command'
+    echo 'In case of developer machine set this variable to AE_DESIGNER_HOME/Bunit Ant Runtime/lib'
+    exit 1
+fi
+
+# on cygwin ensure unix path is used
+if $cygwin; then
+  [ -n "$JAVA_HOME" ] && JAVA_HOME=$(cygpath --unix "$JAVA_HOME")
+  [ -n "$CLASSPATH" ] && CLASSPATH=$(cygpath --path --unix "$CLASSPATH")
+  [ -n "$AE_RUNTIME_LIB" ] && AE_RUNTIME_LIB=$(cygpath --path --unix "$AE_RUNTIME_LIB")
+fi
+
+RUN_JAVA=$JAVA_HOME/bin/java
+
+#set AE classpath
+CLASSPATH="$AE_RUNTIME_LIB/saxon-pe-9.5.1.10.jar:$AE_RUNTIME_LIB/org.activebpel.rt.bpel.ext.expr.jar"
+
+
+# For Cygwin, switch paths to Windows format before running java
+if $cygwin; then
+  JAVA_HOME=$(cygpath --absolute --windows "$JAVA_HOME")
+  CLASSPATH=$(cygpath --path --windows "$CLASSPATH")
+  AE_RUNTIME_LIB=$(cygpath --path --windows "$AE_RUNTIME_LIB")
+fi
+
+# echo "$RUN_JAVA" "$JAVA_OPTS" -cp "$CLASSPATH" org.activebpel.rt.bpel.ext.expr.impl.xquery.AeQuery -qversion:3.0 "$@"
+
+"$RUN_JAVA" $JAVA_OPTS -cp $CLASSPATH org.activebpel.rt.bpel.ext.expr.impl.xquery.AeQuery -qversion:3.0 "$@"
+```
+
+This script will allow you to run Saxon from command line (put your `~/bin` on system path in your shell) as shown below
+
+```text
+$ xq
+No query file name
+Saxon-PE 9.5.1.9J from Saxonica
+Usage: see http://www.saxonica.com/documentation9.5/using-xquery/commandline.html
+Format: org.activebpel.rt.bpel.ext.expr.impl.xquery.AeQuery options params
+Options available: -? -backup -catalog -config -cr -dtd -expand -explain -ext -init -l -mr -now -o -opt -outval -p -pipe -projection -q -qs -quit -qversion -r -repeat -s -sa -strip -t -T -TJ -TP -traceout -tree -u -update -val -wrap -x -xi -xmlversion -xsd -xsdversion -xsiloc
+Use -XYZ:? for details of option XYZ
+Params:
+  param=value           Set query string parameter
+  +param=filename       Set query document parameter
+  ?param=expression     Set query parameter using XPath
+  !param=value          Set serialization parameter
+```
+
+Then Setup Saxon xquery interpreter as external tool in Eclipse as follows
+
+1. Create External Tool
+  ![External Tool Congiguration](./images/xquery_set_saxon_tool.png "Create External Ccnfiguretaion")
+2. Configure External Tool ponting to your script and resource in your editor
+  ![External Tool Congiguration](./images/xquery_external_tool_config.png "External Cool Configuration")
+3. Now you should be able to run saxon juts by selecting external tool from the drop down when editing the main Saxon module.
+  ![Run External Tool Congiguration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
+
 [eclipse win 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32.zip
 [eclipse win 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32-x86_64.zip
 [eclipse mac 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-macosx-cocoa.tar.gz
 [eclipse mac 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-macosx-cocoa-x86_64.tar.gz
 [eclipse linux 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-linux-gtk.tar.gz
 [eclipse linux 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz
-[oracle jdk download]: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html
-
-
+[oracle jdk download]: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.ht:
