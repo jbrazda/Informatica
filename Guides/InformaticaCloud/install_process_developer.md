@@ -12,9 +12,10 @@ Version: Kepler Service Release 2
 Build id: 20140224-0627
 
 Process Developer Component Versions:
-  Informatica Process Developer 9.33.0.201803021154 com.activevos.complete.product
-  Informatica Process Developer Add-on Components 9.33.0.201803021154 com.activee.complete.feature.feature.group
-  Informatica Process Developer Screenflow Components 3.35.0.201803021127 com.activevos.socrates.feature.feature.group
+
+- Informatica Process Developer 9.33.0.201803021154 com.activevos.complete.product
+- Informatica Process Developer Add-on Components 9.33.0.201803021154 com.activee.complete.feature.feature.group
+- Informatica Process Developer Screenflow Components 3.35.0.201803021127 com.activevos.socrates.feature.feature.group
 
 <!-- MarkdownTOC -->
 
