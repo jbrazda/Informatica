@@ -1,5 +1,12 @@
 # Install Process Developer
 
+This Guide is specific to Informatica Process developer currently available for download on APP2, APP3 and IICS CLoud platforms
+It is tested on following OS Versions but it should work on any Linux with any macOS 12.x and higher or Linux with 1.7.x JDK Installed
+
+- Ubuntu 16.04 LTS
+- macOS 10.12.6 (16G1212)
+- macOS 10.13.4 (17E199)
+
 <!-- MarkdownTOC -->
 
 - [Installations](#installations)
@@ -98,8 +105,6 @@ openFile
 Installation on Mac can be tricky as Kepler Eclipse Release is not very well supported in recent Mac OS Versions
 if you try to run Eclipse Kepler on macOS Sierra or High Sierra even with Oracle JDK installed, it will refuse to start and show following dialog
 
-I tested following steps on Mac OS Sierra - macOS 10.12.6 (16G1212) and macOS 10.13.4 (17E199)
-
 1. Download JDK
 2. Install JDK
 3. Download Eclipse Distribution
@@ -188,8 +193,10 @@ Caused by: java.lang.ClassNotFoundException:
 ```
 
 Only way to workaround this was to run the XQuery Saxon runtime as external tool. I created xq script in ~/bin directory.
+You can also put this script into /usr/local/bin directory or create an alias to it in your shell configuration whichever method you prefer.
 This script runs the Saxon externally. Note that the `JAVA_HOME` and `AE_RUNTIME_LIB` can be different in your environment depending which version of JAVA and Process Developer you have.
-Script is designed to run well both on Linux/Windows/Cygwin
+
+Script is designed to run on macOS, Linux, Windows+Cygwin
 
 ```shell
 #!/bin/bash
