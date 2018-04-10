@@ -117,7 +117,7 @@ if you try to run Eclipse Kepler on macOS Sierra or High Sierra even with Oracle
 
 ![Legacy Java Prompt](./images/eclipse_fail_start.png "Legacy Java Prommpt")
 
-Do not install Legacy Java as suggested it is unsafe and also broken on latest macOS High Sierra, instead use following steps:
+Do not install Legacy Java as suggested, it is unsafe and also broken on latest macOS High Sierra, instead use following steps:
 
 1. Download JDK
 2. Install JDK
@@ -287,7 +287,7 @@ Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
   ![External Tool Configuration](./images/xquery_set_saxon_tool.png "Create External Configuration")
 2. Configure External Tool ponting to your script and resource in your editor
   ![External Tool Configuration](./images/xquery_external_tool_config.png "External Cool Configuration")
-3. Now you should be able to run saxon juts by selecting external tool from the drop down when editing the main Saxon module.
+3. Now you should be able to run saxon by selecting external tool from the drop down when editing the main Saxon modules.
   ![Run External Tool Configuration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
 
 [eclipse win 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32.zip
@@ -296,4 +296,4 @@ Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
 [eclipse mac 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-macosx-cocoa-x86_64.tar.gz
 [eclipse linux 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-linux-gtk.tar.gz
 [eclipse linux 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz
-[oracle jdk download]: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.ht:
+[oracle jdk download]: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.ht
