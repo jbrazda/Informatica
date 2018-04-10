@@ -12,7 +12,7 @@
     - [Installing](#installing)
     - [Running the Designer](#running-the-designer)
 - [Process Developer Issues on macOS and Linux](#process-developer-issues-on-macos-and-linux)
-    - [Xquery Intrepreter runtime does not work](#xquery-intrepreter-runtime-does-not-work)
+    - [Xquery Intrepreter Fails with ClassNotFoundException](#xquery-intrepreter-fails-with-classnotfoundexception)
 
 <!-- /MarkdownTOC -->
 
@@ -95,10 +95,10 @@ openFile
 
 ## Installing on Mac OS
 
-Installation on MAc can be tricky as Kepler Eclipse Release is not very well supported in recent Mac OS Versions
+Installation on Mac can be tricky as Kepler Eclipse Release is not very well supported in recent Mac OS Versions
 if you try to run Eclipse Kepler on macOS Sierra or High Sierra even with Oracle JDK installed, it will refuse to start and show following dialog
 
-I tested these steps on Mac OS Sierra - macOS 10.12.6 (16G1212).
+I tested following steps on Mac OS Sierra - macOS 10.12.6 (16G1212) and macOS 10.13.4 (17E199)
 
 1. Download JDK
 2. Install JDK
@@ -115,7 +115,7 @@ I tested these steps on Mac OS Sierra - macOS 10.12.6 (16G1212).
 8. Set other jvm parameters such as xmx and xms
 9. Download the Process Developer Plug-ins
 10. Unzip the plug-ins
-11. Install the plug-ins following the
+11. Install the plug-ins following the [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
 
 Example eclipse.ini on Mac
 
@@ -178,7 +178,7 @@ Installing the Informatica Cloud Process Developer License
 
 There Are several issues running Process Developer on Mac but I have found some workarounds
 
-### Xquery Intrepreter runtime does not work
+### Xquery Intrepreter Fails with ClassNotFoundException
 
 I have tried almost everything to  make the editors runtime working under macOS and Linux, but it does not work, just throwing follwoing exception when running main module
 
@@ -189,7 +189,7 @@ Caused by: java.lang.ClassNotFoundException:
 
 Only way to workaround this was to run the xquery saxon runtime as external tool. I created xq script in ~/bin directory.
 This script runs the Saxon externally. Note that the `JAVA_HOME` and `AE_RUNTIME_LIB` can be  different in your environment depending which version of JAVA and Process Developer you have.
-
+Script is designed to run well both on Linux/Windows/Cygwin
 
 ```shell
 #!/bin/bash
@@ -237,7 +237,7 @@ fi
 "$RUN_JAVA" $JAVA_OPTS -cp $CLASSPATH org.activebpel.rt.bpel.ext.expr.impl.xquery.AeQuery -qversion:3.0 "$@"
 ```
 
-This script will allow you to run Saxon from command line (put your `~/bin` on system path in your shell) as shown below
+This script will allow you to run Saxon from command line as shown below (assuming you put your `~/bin` on system path in your shell)
 
 ```text
 $ xq
