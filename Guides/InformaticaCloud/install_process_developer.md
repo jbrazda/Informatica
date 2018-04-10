@@ -12,7 +12,7 @@
     - [Installing](#installing)
     - [Running the Designer](#running-the-designer)
 - [Process Developer Issues on macOS and Linux](#process-developer-issues-on-macos-and-linux)
-    - [Xquery Intrepreter Fails with ClassNotFoundException](#xquery-intrepreter-fails-with-classnotfoundexception)
+    - [XQuery Interpreter Fails with ClassNotFoundException](#xquery-interpreter-fails-with-classnotfoundexception)
 
 <!-- /MarkdownTOC -->
 
@@ -178,7 +178,7 @@ Installing the Informatica Cloud Process Developer License
 
 There Are several issues running Process Developer on Mac but I have found some workarounds
 
-### Xquery Intrepreter Fails with ClassNotFoundException
+### XQuery Interpreter Fails with ClassNotFoundException
 
 I have tried almost everything to  make the editors runtime working under macOS and Linux, but it does not work, just throwing follwoing exception when running main module
 
@@ -187,12 +187,14 @@ Error: Could not find or load main class
 Caused by: java.lang.ClassNotFoundException:
 ```
 
-Only way to workaround this was to run the xquery saxon runtime as external tool. I created xq script in ~/bin directory.
-This script runs the Saxon externally. Note that the `JAVA_HOME` and `AE_RUNTIME_LIB` can be  different in your environment depending which version of JAVA and Process Developer you have.
+Only way to workaround this was to run the XQuery Saxon runtime as external tool. I created xq script in ~/bin directory.
+This script runs the Saxon externally. Note that the `JAVA_HOME` and `AE_RUNTIME_LIB` can be different in your environment depending which version of JAVA and Process Developer you have.
 Script is designed to run well both on Linux/Windows/Cygwin
 
 ```shell
 #!/bin/bash
+
+#you can define these variables also globally in .profile or .bashrc, .zshrc
 JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home'
 AE_RUNTIME_LIB='/Applications/eclipse_kepler/plugins/org.activebpel.enginep_9.33.0.201803021154/server/shared/lib'
 
@@ -254,14 +256,14 @@ Params:
   !param=value          Set serialization parameter
 ```
 
-Then Setup Saxon xquery interpreter as external tool in Eclipse as follows
+Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
 
 1. Create External Tool
-  ![External Tool Congiguration](./images/xquery_set_saxon_tool.png "Create External Ccnfiguretaion")
+  ![External Tool Configuration](./images/xquery_set_saxon_tool.png "Create External Configuration")
 2. Configure External Tool ponting to your script and resource in your editor
-  ![External Tool Congiguration](./images/xquery_external_tool_config.png "External Cool Configuration")
+  ![External Tool Configuration](./images/xquery_external_tool_config.png "External Cool Configuration")
 3. Now you should be able to run saxon juts by selecting external tool from the drop down when editing the main Saxon module.
-  ![Run External Tool Congiguration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
+  ![Run External Tool Configuration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
 
 [eclipse win 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32.zip
 [eclipse win 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32-x86_64.zip
