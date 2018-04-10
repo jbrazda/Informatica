@@ -7,6 +7,15 @@ It is tested on following OS Versions but it should work on any macOS 12.x or hi
 - macOS 10.12.6 (16G1212)
 - macOS 10.13.4 (17E199)
 
+Eclipse for RCP and RAP Developers
+Version: Kepler Service Release 2
+Build id: 20140224-0627
+
+Process Developer Component Versions:
+  Informatica Process Developer 9.33.0.201803021154 com.activevos.complete.product
+  Informatica Process Developer Add-on Components 9.33.0.201803021154 com.activee.complete.feature.feature.group
+  Informatica Process Developer Screenflow Components 3.35.0.201803021127 com.activevos.socrates.feature.feature.group
+
 <!-- MarkdownTOC -->
 
 - [Installations](#installations)
