@@ -1,6 +1,5 @@
 # ICRT Cloud Org Configuration
 
-
 <!-- MarkdownTOC -->
 
 - [Environments](#environments)

@@ -2,33 +2,35 @@
 
 # Informatica Cloud Naming Conventions
 
-<!-- MarkdownTOC  depth=0 -->
+<!-- MarkdownTOC -->
 
 - [Agents and Agent Groups](#agents-and-agent-groups)
     - [Secure Agent](#secure-agent)
         - [Naming Agent Groups](#naming-agent-groups)
+            - [Name Structure](#name-structure)
         - [Naming Agents](#naming-agents)
+            - [Name Structure](#name-structure-1)
 - [ICS Artifacts](#ics-artifacts)
     - [Connections](#connections)
     - [Tasks](#tasks)
-        - [Name Structure](#name-structure)
+        - [Name Structure](#name-structure-2)
         - [Examples](#examples)
     - [Mappings](#mappings)
-        - [Name Structure](#name-structure-1)
+        - [Name Structure](#name-structure-3)
         - [Examples](#examples-1)
     - [Task Flows](#task-flows)
-        - [Name Structure](#name-structure-2)
+        - [Name Structure](#name-structure-4)
         - [Examples](#examples-2)
     - [Schedulers](#schedulers)
-        - [Name Structure](#name-structure-3)
+        - [Name Structure](#name-structure-5)
         - [Examples](#examples-3)
     - [Custom Views](#custom-views)
 - [ICRT Naming Conventions](#icrt-naming-conventions)
     - [Connectors](#connectors)
-        - [Name Structure](#name-structure-4)
+        - [Name Structure](#name-structure-6)
         - [Examples](#examples-4)
     - [Connections](#connections-1)
-        - [Name Structure](#name-structure-5)
+        - [Name Structure](#name-structure-7)
         - [Name Variants](#name-variants)
     - [Processes](#processes)
         - [Data Access Processes](#data-access-processes)
@@ -59,7 +61,7 @@
 
 ### Secure Agent
 
-Integration tasks can run on Secure Agent groups or the Hosted Agent. Download Secure Agents and group them for load balancing and high availability.
+Integration tasks can run on Secure Agent groups or the Hosted Agents. Secure Agents can be grouped for load balancing and high availability.
 When you add/register new secure agent to your org it will default to own agent Group and use Host name as the agent name.
 You may see something like this in Informatica Cloud Administration
 
@@ -67,14 +69,14 @@ You may see something like this in Informatica Cloud Administration
 |--------------------------------|----------------|-----------|----------|---------|-----|
 | Informatica Cloud Hosted Agent | Up and Running |           |          |         |     |
 | agent1 (1)                     |                |           |          |         |     |
-| -- agent1                      | Up and Running | agent1    | Linux64  |         |     |
+| -- agent01                     | Up and Running | agent01   | Linux64  |         |     |
 | iclab  (1)                     |                |           |          |         |     |
 | -- iclab                       | Up and Running | iclab     | Linux64  |         |     |
 
 Agents can be used separately or put into groups which can be used to execute integration tasks on agent grouped based on regions or functional requirements.
 
-It is practical to rename your groups and agents with logical names rather than using physical host names names.
-Agents can be then migrated to different host and environment migrations from DEV to QA to PROD will be also easier as they will not require renaming of the references used in the design artifacts such as connections and processes.
+It is recommended to rename your groups and agents with logical names rather than using physical host names names.
+Agents can be then migrated more easily to a different host. Environment migrations from DEV to QA to PROD will be also easier as they will not require renaming of the references used in the design artifacts such as connections and processes.
 
 Example Regional Layout
 
@@ -91,7 +93,7 @@ Example Regional Layout
 | -- global_agent_01             | Up and Running |           | Linux64  |         |     |
 | -- global_agent_02             | Up and Running |           | Linux64  |         |     |
 
-In above example one Informatica Cloud Organization is used to manage integration processes across several regions where each region has specific set of integrations and region specific connections.
+In above example of Informatica Cloud Organization is used to manage integration processes across several regions where each region supports specific set of integrations and region specific connections.
 
 Another possible grouping of agents can be on functional or specific integration needs basis i.e.
 
@@ -101,13 +103,18 @@ Another possible grouping of agents can be on functional or specific integration
 - Sizing levels such as Small,Medium,Large
 
 #### Naming Agent Groups
+
 Using upper case for groups makes it easier to know if the Design object references a group or a specific agent.
 
 - use upper case
 - separate words by underscores
 - standardize and document abbreviations
 
-Name: Structure  `<group_logical_name>_<number>`
+##### Name Structure
+
+```text
+<group_logical_name>_<number>
+```
 
 #### Naming Agents
 
@@ -115,21 +122,23 @@ Name: Structure  `<group_logical_name>_<number>`
 - use underscore to separate words
 - logical name can indicate os/sizing and other environment characteristics
 
-Name: Structure  `<group>_<agent_logical_name>_<number>`
+##### Name Structure
 
-|      Example       |              Name Structure Variant              |
-|--------------------|--------------------------------------------------|
-| na_aws_east_01     | `<geography>_<hosting>_<region>_<agent_number> ` |
-| na_east_sm_suse_01 | `<geography>_<hosting>_<region>_<agent_number>`  |
-| na_rt_01           | `<geography>_<rt_orbatch>_<agent_number>`        |
+```text
+<group>_<agent_logical_name>_<number>
+```
 
+|      Example       |              Name Structure Variant             |
+|--------------------|-------------------------------------------------|
+| na_aws_east_01     | `<geography>_<hosting>_<region>_<agent_number>` |
+| na_east_sm_suse_01 | `<geography>_<hosting>_<region>_<agent_number>` |
+| na_rt_01           | `<geography>_<rt_or_batch>_<agent_number>`      |
 
 Another organizational layer of  Informatica CLoud is ability define and use Informatica Cloud Sub-Organizations
 Sub Organizations can be used to further isolate different group of integration assets as well manage more granular access to specific integrations or hierarchy driven by corporate organizational hierarchy.
 
 Administrators of parent organizations manage and monitor child organizations from one place.
 See [Organization Hierarchies](https://app3.informaticacloud.com/saas/v389/docs/EN/index.htm#page/cc-cloud-administer/Organization_Hierarchies.html#3_12_8_1)
-
 
 ## ICS Artifacts
 
@@ -150,7 +159,7 @@ for some connections simple name suffice and some other connection names may nee
 
 Generic Name Structure
 
-```
+```text
 <ConnectionType>_<logical_name>_<flag(s)>
 ```
 
@@ -164,7 +173,6 @@ Examples:
 | SAP             | `SAP_<type>_<logical_name>_<region>`     | SAP_BAPI_COMPANYCODE_GETDETAIL_NA, SAP_IDOCR_MATMAS04 |
 |                 |                                          |                                                       |
 
-
 ### Tasks
 
 #### Name Structure
@@ -173,8 +181,7 @@ Examples:
 - Prefer to use underscore as a word separator
 - It is allowed to choose all lover case or mixed case, it is desirable to keep convention consistent for different types of tasks
 
-
-```
+```text
 DSS_<SOURCE>_<TARGET>_<NAME>_(INS|UPD|DEL|UPSERT)_<VERSION>
 ```
 
@@ -192,14 +199,13 @@ DSS_<SOURCE>_<TARGET>_<NAME>_(INS|UPD|DEL|UPSERT)_<VERSION>
 
 #### Name Structure
 
-```
+```text
 # for mappings that have single source target
 M_<SOURCE>_<TARGET>_<NAME>_<VERSION>
 
 # mappings that use  multiple Sources can contain entity names in the name
 M_<SOURCE>_<ENTITY>_to_<TARGET>_<NAME>_<VERSION>
 ```
-
 
 #### Examples
 
@@ -214,16 +220,14 @@ M_<SOURCE>_<ENTITY>_to_<TARGET>_<NAME>_<VERSION>
 - Prefer to use underscore as a word separator
 - It is allowed to choose all lover case or mixed case, it is desirable to keep convention consistent
 
-```
+```text
 TF_<NAME>_<VERSION>
 ```
-
 
 #### Examples
 
 - TF_CDI_Acount_Contacts_to_SFDC
 - TF_Hierarchy_Change_Processing
-
 
 ### Schedulers
 
@@ -233,7 +237,7 @@ TF_<NAME>_<VERSION>
 
 #### Name Structure
 
-```
+```text
     Schedule_<TIMEZONE>_<Frequency>_<TIME>
     or
     SCH_<TIMEZONE>_<Frequency>_<TIME>
@@ -245,12 +249,11 @@ TF_<NAME>_<VERSION>
 - Schedule_Hourly
 - Schedule_PST_Daily_11PM
 
-
 ### Custom Views
 
-> Note: taken from KB, but needs review and andjustments
+> Note: taken from KB, but needs review and adjustments
 
-|     Type     |               Name Stucture               |         Example          |                                          Description                                           |
+|     Type     |               Name Structure              |         Example          |                                          Description                                           |
 |--------------|-------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------|
 | Activity Log | View_<Criteria1_Criteria_2_...Criteria_n> | View_DSS_SFDC_Success    | This view will display the activity log of all successful DSS tasks which contain SFDC keyword |
 | Connection   | View_<Criteria1_Criteria_2_...Criteria_n> | View_SFDC_User01         | This view will display all the SFDC type Connections created by User01                         |
@@ -262,8 +265,9 @@ TF_<NAME>_<VERSION>
 ICRT Naming Conventions have different specific constraints, these tend to be less strict than in ICS.
 
 - Valid characters are specific to an object type
-- Specific for Object Type
+- Maximum length is specific to an object type
 - Usually enforced by code reviews
+- changing names later can be challenging due to name based dependencies in the designs
 
 ### Connectors
 
@@ -295,18 +299,19 @@ ICRT Naming Conventions have different specific constraints, these tend to be le
 <CONNECTOR>-<Version>-<Module>-<LOCATION>
 ```
 
-
 #### Name Variants
 
-[Connector] CventWeserviceSoap 
-[Connector]-[LogicalSystemName]
+```text
+<Connector>-CventWeserviceSoap
+<Connector>-<LogicalSystemName>
+
 SFDC-Atlas
 SFDC-MDM
 SFDC-ATS
 
-[Connector]-[Module]-[TargetAgent]
-Workday-V2-ResourceManagement-agent01 
-
+<Connector>-<Module>-<TargetAgentOrGroup>
+Workday-V2-ResourceManagement-agent01
+```
 
 ### Processes
 
@@ -320,7 +325,7 @@ Typically Encapsulate CRUD operations on managed entities
 
 - `CreateEntity`
 - `UpdateEntity`
-- `UpsertEntity` 
+- `UpsertEntity`
 
 #### General Purpose Processes (Utility Services)
 
@@ -353,7 +358,7 @@ Follow General Web Service and SOA naming conventions
 `<Source>-<Target>-<UseCase>-<Component>`
 
 - `SFDC-Workday-Upsert-Project-Handler`
-- `SFDC-Workday-Upsert-Project-Job `
+- `SFDC-Workday-Upsert-Project-Job`
 - `SFDC-Workday-Upsert-Project-ETL`
 
 #### IPD Process and Guide Variables
@@ -365,7 +370,6 @@ There are essentially three types of variable in IPD processes
 | Input     | `in_<name>`    |
 | Temporary | `tmp_<name>`   |
 | Output    | `out_<name>`   |
-
 
 Input Variables define an input of the process, guide or service. Temporary variables are used by the process to perform data transformation or store state information and intermediary results. Output variables define output data pf the Process or service.
 You should use prefix for all process/guide variables which makes makes it easier to distinguish between process object attributes and variable in expression editor as well as distinguish the container of the variable (temp, in, out).
@@ -414,7 +418,7 @@ pim_item_creation [ActiveRecords-Catalog:Article:50617@1000] [itemNo:14376053843
 
 ##### Main Process
 
-Main Process is a process that contains core orchestration of the Job Intgeration Pomponent, main process is as service directly triggered by scheduler, inbound event, JMS or File listener
+Main Process is a process that contains core orchestration of the Job Integration Component, main process is as service directly triggered by scheduler, inbound event, JMS or File listener
 
 ```text
 MP_Process_Name id:{$objectId} step:{$logicalStepName} status:{$status} {$errorMessage}
@@ -422,7 +426,7 @@ MP_Process_Name id:{$objectId} step:{$logicalStepName} status:{$status} {$errorM
 
 ##### Sub Processes
 
-Sub Process is a typically re-usable processs serving generic function in the process chan invocation, it is usually not invoked directly (except unit testing) it partcipates in orchestration and there are several sub-types of subProcess
+Sub Process is a typically re-usable process serving generic function in the process chain invocation, it is usually not invoked directly (except unit testing) it partcipates in orchestration and there are several sub-types of subProcess
 
 - Data mapping (transformation) process
 - Utility process, facilitates re-usable operations

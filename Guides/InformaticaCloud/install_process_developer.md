@@ -283,11 +283,11 @@ Params:
 
 Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
 
-1. Create External Tool
+1. Create External Tool<br>
   ![External Tool Configuration](./images/xquery_set_saxon_tool.png "Create External Configuration")
-2. Configure External Tool ponting to your script and resource in your editor
+2. Configure External Tool ponting to your script and resource in your editor<br>
   ![External Tool Configuration](./images/xquery_external_tool_config.png "External Cool Configuration")
-3. Now you should be able to run saxon by selecting external tool from the drop down when editing the main Saxon modules.
+3. Now you should be able to run saxon by selecting external tool from the drop down when editing the main Saxon modules.<br>
   ![Run External Tool Configuration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
 
 [eclipse win 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32.zip
