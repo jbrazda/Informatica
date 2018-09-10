@@ -39,6 +39,7 @@
         - [Integration Process Flow Naming Convention](#integration-process-flow-naming-convention)
         - [Names Aligned with the DI Process Architecture](#names-aligned-with-the-di-process-architecture)
         - [IPD Process and Guide Variables](#ipd-process-and-guide-variables)
+            - [Name Structure](#name-structure-8)
         - [Variable Examples](#variable-examples)
             - [Process Titles](#process-titles)
         - [Recommended process Title Structure](#recommended-process-title-structure)
@@ -326,6 +327,7 @@ Typically Encapsulate CRUD operations on managed entities
 - `CreateEntity`
 - `UpdateEntity`
 - `UpsertEntity`
+- `DeleteEntity`
 
 #### General Purpose Processes (Utility Services)
 
@@ -337,7 +339,7 @@ Follow General Web Service and SOA naming conventions
 
 #### Business Process Flow Naming Convention
 
-- Name the process with a descriptive title. The name should be descriptive of what the process does (ex: MissingClinicalDataCase).
+- Name the process with a descriptive title. The name should be descriptive of what the process does (ex: `MissingClinicalDataCase`).
 - Add the prefix (MP-) to name if it is a master process. A master process is generally called directly from outbound message. It also contains the error handling.
 - Add the prefix (ER-) for error handling processes.
 - Add the prefix (SP-) for processes called by a master process.
@@ -355,21 +357,26 @@ Follow General Web Service and SOA naming conventions
 
 #### Names Aligned with the DI Process Architecture
 
-`<Source>-<Target>-<UseCase>-<Component>`
+```text
+<Target>-<UseCase>-<Component>
 
-- `SFDC-Workday-Upsert-Project-Handler`
-- `SFDC-Workday-Upsert-Project-Job`
-- `SFDC-Workday-Upsert-Project-ETL`
+Examples:
+SFDC-Workday-Upsert-Project-Handler
+SFDC-Workday-Upsert-Project-Job
+SFDC-Workday-Upsert-Project-ETL
+```
 
 #### IPD Process and Guide Variables
 
 There are essentially three types of variable in IPD processes
 
-|    Type   | Name Structure |
-|-----------|----------------|
-| Input     | `in_<name>`    |
-| Temporary | `tmp_<name>`   |
-| Output    | `out_<name>`   |
+##### Name Structure
+
+|    Type   | Name Structure |      Example      |
+|-----------|----------------|-------------------|
+| Input     | `in_<name>`    | in_entity_id      |
+| Temporary | `tmp_<name>`   | tmp_process_title |
+| Output    | `out_<name>`   | out_context       |
 
 Input Variables define an input of the process, guide or service. Temporary variables are used by the process to perform data transformation or store state information and intermediary results. Output variables define output data pf the Process or service.
 You should use prefix for all process/guide variables which makes makes it easier to distinguish between process object attributes and variable in expression editor as well as distinguish the container of the variable (temp, in, out).
@@ -392,7 +399,7 @@ Make the process Titles consistent across the board the process title should fol
 - Always include actual process name and make it first part of the process title
 - Include IDs of main item or when the process takes care of single item
 - When process handles list of items rather than single one, include only count of items and indicate progress if desired
-- Include Status information to indicate step of the process or final status
+- Optionally Include Status information to indicate step of the process or final status
 - Include Error Message or its part when process faults
 - Indicate that process is retrying activities and how many retries it performed when applicable
 - Be aware of size limit of process title  (256 bytes) (make sure you trim it to fit, especially when reporting error message to process title)

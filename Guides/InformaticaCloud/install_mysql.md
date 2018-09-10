@@ -1,6 +1,5 @@
 # Install Mys sql server
 
-
 First, install the MySQL server and client packages:
 
 ```shell
