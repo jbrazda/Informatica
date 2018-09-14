@@ -36,10 +36,12 @@
         - [Data Access Processes](#data-access-processes)
         - [General Purpose Processes \(Utility Services\)](#general-purpose-processes-utility-services)
         - [Business Process Flow Naming Convention](#business-process-flow-naming-convention)
+        - [Process Name Structure](#process-name-structure)
         - [Integration Process Flow Naming Convention](#integration-process-flow-naming-convention)
-        - [Names Aligned with the DI Process Architecture](#names-aligned-with-the-di-process-architecture)
+        - [Name Structure](#name-structure-8)
+        - [Examples](#examples-5)
         - [IPD Process and Guide Variables](#ipd-process-and-guide-variables)
-            - [Name Structure](#name-structure-8)
+            - [Name Structure](#name-structure-9)
         - [Variable Examples](#variable-examples)
         - [Process Titles](#process-titles)
         - [Recommended Process Title Structure](#recommended-process-title-structure)
@@ -54,7 +56,7 @@
             - [Fault](#fault)
     - [Process Objects](#process-objects)
     - [Guides](#guides)
-        - [Examples](#examples-5)
+        - [Examples](#examples-6)
 
 <!-- /MarkdownTOC -->
 
@@ -339,28 +341,47 @@ Follow General Web Service and SOA naming conventions
 
 #### Business Process Flow Naming Convention
 
-- Name the process with a descriptive title. The name should be descriptive of what the process does (ex: `MissingClinicalDataCase`).
+Buiness processes are often processes that can represent long running often stateful processes. Such processes have slightly different characteristics than typical Integration Process.
+
+- often interact with more than 2 systems, source,target sematics is often not applicable
+- often statels and long running
+- can have multiple endpoints and events on process level like operation to cancel process, pending tasks, getStatus operations etc.
+
+Naming Guidelines
+
+- Name the process with a descriptive title. The name should be descriptive of what the process does (ex: `MissingClinicalDataCase`, `CalculateTax`, `PurchaseOrder`).
 - Add the prefix (MP-) to name if it is a master process. A master process is generally called directly from outbound message. It also contains the error handling.
 - Add the prefix (ER-) for error handling processes.
 - Add the prefix (SP-) for processes called by a master process.
 
+#### Process Name Structure
+
+```text
+<MP|SP|ERR>-<Name>
+```
+
 #### Integration Process Flow Naming Convention
 
-> To be reviewed - Need peer review
+Use similar naming convention principles as in the case of Business Processes
 
-- Name the process with a descriptive title. The name should be descriptive of what the integration process does (ex: SendAdHocDataMessage, MapOrderRoleData).
+Sometimes it is usefull to distinguish from Business Processes
+
+- Name the process with a descriptive title. The name should be descriptive of what the integration process does (ex: SendDataMessage, MapOrderRoleData).
 - Add the prefix (INT-) to all processes that are integration specific.
 - Add the prefix (INT-MP-) to name if it is an integration master process. An integration master process controls the overall function of the integration. It is can be called by a business process or directly by a workflow outbound message. It also contain the general error handling of the integration, including retries.
 - Add the prefix (INT-SP-) for integration processes called by an integration master process.
 - Add the prefix (INT-XDM-) for integration processes responsible for data mapping.
 - Add the prefix (INT-SXDM-) for integration processes responsible for data mapping that are reusable by multiple data mapping processes.
 
-#### Names Aligned with the DI Process Architecture
+#### Name Structure
 
 ```text
-<Target>-<UseCase>-<Component>
+<Source>-<Target>-<UseCase>-<Component>
+```
 
-Examples:
+#### Examples
+
+```text
 SFDC-Workday-Upsert-Project-Handler
 SFDC-Workday-Upsert-Project-Job
 SFDC-Workday-Upsert-Project-ETL
@@ -401,7 +422,7 @@ Make the process Titles consistent across the board the process title should fol
 - When process handles list of items rather than single one, include only count of items and indicate progress if desired
 - Optionally Include Status information to indicate step of the process or final status
 - Include Error Message or its part when process faults
-- Indicate that process is retrying activities and how many retries it![]() performed when applicable
+- Indicate that process is retrying activities and how many retries it has done when applicable
 - Be aware of size limit of process title  (256 bytes) (make sure you trim it to fit, especially when reporting error message to process title)
 - Define standardized process title structure for your project
 - There Are some cases when updating a process title is not desired
