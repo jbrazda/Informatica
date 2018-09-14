@@ -1,6 +1,4 @@
-![Logo](https://www.informatica.com/content/dam/informatica-com/global/informatica-logo.png)
-
-# Informatica Cloud Naming Conventions
+# Informatica Cloud Naming Conventions ![Logo](https://www.informatica.com/content/dam/informatica-com/global/informatica-logo.png)
 
 <!-- MarkdownTOC -->
 
