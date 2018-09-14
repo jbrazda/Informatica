@@ -259,7 +259,7 @@ Click on the name of your server
 Expand Java and Process Management and select Process Definition.
 Under the Additional Properties section, click Java Virtual Machine.
 ![JVM](images/was_config/was_jvm_seetings.png "JVM")
-Set Max and Min heap size and Scroll down and locate the textbox for Generic JVM arguments and set the perm Gen size or any other desired parameters.
+Set Max and Min heap size and Scroll down and locate the text box for Generic JVM arguments and set the perm Gen size or any other desired parameters.
 ![JVM](images/was_config/was_jvm_seetings_2.png "JVM")
 
 ## First Steps Guide
