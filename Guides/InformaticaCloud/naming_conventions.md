@@ -41,8 +41,8 @@
         - [IPD Process and Guide Variables](#ipd-process-and-guide-variables)
             - [Name Structure](#name-structure-8)
         - [Variable Examples](#variable-examples)
-            - [Process Titles](#process-titles)
-        - [Recommended process Title Structure](#recommended-process-title-structure)
+        - [Process Titles](#process-titles)
+        - [Recommended Process Title Structure](#recommended-process-title-structure)
             - [Main Process](#main-process)
             - [Sub Processes](#sub-processes)
             - [Example of retrying process Title](#example-of-retrying-process-title)
@@ -392,7 +392,7 @@ Standardized input parameters for sub Processes
 - `in_parent_process_id` Should contain the parent process if the process from another process
 - `in_main_process_id` Should contain the main job or integration process id
 
-##### Process Titles
+#### Process Titles
 
 Make the process Titles consistent across the board the process title should follow these rules
 
@@ -401,7 +401,7 @@ Make the process Titles consistent across the board the process title should fol
 - When process handles list of items rather than single one, include only count of items and indicate progress if desired
 - Optionally Include Status information to indicate step of the process or final status
 - Include Error Message or its part when process faults
-- Indicate that process is retrying activities and how many retries it performed when applicable
+- Indicate that process is retrying activities and how many retries it![]() performed when applicable
 - Be aware of size limit of process title  (256 bytes) (make sure you trim it to fit, especially when reporting error message to process title)
 - Define standardized process title structure for your project
 - There Are some cases when updating a process title is not desired
@@ -421,7 +421,7 @@ pim_item_creation [ActiveRecords-Catalog:Article:50617@1000] [itemNo:14376053843
 pim_item_creation [ActiveRecords-Catalog:Article:50617@1000] [itemNo:1437605384345] [Approved-Merged]
 ```
 
-#### Recommended process Title Structure
+#### Recommended Process Title Structure
 
 ##### Main Process
 

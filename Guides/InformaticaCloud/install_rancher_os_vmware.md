@@ -11,7 +11,7 @@ http://rancher.com/docs/os/running-rancheros/server/install-to-disk/
 3. Set VN Memory to 2GB
 4. Point vm to downloaded  iso image
 5. Boot the VM, it will star logged in as rancher user with no password. Use `sudo passwd rancher` to set password so you can scp the config file for installation
-5. Create cloud-config.yml file
+6. Create cloud-config.yml file
 
     ```yml
     #cloud-config
@@ -30,9 +30,9 @@ http://rancher.com/docs/os/running-rancheros/server/install-to-disk/
     #         dhcp: false
     ```
 
-6. Upload the created yaml file using `scp cloud-config.yml rancher@<ipof the VM after boot>` (use passord previously updated by sudo)
+7. Upload the created yaml file using `scp cloud-config.yml rancher@<ipof the VM after boot>` (use passord previously updated by sudo)
 
-    ```xml
+    ```text
     $ scp cloud-config.yml rancher@192.168.106.129:.
     The authenticity of host '192.168.106.129 (192.168.106.129)' can't be established.
     ECDSA key fingerprint is SHA256:Sm7KoyDt0qFJsKePWWQByK7PqnJhJORlVT5KZZy/awM.
@@ -42,13 +42,13 @@ http://rancher.com/docs/os/running-rancheros/server/install-to-disk/
     cloud-config.yml
     ```
 
-7. Install rancherOS onto the VM /dev/sda using `sudo ros install -c cloud-config.yml -d /dev/sda`
-8. After reboot login to isntalled RancherOS using your ssh keys `ssh rancher@<yourvmip>`
+8. Install rancherOS onto the VM /dev/sda using `sudo ros install -c cloud-config.yml -d /dev/sda`
+9. After reboot login to isntalled RancherOS using your ssh keys `ssh rancher@<yourvmip>`
 
 I prefer to use ubuntu as console, either enable ubuntu console right within isntallation on cloud-config.yml
 or sitch the console later
 
-```
+```text
 $ sudo ros console switch ubuntu
 Switching consoles will
 1. destroy the current console container
@@ -82,9 +82,8 @@ sudo apt-get update
 sudo apt-get install git
 ```
 
-
-
 ## Enable Rancher server
+
 Install and enable rancher server and and rancher-compose
 This allows to run docker-compose configurations on rancher os
 
@@ -94,4 +93,3 @@ sudo ros service enable rancher-server
 
 follow
 http://rancher.com/docs/rancher/v1.6/en/cattle/rancher-compose/
-

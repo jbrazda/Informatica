@@ -2,16 +2,16 @@
 
 <!-- MarkdownTOC -->
 
-- Install Informatica Tools
-    - Process Developer
-- Other Recommended Tools
-    - Developer Text Editor
-    - Git Client
-    - Apache Ant
-    - Java JDK
-    - After Installation of the tools \(your first Login to the Maintenance Machine\)
-    - Setup SSH key
-    - Setup your Git Client
+- [Install Informatica Tools](#install-informatica-tools)
+    - [Process Developer](#process-developer)
+- [Other Recommended Tools](#other-recommended-tools)
+    - [Developer Text Editor](#developer-text-editor)
+    - [Git Client](#git-client)
+    - [Apache Ant](#apache-ant)
+    - [Java JDK](#java-jdk)
+    - [After Installation of the tools \(your first Login to the Maintenance Machine\)](#after-installation-of-the-tools-your-first-login-to-the-maintenance-machine)
+    - [Setup SSH key](#setup-ssh-key)
+    - [Setup your Git Client](#setup-your-git-client)
 
 <!-- /MarkdownTOC -->
 
@@ -123,4 +123,3 @@ git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.up rebase
 ```
-
