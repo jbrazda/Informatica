@@ -11,8 +11,10 @@
 - [Informatica Cloud Disaster Recovery](#informatica-cloud-disaster-recovery)
     - [Informatica Cloud Components](#informatica-cloud-components-1)
     - [Informatica Cloud Secure Agent](#informatica-cloud-secure-agent-1)
-        - [Data Integration Service \(ICS\)](#data-integration-service-ics)
-        - [Informatica Cloud Real Time \(ICRT\)](#informatica-cloud-real-time-icrt)
+        - [Example Regional Layout With "Hot" Standby](#example-regional-layout-with-hot-standby)
+        - [Example Regional Layout With "Cold" Standby](#example-regional-layout-with-cold-standby)
+        - [Data Integration Service \(CDI\)](#data-integration-service-cdi)
+        - [Informatica Cloud Real Time \(CAI\)](#informatica-cloud-real-time-cai)
             - [Outage of the Single Agent Primary group](#outage-of-the-single-agent-primary-group)
             - [Full Failure of a Primary Site](#full-failure-of-a-primary-site)
 
@@ -24,7 +26,7 @@ Informatica Cloud is an on-demand subscription service that provides data integr
 
 ## Informatica Cloud Components
 
-A multi-tenant cloud based batch and real-time integration platform that combines application and data integration and features pre-built connectors to cloud, on premise, mobile, and social data sources, as well as cloud Hosted Secure Agents to run Data Inetgration tasks in the cloud, Cloud Integration Hub and
+A multi-tenant cloud based batch and real-time integration platform that combines application and data integration and features pre-built connectors to cloud, on premise, mobile, and social data sources, as well as cloud Hosted Secure Agents to run Data Integration tasks in the cloud, Cloud Integration Hub and
 
 ## Informatica Cloud Secure Agent
 
@@ -59,8 +61,8 @@ http://trust.informaticacloud.com/status
 Informatica Cloud Secure Agent is composed of several Components
 
 - Agent core - Manages agent runtime, agent and  its components updates and configuration managed from the Cloud Administration console.
-- ICS (Data Integration Service) - provides technology based on ETL and large amount of connectors, DAta Quality and range of Data integration use cases
-- ICRT (Informatica Cloud Real Time) - also called Informatica Cloud Application Integration (ICAI)
+- CDI (Cloud Data Integration Integration Service) - provides technology based on ETL and large amount of connectors, DAta Quality and range of Data integration use cases
+- CAI (Cloud Application Integration) - formerly known as ICRT (Informatica Cloud Real Time) is an integration component responsible for event-driven Application Integration utilizing Process Engine (BPM) technology
 
 Each component of the system has its own characteristics and specific procedures for disaster recovery
 
@@ -80,7 +82,9 @@ Agents can be used separately or put into groups which can be used to execute in
 It is practical to rename your groups and agents with logical names rather than using physical host names names.
 Agents can be then migrated to different host and environment migrations from DEV to QA to PROD will be also easier as they will not require renaming of the references used in the design artifacts such as connections and processes.
 
-Example Regional Layout Primary Site
+### Example Regional Layout With "Hot" Standby
+
+In this configuration all groups and agents are running and receiving updates all the time, the fail-over is facilitated by renaming agent group when certain data center fails
 
 |        Environment Name        | Host Name |    Site   |
 |--------------------------------|-----------|-----------|
@@ -98,6 +102,23 @@ Example Regional Layout Primary Site
 | -- eu_agent_dr_01              |           | Secondary |
 | -- eu_agent_dr_02              |           | Secondary |
 
+### Example Regional Layout With "Cold" Standby
+
+In this configuration all agents are hosted on virtualized systems
+where the VM images are backed up and snapshots taken on regular basis.
+The full data center structure is replicated on disaster recovery data center
+when main Site fails the VMs are spin up in backup data center.
+
+|        Environment Name        | Host Name |   Site  |
+|--------------------------------|-----------|---------|
+| Informatica Cloud Hosted Agent |           |         |
+| NA (2)                         |           |         |
+| -- na_agent_01                 |           | Primary |
+| -- na_agent_02                 |           | Primary |
+| EU  (2)                        |           |         |
+| -- eu_agent_01                 |           | Primary |
+| -- eu_agent_02                 |           | Primary |
+
 Above table describes the Secure Agent Layout based on the Regional groups
 Data integration tasks can be configured to run on specific group of agent or individual agent if the agent is not a part of the group.
 For disaster recover would need to create an agent group that contains both primary and the backup site. Agents will be configured and installed all all the Sites following the same installation procedures and configuration steps.
@@ -105,7 +126,7 @@ For disaster recover would need to create an agent group that contains both prim
 To ensure consistency any configuration changes that are not managed from the cloud would have to be synchronized from the primary to secondary site.
 We will discuss those scenarios.
 
-### Data Integration Service (ICS)
+### Data Integration Service (CDI)
 
 Data integration Service configuration and The metadata for tasks executed by the Data Integration Service is stored in the cloud so when the task is schedule on the Agent the Metadata and task definitions will be retrieved from the Informatica Cloud Repository and thus the recovery of such components is not necessary.
 
@@ -121,7 +142,7 @@ Files and changes to the above files must be synchronized between environments t
 
 This synchronization can be done using simple `cron` triggered shell script with `rsync` or some other tool suitable for synchronization
 
-### Informatica Cloud Real Time (ICRT)
+### Informatica Cloud Real Time (CAI)
 
 ICRT is a process engine that runs in a separate Tomcat container, to be able to execute all kinds of integration processes, the metadata and process instance data are stored in a local PostgreSQL database installed and managed by the Secure Agents Core Service. This database persists the process metadata and runtime data. The Process engine can load balance task executed from the cloud process but certain tasks can target individual Agent instance even when the agent is a member of the agent group. This provides flexibility in the way Precess developers design their integration and orchestration processes as well ass allows distribution of load across the agent group nodes.
 
@@ -131,7 +152,7 @@ The ICRT Agent Group can be set in two modes
 
 - Clustered Deployment - process engines on individual agents in the group are configured ins such way that they use the same instance of PostgreSQL DB where one of the agents is a dedicated Master, this master agent system becomes single point of failure in such configuration. ICRT currently does not support use of externally provided database to provide a storage for Process Engine neither high availability clustered PostgreSQL Configuration option
 
-Current Mondelez Integration needs do not include stateful processes so the process engine can be configured as described in the first option. this makes disaster recovery similar to ICS component only with an addition of couple manual steps that needs to performed in the Cloud Administration Console
+Typical Data Integration needs do not include stateful processes so the process engine can be configured as described in the first option. this makes disaster recovery similar to ICS component only with an addition of couple manual steps that needs to performed in the Cloud Administration Console
 
 ICRT also contains certain files which are only managed locally and needs to be kept in sync in all agent instances these include
 

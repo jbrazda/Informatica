@@ -1,6 +1,4 @@
-![Logo](https://www.informatica.com/content/dam/informatica-com/global/informatica-logo.png "Informatica")
-
-# Informatica Secure Agent Installation
+# Informatica Secure Agent Installation ![Logo](https://www.informatica.com/content/dam/informatica-com/global/informatica-logo.png "Informatica")
 
 <!-- MarkdownTOC -->
 
