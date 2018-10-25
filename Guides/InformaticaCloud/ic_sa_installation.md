@@ -4,6 +4,13 @@
 
 - [Pre-Requisites](#pre-requisites)
     - [Install Secure Agent](#install-secure-agent)
+        - [Download the Secure Agent](#download-the-secure-agent)
+            - [APP3 pod](#app3-pod)
+            - [IICS NA1 PODS](#iics-na1-pods)
+        - [Install Secure Agent](#install-secure-agent-1)
+        - [Create Agent Connection User](#create-agent-connection-user)
+        - [Initialize Secure Agent and register to your org](#initialize-secure-agent-and-register-to-your-org)
+        - [Register the Agent](#register-the-agent)
 - [Install Secure Agent as a Daemon](#install-secure-agent-as-a-daemon)
     - [Setup as a Service using systemd](#setup-as-a-service-using-systemd)
         - [Start and Stop service](#start-and-stop-service)
@@ -15,8 +22,12 @@
 
 # Pre-Requisites
 
+Please consult the target Installation platform with Offcial PAM before Installing
+
+[Product Availability Matrix](https://network.informatica.com/docs/DOC-17579)
+
 Create a system user that will run and Secure Agent and own Secure Agent directory
-Suggested user name can be `infaagent`, `informatica` or 'sagent'
+Suggested user name can be `infaagent`, `informatica` or `sagent`
 Check that you have enough space on the drive (mount you plant to install)
 
 Run
@@ -32,120 +43,180 @@ In such  case plan sizing of file system and its usage monitoring accordingly.
 
 Make sure that the Hostname of the Machine resolves correctly to IP and vice versa
 
+```shell
+hostname
+nslookup $(hostname)
+```
+
+Make sure that you can connect to Informatica Cloud servers (Is proxy needed for outbound connections?)
+
+```shell
+curl -I https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+ICS-X: b9af0824-97ec-41de-b61f-653723528900
+Accept-Ranges: bytes
+ETag: W/"137271056-1526176180000"
+Last-Modified: Sun, 13 May 2018 01:49:40 GMT
+Content-Type: application/octet-stream;charset=UTF-8
+Content-Length: 137271056
+Date: Wed, 19 Sep 2018 15:03:37 GMT
+Access-Control-Allow-Credentials: true
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: SERVERID_SAAS=IICS-saas8225480; path=/
+Cache-control: private
+```
+
 ## Install Secure Agent
 
-1. Download the Secure Agent
-    ```shell
-    curl -o /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
-    ```
-    or
-    ```she;;
-    wget -O /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
-    ```
-    Note that the actual URL might be different based on the org you using, always make sure that you download the binary from the specific host site which your org is assigned to (app3,app2)
-2. Install Secure Agent
-    ```shell
-    # use chmod to set the binary as executable
-    mkdir -p /home/iclab
-    chmod +x /tmp/agent64_install.bin
-    /tmp/agent64_install.bin -i silent
-    ```
-    The secure agent will be installed to the `~/infaagent` directory of the user which runs the installer
-    Install agent to a different directory: `/tmp/agent64_install.bin -i silent -DUSER_INSTALL_DIR=<target directory>`
-    You can run secure agent installer in interactive console mode  which will allow you to change some configuration options such as installation to different than default directory.
-    ```text
-    user@host ~ $ /tmp/agent64_install.bin -i console
-    Preparing to install...
-    Extracting the JRE from the installer archive...
-    Unpacking the JRE...
-    Extracting the installation resources from the installer archive...
-    Configuring the installer for this system's environment...
+> Note that the actual URL might be different based on the org you using, always make sure that you download the binary from the specific host site which your org is assigned to (app3, app2, iics)
 
-    Launching installer...
+### Download the Secure Agent
 
-    /===============================================================================
-    Informatica Cloud Secure Agent                   (created with InstallAnywhere)
-    /-------------------------------------------------------------------------------
+#### APP3 pod
 
-    Preparing CONSOLE Mode Installation...
-    /===============================================================================
-    Choose Install Folder
-    /---------------------
+```shell
+curl -o /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+```
 
-    Where would you like to install?
+or
 
-      Default Install Folder: /home/iclab/infaagent
+```shell
+wget -O /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+```
 
-    ENTER AN ABSOLUTE PATH, OR PRESS <ENTER> TO ACCEPT THE DEFAULT
-          : /opt/infaagent
-    ```
+#### IICS NA1 PODS
 
-3. Initialize Secure Agent and register to your org.
-    `consoleAgentManager` is a tool used to configure and manage agent settings, it is located in the `<agent_home>/apps/agentcore` directory.
-    You can use it to manage various settings and initialize the agent.
-    <pre>
-    /home/iclabinfaagent/apps/agentcore $ ./consoleAgentManager.sh
-    JAVA_HOME=/home/iclab/infaagent/apps/agentcore/../../jre
-    Console Agent Manager
+```shell
+curl -o /tmp/agent64_install.bin https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+```
 
-    Usage:
-    Use "./program help" to print this page. This is also the default operation.
-    ./program OPERATION ARG1 ARG2...
+or
 
-    Operations:
+```shell
+wget -O /tmp/agent64_install.bin https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+```
 
-    configure USERNAME PASSWORD
-    Configure the Agent Core with IOD username and password. After the Agent Core is configured, it belongs to the user and is ready to run jobs. If the Agent Core is already configured when this operation is executed, the Agent Core shuts down the previous process. This operation returns "succeeds" if the configuration succeeds and "fails" if it fails. Additional information maybe provided for the explanation of a configuration failure. Please refer to the AgentV3 functional specification for further information.
+### Install Secure Agent
 
-    configureToken USERNAME TOKEN
-    Configure the Agent Core with IOD username and install token. After the Agent Core is configured, it belongs to the user and is ready to run jobs. If the Agent Core is already configured when this operation is
-    executed, the Agent Core shuts down the previous process. This operation returns "succeeds" if the configuration succeeds and "fails" if it fails. Additional information maybe provided for the explanation of a
-    configuration failure. Please refer to the AgentV3 functional specification for further information.
+```shell
+# use chmod to set the binary as executable
+mkdir -p /opt/infaagent
+chmod +x /tmp/agent64_install.bin
+/tmp/agent64_install.bin -i silent
+```
 
-    shutdown
-    Shutdown the agent.
+The secure agent will be installed to the `~/infaagent` directory of the user which runs the installer
+Install agent to a different directory: `/tmp/agent64_install.bin -i silent -DUSER_INSTALL_DIR=<target directory>`
+You can run secure agent installer in interactive console mode  which will allow you to change some configuration options such as installation to different than default directory.
 
-    shutdownNoLog
-    Shutdown the agent without generating any logs.
+```text
+user@host ~ $ /tmp/agent64_install.bin -i console
+Preparing to install...
+Extracting the JRE from the installer archive...
+Unpacking the JRE...
+Extracting the installation resources from the installer archive...
+Configuring the installer for this system's environment...
 
-    getStatus
-    Get the status of the agent.
+Launching installer...
 
-    updateStatus
-    Refresh the status of the agent. This maybe required for getStatus to return the correct status if the connectivity environment of the agent is changed.
+/===============================================================================
+Informatica Cloud Secure Agent                   (created with InstallAnywhere)
+/-------------------------------------------------------------------------------
 
-    isConfigured
-    Check if the agent is configured.
+Preparing CONSOLE Mode Installation...
+/===============================================================================
+Choose Install Folder
+/---------------------
 
-    isConfigurationValid
-    Check if the agent's configuration is valid.
+Where would you like to install?
 
-    logMessage MSG
-    Log a message to the Agent Core. The message can be seen in the log of the Agent Core.
+  Default Install Folder: /home/iclab/infaagent
 
-    removePackages
-    Remove all packages from the agent.
+ENTER AN ABSOLUTE PATH, OR PRESS <ENTER> TO ACCEPT THE DEFAULT
+      : /opt/infaagent
+```
 
-    removeApps
-    Remove all applications from the agent.
+### Create Agent Connection User
 
-    configureProxy
-    Configures proxy settings with proxyHost proxyPort proxyUsername proxyPassword passed as arguments. The proxyUsername and proxyPassword arguments are optional.
-    </pre>
-    Use Following commands to setup your agent after installation
-    ```shell
-    cd /home/iclab/infaagent/apps/agentcore/
-    # check the status, for a new silent installed agent the status should be 'NOT_CONFIGURED'
-    ./consoleAgentManager.sh getStatus
-    # Start Agent core
-    ./infaagent startup
-    # register agent - after successful login agent core will initialize your agent and download updates and all your enabled components such as process engine and connectors
-    ./consoleAgentManager.sh configure <userId> <password>
-    ```
-    If you have a proxy http setup for your environment, you will have to configure proxy before  running configure command by using the `configureProxy` command:
-    ```shell
-    /home/iclabinfaagent/apps/agentcore/consoleAgentManager.sh configureProxy <ProxyHost> <ProxyPort> <ProxyUser> <ProxyPassword>
-    ```
+Create User that will be used to register connect secure agent to Informatica Cloud `secure_agent@univison.com.net` as Administrator
+![CreateSA User](images/Informatica_Cloud_SA_User.png "User Creation")
+
+### Initialize Secure Agent and register to your org
+
+`consoleAgentManager` is a tool used to configure and manage agent settings, it is located in the `<agent_home>/apps/agentcore` directory.
+You can use it to manage various settings and initialize the agent.
+
+<pre>
+/home/iclabinfaagent/apps/agentcore $ ./consoleAgentManager.sh
+JAVA_HOME=/home/iclab/infaagent/apps/agentcore/../../jre
+Console Agent Manager
+
+Usage:
+Use "./program help" to print this page. This is also the default operation.
+./program OPERATION ARG1 ARG2...
+
+Operations:
+
+configure USERNAME PASSWORD
+Configure the Agent Core with IOD username and password. After the Agent Core is configured, it belongs to the user and is ready to run jobs. If the Agent Core is already configured when this operation is executed, the Agent Core shuts down the previous process. This operation returns "succeeds" if the configuration succeeds and "fails" if it fails. Additional information maybe provided for the explanation of a configuration failure. Please refer to the AgentV3 functional specification for further information.
+
+configureToken USERNAME TOKEN
+Configure the Agent Core with IOD username and install token. After the Agent Core is configured, it belongs to the user and is ready to run jobs. If the Agent Core is already configured when this operation is
+executed, the Agent Core shuts down the previous process. This operation returns "succeeds" if the configuration succeeds and "fails" if it fails. Additional information maybe provided for the explanation of a
+configuration failure. Please refer to the AgentV3 functional specification for further information.
+
+shutdown
+Shutdown the agent.
+
+shutdownNoLog
+Shutdown the agent without generating any logs.
+
+getStatus
+Get the status of the agent.
+
+updateStatus
+Refresh the status of the agent. This maybe required for getStatus to return the correct status if the connectivity environment of the agent is changed.
+
+isConfigured
+Check if the agent is configured.
+
+isConfigurationValid
+Check if the agent's configuration is valid.
+
+logMessage MSG
+Log a message to the Agent Core. The message can be seen in the log of the Agent Core.
+
+removePackages
+Remove all packages from the agent.
+
+removeApps
+Remove all applications from the agent.
+
+configureProxy
+Configures proxy settings with proxyHost proxyPort proxyUsername proxyPassword passed as arguments. The proxyUsername and proxyPassword arguments are optional.
+</pre>
+
+### Register the Agent
+
+Use Following commands to setup your agent after installation
+
+```shell
+cd /home/iclab/infaagent/apps/agentcore/
+# check the status, for a new silent installed agent the status should be 'NOT_CONFIGURED'
+./consoleAgentManager.sh getStatus
+# Start Agent core
+./infaagent startup
+# register agent - after successful login agent core will initialize your agent and download updates and all your enabled components such as process engine and connectors
+./consoleAgentManager.sh configure <userId> <password>
+```
+
+If you have a proxy http setup for your environment, you will have to configure proxy before  running configure command by using the `configureProxy` command:
+
+```shell
+/home/iclabinfaagent/apps/agentcore/consoleAgentManager.sh configureProxy <ProxyHost> <ProxyPort> <ProxyUser> <ProxyPassword>
+```
 
 # Install Secure Agent as a Daemon
 
