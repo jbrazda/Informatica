@@ -51,7 +51,7 @@ mysqladmin -u root -p create avosdb
 mysql -u root -p
 password: 'secret_password'
 
-### Create User
+### Create User for Standalone ActiveVOS Server (Optional)
 
 ```sql
 --GRANT usage ON *.* TO avosdba@localhost identified by 'password'
@@ -71,8 +71,8 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON avosdb.* TO 'bpeluser'@'%';
 ```sql
 use avosdb
 run avos ddl scripts
-mysql> \. /home/infabpm/ActiveVOS/Server/server-enterprise/jboss_config/ddls/ActiveBPEL_Enterprise-MySQL.sql
-mysql> \. /home/infabpm/ActiveVOS/Server/server-enterprise/jboss_config/ddls/create_repository_MySQL.ddl
+mysql> \. /home/iclab/ActiveVOS/Server/server-enterprise/jboss_config/ddls/ActiveBPEL_Enterprise-MySQL.sql
+mysql> \. /home/iclab/ActiveVOS/Server/server-enterprise/jboss_config/ddls/create_repository_MySQL.ddl
 ```
 
 passwords:

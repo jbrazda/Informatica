@@ -140,7 +140,7 @@ ENTER AN ABSOLUTE PATH, OR PRESS <ENTER> TO ACCEPT THE DEFAULT
 
 ### Create Agent Connection User
 
-Create User that will be used to register connect secure agent to Informatica Cloud `secure_agent@univison.com.net` as Administrator
+Create User that will be used to register connect secure agent to Informatica Cloud i.e. `secure_agent_dev@acme.com` as Administrator
 ![CreateSA User](images/Informatica_Cloud_SA_User.png "User Creation")
 
 ### Initialize Secure Agent and register to your org

@@ -217,48 +217,48 @@ mkdir -p /nfs/ipaas/data/hadoop
 
 ### Agents DEV
 
-|             URN              |                                   VALUE                                    |                          Comment                          |
-|------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------|
-| ae:internal-reporting        | http://localhost:8080/activevos/internalreports                            | System Mapping, do not mot modify unless instructed       |
-| ae:task-inbox                | http://localhost:8080/activevos-central/avc                                | System Mapping, do not mot modify unless instructed       |
-| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com                                  | Base URL of informatica cloud Pod                         |
-| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                                               | System Mapping, do not mot modify unless instructed       |
-| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                                             | System Mapping, do not mot modify unless instructed       |
-| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                                            | must match the Actual agent name in the Org. definition   |
-| urn:environment:orgid        | 001WOZ                                                                     | Org. ID                                                   |
-| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1                                     | Example API URL                                           |
-| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq                                 | Example API credentials Encrypted                         |
-| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name                                      | Example configurable path to Staging directory            |
+|             URN              |                      VALUE                      |                         Comment                         |
+|------------------------------|-------------------------------------------------|---------------------------------------------------------|
+| ae:internal-reporting        | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
+| ae:task-inbox                | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
+| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com       | Base URL of informatica cloud Pod                       |
+| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
+| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
+| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                 | must match the Actual agent name in the Org. definition |
+| urn:environment:orgid        | <ORGID> i.e. 001WOZ                             | Org. ID                                                 |
+| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
+| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
+| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
 
 #### Agents QA
 
-|             URN              |                                   VALUE                                    |                          Comment                          |
-|------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------|
-| ae:internal-reporting        | http://localhost:8080/activevos/internalreports                            | System Mapping, do not mot modify unless instructed       |
-| ae:task-inbox                | http://localhost:8080/activevos-central/avc                                | System Mapping, do not mot modify unless instructed       |
-| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com                                  | Base URL of informatica cloud Pod                         |
-| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                                               | System Mapping, do not mot modify unless instructed       |
-| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                                             | System Mapping, do not mot modify unless instructed       |
-| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                                            | must match the Actual agent name in the Org. definition   |
-| urn:environment:orgid        | 001WOZ                                                                     | Org. ID                                                   |
-| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1                                     | Example API URL                                           |
-| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq                                 | Example API credentials Encrypted                         |
-| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name                                      | Example configurable path to Staging directory            |
+|             URN              |                      VALUE                      |                         Comment                         |
+|------------------------------|-------------------------------------------------|---------------------------------------------------------|
+| ae:internal-reporting        | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
+| ae:task-inbox                | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
+| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com       | Base URL of informatica cloud Pod                       |
+| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
+| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
+| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                 | must match the Actual agent name in the Org. definition |
+| urn:environment:orgid        | <ORGID> i.e. 001WOZ                             | Org. ID                                                 |
+| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
+| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
+| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
 
 #### Agents PROD
 
-|             URN              |                                   VALUE                                    |                          Comment                          |
-|------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------|
-| ae:internal-reporting        | http://localhost:8080/activevos/internalreports                            | System Mapping, do not mot modify unless instructed       |
-| ae:task-inbox                | http://localhost:8080/activevos-central/avc                                | System Mapping, do not mot modify unless instructed       |
-| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com                                  | Base URL of informatica cloud Pod                         |
-| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                                               | System Mapping, do not mot modify unless instructed       |
-| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                                             | System Mapping, do not mot modify unless instructed       |
-| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                                            | must match the Actual agent name in the Org. definition   |
-| urn:environment:orgid        | 001WOZ                                                                     | Org. ID                                                   |
-| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1                                     | Example API URL                                           |
-| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq                                 | Example API credentials Encrypted                         |
-| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name                                      | Example configurable path to Staging directory            |
+|             URN              |                      VALUE                      |                         Comment                         |
+|------------------------------|-------------------------------------------------|---------------------------------------------------------|
+| ae:internal-reporting        | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
+| ae:task-inbox                | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
+| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com       | Base URL of informatica cloud Pod                       |
+| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
+| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
+| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                 | must match the Actual agent name in the Org. definition |
+| urn:environment:orgid        | <ORGID> i.e. 001WOZ                             | Org. ID                                                 |
+| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
+| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
+| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
 
 # Process Engine Alerting
 

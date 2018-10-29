@@ -6,6 +6,7 @@ It is tested on following OS Versions but it should work on any macOS 12.x or hi
 - Ubuntu 16.04 LTS
 - macOS 10.12.6 (16G1212)
 - macOS 10.13.4 (17E199)
+- macOS 10.13.6 (17G65)
 
 Eclipse for RCP and RAP Developers
 Version: Kepler Service Release 2
@@ -219,8 +220,9 @@ Script is designed to run on macOS, Linux, Windows+Cygwin
 ```shell
 #!/bin/bash
 
-#you can define these variables also globally in .profile or .bashrc, .zshrc
+# you can define these variables also globally in .profile or .bashrc, .zshrc
 JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home'
+# this path might be different if you download newer version of Process Developer
 AE_RUNTIME_LIB='/Applications/eclipse_kepler/plugins/org.activebpel.enginep_9.33.0.201803021154/server/shared/lib'
 
 cygwin=false
