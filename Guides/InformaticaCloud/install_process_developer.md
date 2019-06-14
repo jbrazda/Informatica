@@ -1,12 +1,15 @@
 # Install Process Developer
 
-This Guide is specific to Informatica Process developer currently available for download on APP2, APP3 and IICS CLoud platforms
-It is tested on following OS Versions but it should work on any macOS 12.x or higher or Linux with 1.7.x JDK Installed
+This Guide is specific to Informatica Process developer currently available for download on IICS CLoud platforms.
+It is tested on following OS Versions but it should work on any macOS 10.12.x or higher or Linux with 1.7.x or higher JDK installed
 
 - Ubuntu 16.04 LTS
+- Ubuntu 18.04 LTS
 - macOS 10.12.6 (16G1212)
 - macOS 10.13.4 (17E199)
 - macOS 10.13.6 (17G65)
+- macOS 10.14.5 (18F132)
+- Windows 10
 
 Eclipse for RCP and RAP Developers
 Version: Kepler Service Release 2
@@ -39,9 +42,9 @@ Process Developer Component Versions:
 Informatica Process Developer is distributed in two ways
 
 1. Windows Installer which Includes JRE, Eclipse And Informatica Process Developer plug-in
-2. Standalone plug-ins in zip archive
+2. Standalone plug-ins in zip archive 
 
-Windows distribution is only 32 bit which limits your eclipse runtime use to relatively small JVM size.
+Windows distribution is only 32 bit which limits your eclipse runtime use to relatively small JVM size. You should prefer plug-in based distribution.
 To Download Process Developer go to you Informatica Cloud Org Console/ Process Designer and select the Forms Tab on the left Navigation pane
 
 ### Direct Links
@@ -56,19 +59,22 @@ You will need a specific version of Eclipse to install plug-ins based distributi
 
 [Eclipse for RCP and RAP Developers](https://www.eclipse.org/downloads/packages/release/Kepler/SR2)
 
+> NOTE: Do not use any other version of Eclipse, process Developer will not work on other versions.
+
 ### Direct Links - Eclipse Download
 
 - Windows [32-bit][eclipse win 32-bit] [64-bit][eclipse win 64-bit]
-- Mac Cocoa [32-bit][eclipse mac 32-bit] [64-bit][eclipse mac 64-bit]
+- Mac [32-bit][eclipse mac 32-bit] [64-bit][eclipse mac 64-bit]
 - Linux [32-bit][eclipse linux 32-bit] [64-bit][eclipse linux 64-bit]
 
-You will also need to download and install JDK 1.7
+You will also need to download and install JDK 1.7 or newer
 
 Download and install JDK specific to your system from [Oracle Website][oracle jdk download]
+Or install corresponding version of Open JDK which is also supported
 
 Use a specific installation for your system
 
-## Installing on Linux
+## Installing on Linux Using Oracle JDK
 
 1. Download JDK (tgz distribution)
 2. expand tgz
@@ -76,13 +82,29 @@ Use a specific installation for your system
 3. Download Eclipse Distribution
 4. Unzip Eclipse
     `tar -xf eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz -C 'your_directry of choice'`
-5. Edit the /eclipse/eclipse.ini to set the -vm to pint the clpise to a specific jdk
+5. Edit the /eclipse/eclipse.ini to set the -vm to pint the eclipse to a specific jdk
     `-vm`
     `/opt/java/jdk1.7.0_80/jre/bin/java`
 6. Run Eclipse
 7. Download the Process Developer Plug-ins
 8. Unzip the plug-ins
 9. Install the plug-ins following the [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
+
+## Installing on Linux Using Oracle JDK (Ubuntu)
+
+1. `sudo apt update`
+2. `sudo apt install openjdk-8-jdk`
+3. Download Eclipse Distribution
+4. Unzip Eclipse
+    `tar -xf eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz -C 'your_directry of choice'` recommended is `/opt/tools`
+5. Optionally Edit the /eclipse/eclipse.ini to set the -vm to pint the eclipse to a specific jdk (this is not necessary whe using OpenJDK installed by apt)
+    `-vm`
+    `/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java`
+6. Run Eclipse
+7. Download the Process Developer Plug-ins
+8. Unzip the plug-ins
+9. Install the plug-ins following the [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
+
 
 Example eclipse.ini
 
@@ -178,14 +200,26 @@ openFile
 ### Installing
 
 1. Select the `install new software` option from the help menu.
-2. Click the add button.
-3. Enter a name and click the local button.
-4. Select the `updatesite` folder included with this distribution.
+  ![Install new Software](images/eclipse-install-new-software.png "Install New Software")
+2. Click the add button to add new update site repository
+  ![Add New Repositor](images/eclipse-install-ipd-step1.png "Add New Repository" )
+3. Enter a name and click the local button and browse for a location of the Expanded Plugin Zip/updatesite
+4. Select the `updatesite` folder included with this distribution
 5. Click the OK button.
 6. Uncheck the `Group items by category` checkbox.
 7. Click "Select All"
 8. Click next and follow the prompts to complete the install.
-9. Depending on the particular Eclipse version or configuration you are running, you may come to a dialog entitled "Install Remediation Page".  If so select the "Update my installation to be compatible with the items being installed" option and follow the prompts.
+  ![Select All Components](images/eclipse-install-ipd-step2.png "Select All Components" )
+9. Review The Install Details Summary and continue with next step.
+  ![Install Details](images/eclipse-install-ipd-step3.png "Install Details" )
+10. Agree to License Terms and User Agreement
+  ![User Agreement](images/eclipse-install-ipd-step4.png "User Agreement" )
+11. Plugin includes unsigned Libraries, accept and dismiss the warning
+  ![Dismiss Warning](images/eclipse-install-ipd-step5.png "Dismiss Warning" )
+12. You might be asked to trust the provided certificates, accept and confirm provided certs to trust
+  ![Certificate Trust](images/eclipse-install-ipd-step6.png "Certificate Trust" )
+13. Confirm Eclipse IDE restart  
+  ![Eclipse Restart](images/eclipse-install-ipd-step7.png "Eclipse Restart" )
 
 ### Running the Designer
 
@@ -193,18 +227,21 @@ Installing the Informatica Cloud Process Developer License
 
 - Start Eclipse.
 - When Eclipse first starts, select the `Activate` button when prompted.
+  ![IPD Activate](images/eclipse-install-ipd-step8.png "IPD Activate" )
 - Enter your name and `browse` to the license.lic file included with this distribution in `Cloud_Process_Developer_plugins/license`
+  ![Import License](images/eclipse-install-ipd-step9.png "Import License" )
 - Select the `Update` button.
 - Select `OK` on the update confirmation dialog.
 - Switch to the Process Developer perspective (Window / Open Perspective / Other / Process Developer)
+  ![Change Perspective](images/eclipse-install-ipd-step10.png "Change Perspective" )
 
 ## Process Developer Issues on macOS and Linux
 
-There Are several issues running Process Developer on Mac but I have found some workarounds
+There are several known issues running Process Developer on Mac but I have found some workarounds
 
 ### XQuery Interpreter Fails with ClassNotFoundException
 
-I have tried almost everything to  make the editors runtime working under macOS and Linux, but it does not work, just throwing follwoing exception when running main module
+I have tried almost everything to  make the editors runtime working under macOS and Linux, but it does not work, just throwing following exception when running main module
 
 ```text
 Error: Could not find or load main class
