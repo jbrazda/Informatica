@@ -51,21 +51,21 @@ nslookup $(hostname)
 Make sure that you can connect to Informatica Cloud servers (Is proxy needed for outbound connections?)
 
 ```shell
-curl -I https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+$ curl -I https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install_ng_ext.bin
 HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
-ICS-X: b9af0824-97ec-41de-b61f-653723528900
+Cache-Control: private
+Expires: Wed, 31 Dec 1969 19:00:00 EST
 Accept-Ranges: bytes
-ETag: W/"137271056-1526176180000"
-Last-Modified: Sun, 13 May 2018 01:49:40 GMT
+ETag: W/"108785065-1560308789000"
+Last-Modified: Wed, 12 Jun 2019 03:06:29 GMT
 Content-Type: application/octet-stream;charset=UTF-8
-Content-Length: 137271056
-Date: Wed, 19 Sep 2018 15:03:37 GMT
+Content-Length: 108785065
+Date: Fri, 14 Jun 2019 17:01:32 GMT
 Access-Control-Allow-Credentials: true
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 X-Frame-Options: SAMEORIGIN
-Set-Cookie: SERVERID_SAAS=IICS-saas8225480; path=/
-Cache-control: private
+Set-Cookie: SERVERID_SAAS=IICS-saas6871920; path=/; Secure
 ```
 
 ## Install Secure Agent
@@ -74,28 +74,16 @@ Cache-control: private
 
 ### Download the Secure Agent
 
-#### APP3 pod
-
-```shell
-curl -o /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
-```
-
-or
-
-```shell
-wget -O /tmp/agent64_install.bin https://app3.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
-```
-
 #### IICS NA1 PODS
 
 ```shell
-curl -o /tmp/agent64_install.bin https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+curl -o /tmp/agent64_install.bin https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install_ng_ext.bin
 ```
 
 or
 
 ```shell
-wget -O /tmp/agent64_install.bin https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install.bin
+wget -O /tmp/agent64_install.bin https://na1.dm-us.informaticacloud.com/saas/download/linux64/installer/agent64_install_ng_ext.bin
 ```
 
 ### Install Secure Agent

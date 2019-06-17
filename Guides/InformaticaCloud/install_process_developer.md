@@ -90,7 +90,7 @@ Use a specific installation for your system
 8. Unzip the plug-ins
 9. Install the plug-ins following the [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
 
-## Installing on Linux Using Oracle JDK (Ubuntu)
+## Installing on Linux Using Open JDK (Ubuntu)
 
 1. `sudo apt update`
 2. `sudo apt install openjdk-8-jdk`
