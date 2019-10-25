@@ -2,59 +2,60 @@
 
 <!-- MarkdownTOC -->
 
-- [Agents and Agent Groups](#agents-and-agent-groups)
+- [Informatica Cloud Naming Conventions !Logo](#informatica-cloud-naming-conventions-logo)
+  - [Agents and Agent Groups](#agents-and-agent-groups)
     - [Secure Agent](#secure-agent)
-        - [Naming Agent Groups](#naming-agent-groups)
-            - [Name Structure](#name-structure)
-        - [Naming Agents](#naming-agents)
-            - [Name Structure](#name-structure-1)
-- [ICS Artifacts](#ics-artifacts)
+      - [Naming Agent Groups](#naming-agent-groups)
+        - [Name Structure](#name-structure)
+      - [Naming Agents](#naming-agents)
+        - [Name Structure](#name-structure-1)
+  - [CDI Artifacts](#cdi-artifacts)
     - [Connections](#connections)
     - [Tasks](#tasks)
-        - [Name Structure](#name-structure-2)
-        - [Examples](#examples)
+      - [Name Structure](#name-structure-2)
+      - [Examples](#examples)
     - [Mappings](#mappings)
-        - [Name Structure](#name-structure-3)
-        - [Examples](#examples-1)
+      - [Name Structure](#name-structure-3)
+      - [Examples](#examples-1)
     - [Task Flows](#task-flows)
-        - [Name Structure](#name-structure-4)
-        - [Examples](#examples-2)
+      - [Name Structure](#name-structure-4)
+      - [Examples](#examples-2)
     - [Schedulers](#schedulers)
-        - [Name Structure](#name-structure-5)
-        - [Examples](#examples-3)
+      - [Name Structure](#name-structure-5)
+      - [Examples](#examples-3)
     - [Custom Views](#custom-views)
-- [ICRT Naming Conventions](#icrt-naming-conventions)
+  - [ICAI Naming Conventions](#icai-naming-conventions)
     - [Connectors](#connectors)
-        - [Name Structure](#name-structure-6)
-        - [Examples](#examples-4)
+      - [Name Structure](#name-structure-6)
+      - [Examples](#examples-4)
     - [Connections](#connections-1)
-        - [Name Structure](#name-structure-7)
-        - [Name Variants](#name-variants)
+      - [Name Structure](#name-structure-7)
+      - [Name Variants](#name-variants)
     - [Processes](#processes)
-        - [Data Access Processes](#data-access-processes)
-        - [General Purpose Processes \(Utility Services\)](#general-purpose-processes-utility-services)
-        - [Business Process Flow Naming Convention](#business-process-flow-naming-convention)
-        - [Process Name Structure](#process-name-structure)
-        - [Integration Process Flow Naming Convention](#integration-process-flow-naming-convention)
-        - [Name Structure](#name-structure-8)
-        - [Examples](#examples-5)
-        - [IPD Process and Guide Variables](#ipd-process-and-guide-variables)
-            - [Name Structure](#name-structure-9)
-        - [Variable Examples](#variable-examples)
-        - [Process Titles](#process-titles)
-        - [Recommended Process Title Structure](#recommended-process-title-structure)
-            - [Main Process](#main-process)
-            - [Sub Processes](#sub-processes)
-            - [Example of retrying process Title](#example-of-retrying-process-title)
-        - [Example Initialize and Set Process Title](#example-initialize-and-set-process-title)
-            - [Main Process](#main-process-1)
-            - [Subprocess](#subprocess)
-        - [Example Update Process Title](#example-update-process-title)
-            - [Success](#success)
-            - [Fault](#fault)
+      - [Data Access Processes](#data-access-processes)
+      - [General Purpose Processes (Utility Services)](#general-purpose-processes-utility-services)
+      - [Business Process Flow Naming Convention](#business-process-flow-naming-convention)
+      - [Process Name Structure](#process-name-structure)
+      - [Integration Process Flow Naming Convention](#integration-process-flow-naming-convention)
+      - [Name Structure](#name-structure-8)
+      - [Examples](#examples-5)
+      - [IPD Process and Guide Variables](#ipd-process-and-guide-variables)
+        - [Name Structure](#name-structure-9)
+      - [Variable Examples](#variable-examples)
+      - [Process Titles](#process-titles)
+      - [Recommended Process Title Structure](#recommended-process-title-structure)
+        - [Main Process](#main-process)
+        - [Sub Processes](#sub-processes)
+        - [Example of retrying process Title](#example-of-retrying-process-title)
+      - [Example Initialize and Set Process Title](#example-initialize-and-set-process-title)
+        - [Main Process](#main-process-1)
+        - [Subprocess](#subprocess)
+      - [Example Update Process Title](#example-update-process-title)
+        - [Success](#success)
+        - [Fault](#fault)
     - [Process Objects](#process-objects)
     - [Guides](#guides)
-        - [Examples](#examples-6)
+      - [Examples](#examples-6)
 
 <!-- /MarkdownTOC -->
 
@@ -66,7 +67,7 @@ Integration tasks can run on Secure Agent groups or the Hosted Agents. Secure Ag
 When you add/register new secure agent to your org it will default to own agent Group and use Host name as the agent name.
 You may see something like this in Informatica Cloud Administration
 
-|        Environment Name        |     Status     | Host Name | Platform | Version | ... |
+| Environment Name               | Status         | Host Name | Platform | Version | ... |
 |--------------------------------|----------------|-----------|----------|---------|-----|
 | Informatica Cloud Hosted Agent | Up and Running |           |          |         |     |
 | agent1 (1)                     |                |           |          |         |     |
@@ -81,7 +82,7 @@ Agents can be then migrated more easily to a different host. Environment migrati
 
 Example Regional Layout
 
-|        Environment Name        |     Status     | Host Name | Platform | Version | ... |
+| Environment Name               | Status         | Host Name | Platform | Version | ... |
 |--------------------------------|----------------|-----------|----------|---------|-----|
 | Informatica Cloud Hosted Agent | Up and Running |           |          |         |     |
 | NA (2)                         |                |           |          |         |     |
@@ -129,7 +130,7 @@ Using upper case for groups makes it easier to know if the Design object referen
 <group>_<agent_logical_name>_<number>
 ```
 
-|      Example       |              Name Structure Variant             |
+| Example            | Name Structure Variant                          |
 |--------------------|-------------------------------------------------|
 | na_aws_east_01     | `<geography>_<hosting>_<region>_<agent_number>` |
 | na_east_sm_suse_01 | `<geography>_<hosting>_<region>_<agent_number>` |
@@ -141,7 +142,7 @@ Sub Organizations can be used to further isolate different group of integration 
 Administrators of parent organizations manage and monitor child organizations from one place.
 See [Organization Hierarchies](https://app3.informaticacloud.com/saas/v389/docs/EN/index.htm#page/cc-cloud-administer/Organization_Hierarchies.html#3_12_8_1)
 
-## ICS Artifacts
+## CDI Artifacts
 
 ### Connections
 
@@ -166,11 +167,11 @@ Generic Name Structure
 
 Examples:
 
-| Connection Type |             Recommended Name             |                        Examples                       |
+| Connection Type | Recommended Name                         | Examples                                              |
 |-----------------|------------------------------------------|-------------------------------------------------------|
 | Database        | `<db_type>_<logical_name>_<schema_name>` | ORCL_siebel_contact_center                            |
 | Flat File       | `FF_<logical_name>_<folder_name>`        | FF_salesforce_lookups                                 |
-| ODBC            | `ODBC_<DS Name>`                         | ODBC                                                  |
+| ODBC            | `ODBC_<DS Name>`                         | ODBC_Accounting                                       |
 | SAP             | `SAP_<type>_<logical_name>_<region>`     | SAP_BAPI_COMPANYCODE_GETDETAIL_NA, SAP_IDOCR_MATMAS04 |
 |                 |                                          |                                                       |
 
@@ -254,16 +255,16 @@ TF_<NAME>_<VERSION>
 
 > Note: taken from KB, but needs review and adjustments
 
-|     Type     |               Name Structure              |         Example          |                                          Description                                           |
+| Type         | Name Structure                            | Example                  | Description                                                                                    |
 |--------------|-------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------|
 | Activity Log | View_<Criteria1_Criteria_2_...Criteria_n> | View_DSS_SFDC_Success    | This view will display the activity log of all successful DSS tasks which contain SFDC keyword |
 | Connection   | View_<Criteria1_Criteria_2_...Criteria_n> | View_SFDC_User01         | This view will display all the SFDC type Connections created by User01                         |
 | Task         | View_<Criteria1_Criteria_2_...Criteria_n> | View_SFDC_ACCOUNT_User01 | This view will display all the tasks containing the keyword SFDC_ACCOUNT created by User01     |
 | Task Flow    | View_<Criteria1_Criteria_2_...Criteria_n> | View_SFDC_ACCOUNT        | This view will display all the task flows containing the keyword SFDC_ACCOUNT                  |
 
-## ICRT Naming Conventions
+## ICAI Naming Conventions
 
-ICRT Naming Conventions have different specific constraints, these tend to be less strict than in ICS.
+ICAI Naming Conventions have different specific constraints, these tend to be less strict than in CDI.
 
 - Valid characters are specific to an object type
 - Maximum length is specific to an object type
@@ -316,7 +317,7 @@ Workday-V2-ResourceManagement-agent01
 
 ### Processes
 
-ICRT Processes may have many different purposes that also drive their naming conventions
+ICAI Processes may have many different purposes that also drive their naming conventions
 
 Maximum name length is 80 characters
 
@@ -391,7 +392,7 @@ There are essentially three types of variable in IPD processes
 
 ##### Name Structure
 
-|    Type   | Name Structure |      Example      |
+| Type      | Name Structure | Example           |
 |-----------|----------------|-------------------|
 | Input     | `in_<name>`    | in_entity_id      |
 | Temporary | `tmp_<name>`   | tmp_process_title |
@@ -518,7 +519,7 @@ return ipd:setProcessTitle($process_title)
 
 ### Process Objects
 
-Process object are logical data structures defines in ICRT, or received from inbound calls. Process objects are used both in processes and within service connectors.
+Process object are logical data structures defines in ICAI, or received from inbound calls. Process objects are used both in processes and within service connectors.
 
 - Maximum name length is 128 characters
 - Process Objects are often derived and directly named after underlying data structures used by the Connectors and Systems they map to a specific JSON or XML data elements and attributes

@@ -22,7 +22,7 @@
 
 # Pre-Requisites
 
-Please consult the target Installation platform with Offcial PAM before Installing
+Please consult the target Installation platform with Official PAM before Installing
 
 [Product Availability Matrix](https://network.informatica.com/docs/DOC-17579)
 
@@ -70,7 +70,7 @@ Set-Cookie: SERVERID_SAAS=IICS-saas6871920; path=/; Secure
 
 ## Install Secure Agent
 
-> Note that the actual URL might be different based on the org you using, always make sure that you download the binary from the specific host site which your org is assigned to (app3, app2, iics)
+> Note that the actual URL might be different based on the org you using, always make sure that you download the binary from the specific host site which your org is assigned to a specific informatica Pod.
 
 ### Download the Secure Agent
 
