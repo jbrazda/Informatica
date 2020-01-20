@@ -1,4 +1,4 @@
-# Install Mys sql server
+# Install Mysql server as ActiveVOS server DB
 
 First, install the MySQL server and client packages:
 

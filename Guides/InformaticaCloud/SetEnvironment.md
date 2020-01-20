@@ -2,18 +2,20 @@
 
 <!-- MarkdownTOC -->
 
+- [Environment and Tools Guides](#environment-and-tools-guides)
 - [My Essential Tools](#my-essential-tools)
-    - [Universal \(All Operating Systems\)](#universal-all-operating-systems)
-        - [Git](#git)
-            - [Install Git CLI](#install-git-cli)
-        - [Sublime Text 3](#sublime-text-3)
+  - [Universal (All Operating Systems)](#universal-all-operating-systems)
+    - [Git](#git)
+      - [Install Git CLI](#install-git-cli)
+    - [Sublime Text 3](#sublime-text-3)
+  - [VS Code](#vs-code)
 
 <!-- /MarkdownTOC -->
 
 Typical Cloud Application Integration development may span large amount technologies tools and APIs
 To keep myself productive especially when given new environment or machine for development
 
-Most of the guides listed here assume that you as a developer have reasonable access to your machine and install software as local administratior.
+Most of the guides listed here assume that you as a developer have reasonable access to your machine and install software as local administrator.
 These guides intend to describe basic setup
 
 # My Essential Tools
@@ -42,15 +44,14 @@ It is not only the most efficient way of dealing with daily git tasks but you wi
 
 ### Sublime Text 3
 
-I prefer this editor edits and in fact these guides were written in Sublime Text as well
 Download [here](https://www.sublimetext.com/3)
-I highly recommend this text editor as general purpose editor, Although there are other choices such as Atom, Notepad++, vim, Visual Studio Code, which are all great editors. I never got proficient enough in using vim so my second choice of multi platform editpr is Sublime Text
+I highly recommend this text editor as general purpose editor, Although there are other choices such as Atom, Notepad++, vim, Visual Studio Code, which are all great editors.
 
-The advantages of this editor for development in the comtext of Informatica Cloud development
+The advantages of this editor for development in the context of Informatica Cloud development
 
 - extensive set of plug-ins that include
     - great Markdown editor
-    - good xquery editor (not as good as Informatica Process Developer)
+    - good xQuery editor (not as good as Informatica Process Developer)
     - good xml support (not as good as Eclipse)
     - Git Integration if you want it
 - it is multi platform supported on Win, Mac, Linux
@@ -60,3 +61,10 @@ The advantages of this editor for development in the comtext of Informatica Clou
 You can use Sublime Text for free "unlimited" evaluation period, but the $70 you pay for full license is well worth the money Visual Source Code or Atom are good alternatives.
 
 [My Install Sublime Text 3 Guide](install_sublime.md)
+
+## VS Code
+
+[Install VS Code](https://code.visualstudio.com/)
+
+I'm myself gradually switching to VS Code
+Has all the advantages of Sublime Text plus more active and larger community, while some plugins and language support is better in Sublime Text as well as memory and ability handle very large files in Sublime Text. I now use more VS Code as it is more common, free and it's easier to install on Customer provided locked down Machines.

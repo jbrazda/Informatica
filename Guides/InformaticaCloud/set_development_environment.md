@@ -2,16 +2,17 @@
 
 <!-- MarkdownTOC -->
 
+- [Set Development Environment for IPD Development](#set-development-environment-for-ipd-development)
 - [Install Informatica Tools](#install-informatica-tools)
-    - [Process Developer](#process-developer)
+  - [Process Developer](#process-developer)
 - [Other Recommended Tools](#other-recommended-tools)
-    - [Developer Text Editor](#developer-text-editor)
-    - [Git Client](#git-client)
-    - [Apache Ant](#apache-ant)
-    - [Java JDK](#java-jdk)
-    - [After Installation of the tools \(your first Login to the Maintenance Machine\)](#after-installation-of-the-tools-your-first-login-to-the-maintenance-machine)
-    - [Setup SSH key](#setup-ssh-key)
-    - [Setup your Git Client](#setup-your-git-client)
+  - [Developer Text Editor](#developer-text-editor)
+  - [Git Client](#git-client)
+  - [Apache Ant](#apache-ant)
+  - [Java JDK](#java-jdk)
+  - [After Installation of the tools (your first Login to the Maintenance Machine)](#after-installation-of-the-tools-your-first-login-to-the-maintenance-machine)
+  - [Setup SSH key](#setup-ssh-key)
+  - [Setup your Git Client](#setup-your-git-client)
 
 <!-- /MarkdownTOC -->
 
@@ -26,11 +27,13 @@ Eclipse-based IDE that developers can download to develop processes and prepare 
 - [Download Informatica Cloud Process Developer (Microsoft Windows)](http://doc.rt.informaticacloud.com/cpd/Cloud_Process_Developer_windows.zip)
 - [Download Informatica Cloud Process Developer Eclipse Plug-ins](http://doc.rt.informaticacloud.com/cpd/Cloud_Process_Developer_plugins.zip)
 
-> The windows Processs Developer (PD) distribution is currently only 32 bit eclipse with 32 bit jre included, if need more memory for larger projects dowbload 614 bit eclipse and install the plugins.
-> You will need a specific verison of Eclipse as base installation to avoid plugin version conflicts and dependency issues
+> The windows Process Developer (PD) distribution is currently only 32 bit eclipse with 32 bit jre included, if you need more memory for larger projects download 614 bit eclipse and install the plugins.
+> You will need a specific version of Eclipse as base installation to avoid plugin version conflicts and dependency issues
 > [Eclipse RCP for RAP Developers (SP 2)](https://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2)
 >
-> You will also need to use plugin distribution if you want to use Informatica Process Devloper on Mac or Linux System. Informatica  does not provide a native distribution for thses systems.
+> You will also need to use plugin distribution if you want to use Informatica Process Developer on Mac or Linux System. Informatica  does not provide a native distribution for these systems.
+
+Use following [detailed guide](install_process_developer.md) if you installing Process Developer on MacOS or Linux
 
 # Other Recommended Tools
 
@@ -44,20 +47,20 @@ Good text editor that supports XML,xQuery, markdown editing and has git support 
 
 ## Git Client
 
-It is best to use Git or other VCS to revsion control your Development assets such as IPD objects and Processes developed in the Process Dveloper
+It is best to use Git or other VCS to revision control your Development assets such as IPD objects and Processes developed in the Process Developer
 We recommend to familiarize yourself with git as VCS of choice for many its advantages notably being distributed system
 
-Although there ramge of visual git clients including Infromatica Process Developer we recommend to familiarize yourself with git command line CLI
+Although there is a range range of visual git clients available  including Informatica Process Developer we recommend to familiarize yourself with git command line CLI
 Install git Client - there is a number of choices, see https://git-scm.com/
 
-> I prefer using [cygwin](https://www.cygwin.com/) shell with git intallation from cygwin, but the git CLI provided on git home page is easier to install, make your own choice
+> I prefer using [cygwin](https://www.cygwin.com/) shell with git installation from cygwin, but the git CLI provided on git home page is easier to install, make your own choice
 
 ## Apache Ant
 
 We have provided set of Apache ant scripts to automate various task for Release and SCM management of Informatica CLoud development assets.
-See [IPD SCM managemnt project doc](../icrt/com.informatica.ipd/doc/README.md)
-Ant is included with above distribution of process Developer (eclipse). Nevertheless, it is benefficial that you setup and on you system to be available from shell on your system.
-Download latest verion of [Apache Ant](http://ant.apache.org/)
+See [IPD SCM management project doc](../icrt/com.informatica.ipd/doc/README.md)
+Ant is included with above distribution of process Developer (eclipse). Nevertheless, it is beneficial that you setup Ant on you system to be available from shell.
+Download latest version of [Apache Ant](http://ant.apache.org/)
 
 ## Java JDK
 
@@ -104,22 +107,24 @@ Steps based on this [guide](https://git-scm.com/book/en/v2/Getting-Started-First
 8. Add your key to the list of access keys
 9. CD to `cd ~/git_repos/ipaas-integration` and verify connection by using `git pull` command
 10. Git client will ask you for your private key passphrase and display similar output to this
+
     ```shell
     $ git pull
     Enter passphrase for key '~/.ssh/id_rsa':
     Already up to date.
     ```
 
-Now you should be able to operate with git and make commits and push changes to orgin repoistory in visualstudio.com
+Now you should be able to operate with git and make commits and push changes to origin repository
 
-In addition ypu can add follwoing useful aliases to you git config
+In addition ypu can add following useful aliases to you git config
 
 ```shell
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-git config --global alias.changed = "git diff --name-only"
+git config --global alias.changed "diff --stat"
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.up rebase
+git config --global alias.alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ / | sort"
 ```

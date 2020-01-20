@@ -2,21 +2,21 @@
 
 <!-- MarkdownTOC -->
 
+- [Informatica Secure Agent Installation !Logo](#informatica-secure-agent-installation-logo)
 - [Pre-Requisites](#pre-requisites)
-    - [Install Secure Agent](#install-secure-agent)
-        - [Download the Secure Agent](#download-the-secure-agent)
-            - [APP3 pod](#app3-pod)
-            - [IICS NA1 PODS](#iics-na1-pods)
-        - [Install Secure Agent](#install-secure-agent-1)
-        - [Create Agent Connection User](#create-agent-connection-user)
-        - [Initialize Secure Agent and register to your org](#initialize-secure-agent-and-register-to-your-org)
-        - [Register the Agent](#register-the-agent)
+  - [Install Secure Agent](#install-secure-agent)
+    - [Download the Secure Agent](#download-the-secure-agent)
+      - [IICS NA1 PODS](#iics-na1-pods)
+    - [Install Secure Agent](#install-secure-agent-1)
+    - [Create Agent Connection User](#create-agent-connection-user)
+    - [Initialize Secure Agent and register to your org](#initialize-secure-agent-and-register-to-your-org)
+    - [Register the Agent](#register-the-agent)
 - [Install Secure Agent as a Daemon](#install-secure-agent-as-a-daemon)
-    - [Setup as a Service using systemd](#setup-as-a-service-using-systemd)
-        - [Start and Stop service](#start-and-stop-service)
-    - [Install Agent as a Service Using init.d](#install-agent-as-a-service-using-initd)
-        - [Start and Stop service](#start-and-stop-service-1)
-        - [Example Output](#example-output)
+  - [Setup as a Service using systemd](#setup-as-a-service-using-systemd)
+    - [Start and Stop service](#start-and-stop-service)
+  - [Install Agent as a Service Using init.d](#install-agent-as-a-service-using-initd)
+    - [Start and Stop service](#start-and-stop-service-1)
+    - [Example Output](#example-output)
 
 <!-- /MarkdownTOC -->
 
@@ -136,7 +136,7 @@ Create User that will be used to register connect secure agent to Informatica Cl
 `consoleAgentManager` is a tool used to configure and manage agent settings, it is located in the `<agent_home>/apps/agentcore` directory.
 You can use it to manage various settings and initialize the agent.
 
-<pre>
+```text
 /home/iclabinfaagent/apps/agentcore $ ./consoleAgentManager.sh
 JAVA_HOME=/home/iclab/infaagent/apps/agentcore/../../jre
 Console Agent Manager
@@ -184,7 +184,7 @@ Remove all applications from the agent.
 
 configureProxy
 Configures proxy settings with proxyHost proxyPort proxyUsername proxyPassword passed as arguments. The proxyUsername and proxyPassword arguments are optional.
-</pre>
+```
 
 ### Register the Agent
 

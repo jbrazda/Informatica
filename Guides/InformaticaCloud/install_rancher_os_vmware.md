@@ -30,7 +30,7 @@ http://rancher.com/docs/os/running-rancheros/server/install-to-disk/
     #         dhcp: false
     ```
 
-7. Upload the created yaml file using `scp cloud-config.yml rancher@<ipof the VM after boot>` (use passord previously updated by sudo)
+7. Upload the created yaml file using `scp cloud-config.yml rancher@<ipof the VM after boot>` (use password previously updated by sudo)
 
     ```text
     $ scp cloud-config.yml rancher@192.168.106.129:.
