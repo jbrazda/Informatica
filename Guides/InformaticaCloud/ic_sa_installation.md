@@ -36,10 +36,10 @@ Run
 df -kh
 ```
 
-Make sure that at least 1.5 GB is available to Secure Agent
+Make sure that at least 15 GB is available to Secure Agent
 
 More available space may be needed if local file system will be used to stage flat files or other data locally (data lookups, caching, etc.)
-In such  case plan sizing of file system and its usage monitoring accordingly.
+In such case plan sizing of file system and its usage monitoring accordingly.
 
 Make sure that the Hostname of the Machine resolves correctly to IP and vice versa
 

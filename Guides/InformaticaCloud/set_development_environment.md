@@ -13,6 +13,7 @@
   - [After Installation of the tools (your first Login to the Maintenance Machine)](#after-installation-of-the-tools-your-first-login-to-the-maintenance-machine)
   - [Setup SSH key](#setup-ssh-key)
   - [Setup your Git Client](#setup-your-git-client)
+- [Recommended VS Code plugins](#recommended-vs-code-plugins)
 
 <!-- /MarkdownTOC -->
 
@@ -42,7 +43,7 @@ Use following [detailed guide](install_process_developer.md) if you installing P
 Good text editor that supports XML,xQuery, markdown editing and has git support if desired
 
 - [Sublime Text 3](https://www.sublimetext.com)
-- [Visual Studio Code](https://code.visualstudio.com)
+- [Visual Studio Code](https://code.visualstudio.com) (my current favorite editor)
 - [Atom](https://atom.io)
 
 ## Git Client
@@ -73,7 +74,7 @@ We highly recommend to install JDK on short path with no spaces (do not use Prog
 Use something like
 
 - `C:\infa\eclipse\`
-- `C:\infa\java\jdk_1.7`
+- `C:\infa\java\jdk_1.8`
 
 ## After Installation of the tools (your first Login to the Maintenance Machine)
 
@@ -127,4 +128,72 @@ git config --global alias.co checkout
 git config --global alias.st status
 git config --global alias.up rebase
 git config --global alias.alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ / | sort"
+```
+
+# Recommended VS Code plugins
+
+VS Code is very useful environment for many aspects of the Informatica CLoud Development Scenarios, I highly recommend to use Sync Settings Plugin to synchronize the Configuration across different machines via Github Gists.
+See [Sync Settings](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+
+Another good way to quickly install set of plugins is this migration [method](https://stackoverflow.com/questions/35773299/how-can-you-export-the-visual-studio-code-extension-list)
+I also use number other extensions related to Markdown, XML, xQuery Editing and syntax support.
+
+Here is my current list of extensions
+```shell
+code --install-extension adashen.vscode-tomcat
+code --install-extension AlanWalk.markdown-navigation
+code --install-extension AlanWalk.markdown-toc
+code --install-extension alefragnani.project-manager
+code --install-extension blackmist.LinkCheckMD
+code --install-extension buianhthang.xml2json
+code --install-extension christian-kohler.path-intellisense
+code --install-extension codezombiech.gitignore
+code --install-extension csholmq.excel-to-markdown-table
+code --install-extension cssho.vscode-svgviewer
+code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension donjayamanne.git-extension-pack
+code --install-extension donjayamanne.githistory
+code --install-extension DotJoshJohnson.xml
+code --install-extension DougFinke.vscode-pandoc
+code --install-extension eamodio.gitlens
+code --install-extension fcrespo82.markdown-table-formatter
+code --install-extension felipecaputo.git-project-manager
+code --install-extension GrapeCity.gc-excelviewer
+code --install-extension heaths.vscode-guid
+code --install-extension hubertstrk.pgsql-html
+code --install-extension jakebathman.mysql-syntax
+code --install-extension kohkimakimoto.vscode-mac-dictionary
+code --install-extension kontrail.vscode-svg-dev
+code --install-extension marvinhagemeister.theme-afterglow-remastered
+code --install-extension mechatroner.rainbow-csv
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-mssql.mssql
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension mycelo.oracle-plsql
+code --install-extension nickheap.vscode-ant
+code --install-extension nidu.copy-json-path
+code --install-extension pedroguerra.ant-tree-viewer
+code --install-extension redhat.java
+code --install-extension redhat.vscode-yaml
+code --install-extension RomanPeshkov.vscode-text-tables
+code --install-extension salesforce.salesforcedx-vscode
+code --install-extension salesforce.salesforcedx-vscode-apex
+code --install-extension salesforce.salesforcedx-vscode-apex-debugger
+code --install-extension salesforce.salesforcedx-vscode-apex-replay-debugger
+code --install-extension salesforce.salesforcedx-vscode-core
+code --install-extension salesforce.salesforcedx-vscode-lightning
+code --install-extension salesforce.salesforcedx-vscode-lwc
+code --install-extension salesforce.salesforcedx-vscode-visualforce
+code --install-extension Shan.code-settings-sync
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension streetsidesoftware.code-spell-checker-czech
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+code --install-extension weijunyu.vscode-json-path
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension ziyasal.vscode-open-in-github
 ```

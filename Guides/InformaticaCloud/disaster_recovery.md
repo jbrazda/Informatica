@@ -1,22 +1,23 @@
-# Disaster Recovery - Informatica Cloud
+# IICS Disaster Recovery - Informatica Cloud
 
 <!-- MarkdownTOC -->
 
+- [IICS Disaster Recovery - Informatica Cloud](#iics-disaster-recovery---informatica-cloud)
 - [Informatica Cloud Architecture](#informatica-cloud-architecture)
-    - [Informatica Cloud Components](#informatica-cloud-components)
-    - [Informatica Cloud Secure Agent](#informatica-cloud-secure-agent)
-    - [Cloud Integration Hub](#cloud-integration-hub)
-    - [Informatica Cloud Repository](#informatica-cloud-repository)
-    - [Informatica Cloud Security](#informatica-cloud-security)
+  - [Informatica Cloud Components](#informatica-cloud-components)
+  - [Informatica Cloud Secure Agent](#informatica-cloud-secure-agent)
+  - [Cloud Integration Hub](#cloud-integration-hub)
+  - [Informatica Cloud Repository](#informatica-cloud-repository)
+  - [Informatica Cloud Security](#informatica-cloud-security)
 - [Informatica Cloud Disaster Recovery](#informatica-cloud-disaster-recovery)
-    - [Informatica Cloud Components](#informatica-cloud-components-1)
-    - [Informatica Cloud Secure Agent](#informatica-cloud-secure-agent-1)
-        - [Example Regional Layout With "Hot" Standby](#example-regional-layout-with-hot-standby)
-        - [Example Regional Layout With "Cold" Standby](#example-regional-layout-with-cold-standby)
-        - [Data Integration Service \(CDI\)](#data-integration-service-cdi)
-        - [Informatica Cloud Real Time \(CAI\)](#informatica-cloud-real-time-cai)
-            - [Outage of the Single Agent Primary group](#outage-of-the-single-agent-primary-group)
-            - [Full Failure of a Primary Site](#full-failure-of-a-primary-site)
+  - [Informatica Cloud Components](#informatica-cloud-components-1)
+  - [Informatica Cloud Secure Agent](#informatica-cloud-secure-agent-1)
+    - [Example Regional Layout With "Hot" Standby](#example-regional-layout-with-hot-standby)
+    - [Example Regional Layout With "Cold" Standby](#example-regional-layout-with-cold-standby)
+    - [Data Integration Service (CDI)](#data-integration-service-cdi)
+    - [Informatica Cloud Real Time (CAI)](#informatica-cloud-real-time-cai)
+      - [Outage of the Single Agent Primary group](#outage-of-the-single-agent-primary-group)
+      - [Full Failure of a Primary Site](#full-failure-of-a-primary-site)
 
 <!-- /MarkdownTOC -->
 

@@ -9,6 +9,7 @@ It is tested on following OS Versions but it should work on any macOS 10.12.x or
 - macOS 10.13.4 (17E199)
 - macOS 10.13.6 (17G65)
 - macOS 10.14.5 (18F132)
+- macOS 10.15.3 (19D76)
 - Windows 10
 
 Eclipse for RCP and RAP Developers
@@ -23,16 +24,18 @@ Process Developer Component Versions:
 
 <!-- MarkdownTOC -->
 
-- [Download Installers](#download-installers)
+- [Install Process Developer](#install-process-developer)
+  - [Download Installers](#download-installers)
     - [Direct Links](#direct-links)
-- [Installation alternatives](#installation-alternatives)
+  - [Installation alternatives](#installation-alternatives)
     - [Direct Links - Eclipse Download](#direct-links---eclipse-download)
-- [Installing on Linux](#installing-on-linux)
-- [Installing on Mac OS](#installing-on-mac-os)
-- [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
+  - [Installing on Linux Using Oracle JDK](#installing-on-linux-using-oracle-jdk)
+  - [Installing on Linux Using Open JDK (Ubuntu)](#installing-on-linux-using-open-jdk-ubuntu)
+  - [Installing on Mac OS](#installing-on-mac-os)
+  - [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
     - [Installing](#installing)
     - [Running the Designer](#running-the-designer)
-- [Process Developer Issues on macOS and Linux](#process-developer-issues-on-macos-and-linux)
+  - [Process Developer Issues on macOS and Linux](#process-developer-issues-on-macos-and-linux)
     - [XQuery Interpreter Fails with ClassNotFoundException](#xquery-interpreter-fails-with-classnotfoundexception)
 
 <!-- /MarkdownTOC -->
@@ -42,7 +45,7 @@ Process Developer Component Versions:
 Informatica Process Developer is distributed in two ways
 
 1. Windows Installer which Includes JRE, Eclipse And Informatica Process Developer plug-in
-2. Standalone plug-ins in zip archive 
+2. Standalone plug-ins in zip archive
 
 Windows distribution is only 32 bit which limits your eclipse runtime use to relatively small JVM size. You should prefer plug-in based distribution.
 To Download Process Developer go to you Informatica Cloud Org Console/ Process Designer and select the Forms Tab on the left Navigation pane
