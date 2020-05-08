@@ -52,8 +52,8 @@ To Download Process Developer go to you Informatica Cloud Org Console/ Process D
 
 ### Direct Links
 
-- [Windows Installer](http://doc.rt.informaticacloud.com/cpd/Cloud_Process_Developer_windows.zip)
-- [Eclipse Plug-ins](http://doc.rt.informaticacloud.com/cpd/Cloud_Process_Developer_plugins.zip)
+- [Windows Installer](https://www.dropbox.com/s/0dyytqvnhj9gqm0/Cloud_Process_Developer_windows.zip?dl=1)
+- [Eclipse Plug-ins](https://www.dropbox.com/s/tn7g48ntl6iy8k7/Cloud_Process_Developer_plugins.zip?dl=1)
 
 ## Installation alternatives
 
