@@ -29,8 +29,10 @@ Process Developer Component Versions:
     - [Direct Links](#direct-links)
   - [Installation alternatives](#installation-alternatives)
     - [Direct Links - Eclipse Download](#direct-links---eclipse-download)
+  - [Installing Open JDK on Windows](#installing-open-jdk-on-windows)
   - [Installing on Linux Using Oracle JDK](#installing-on-linux-using-oracle-jdk)
   - [Installing on Linux Using Open JDK (Ubuntu)](#installing-on-linux-using-open-jdk-ubuntu)
+  - [Example eclipse.ini](#example-eclipseini)
   - [Installing on Mac OS](#installing-on-mac-os)
   - [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
     - [Installing](#installing)
@@ -67,15 +69,39 @@ You will need a specific version of Eclipse to install plug-ins based distributi
 ### Direct Links - Eclipse Download
 
 - Windows [32-bit][eclipse win 32-bit] [64-bit][eclipse win 64-bit]
-- Mac [32-bit][eclipse mac 32-bit] [64-bit][eclipse mac 64-bit]
+- Mac [64-bit][eclipse mac 64-bit]
 - Linux [32-bit][eclipse linux 32-bit] [64-bit][eclipse linux 64-bit]
 
 You will also need to download and install JDK 1.7 or newer
 
-Download and install JDK specific to your system from [Oracle Website][oracle jdk download]
-Or install corresponding version of Open JDK which is also supported
+Download and install JDK specific to your system from 
+- [Oracle Website][oracle jdk download]
+- [Open JDK](https://jdk.java.net/)
 
 Use a specific installation for your system
+
+## Installing Open JDK on Windows
+
+Install [Open JDK](https://jdk.java.net/)
+Direct [download](https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_windows-x64_bin.zip)
+
+I install JDK to /c/opt/java/jdk-15.0.2
+
+Run following your have [msys2+packages](setup_tools_windows.md#install-open-jdk) installed
+
+Bash/zsh
+
+```shell
+curl -o ~/Downloads/openjdk-15.0.2_windows-x64_bin.zip https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_windows-x64_bin.zip
+unzip -d /c/opt/java ~/Downloads/openjdk-15.0.2_windows-x64_bin.zip
+```
+
+PowerShell
+
+```powershell
+(New-Object Net.WebClient).DownloadFile("https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_windows-x64_bin.zip", "$env:USERPROFILE\Downloads\openjdk-15.0.2_windows-x64_bin.zip")
+Expand-Archive "$env:USERPROFILE\Downloads\openjdk-15.0.2_windows-x64_bin.zip" -DestinationPath C:\opt\java\library
+```
 
 ## Installing on Linux Using Oracle JDK
 
@@ -108,8 +134,7 @@ Use a specific installation for your system
 8. Unzip the plug-ins
 9. Install the plug-ins following the [Informatica Cloud Process Developer Plug-in Installation](#informatica-cloud-process-developer-plug-in-installation)
 
-
-Example eclipse.ini
+## Example eclipse.ini
 
 ```text
 -startup
