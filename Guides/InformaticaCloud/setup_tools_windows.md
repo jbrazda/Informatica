@@ -13,7 +13,7 @@
   - [Install Open JDK](#install-open-jdk)
   - [Install Process Developer](#install-process-developer)
   - [Install Apache Ant](#install-apache-ant)
-  - [Install](#install)
+  - [Summary](#summary)
 
 <!-- /TOC -->
 
@@ -447,7 +447,7 @@ export PATH="/c/opt/java/library/basex/bin:$PATH"
 
 
 # History stuff
-HISTORY_IGNORE="&:[bf]g:exit:reset:clear:cd ..:ls:lls:lla:ll:ss"
+HISTORY_IGNORE="&:[bf]g:exit:reset:clear:cd *:ls *:lls *:lla *:ll *"
 HISTSIZE=99999
 HISTFILESIZE=999999
 SAVEHIST=$HISTSIZE
@@ -488,7 +488,9 @@ curl -o ~/Downloads/apache-ant-1.9.15-bin.zip https://mirrors.ocf.berkeley.edu/a
 unzip -d /c/opt/java/library ~/Downloads/apache-ant-1.9.15-bin.zip
 ```
 
-## Install
+Make sure you setup `JAVA_HOME` and `ANT_HOME` System Environment VAriables to a corresponding location of your JDK  and and installation locations
+
+## Summary
 
 Now I have the sweet setup I wanted and can additional gnu tools quickly if needed
 

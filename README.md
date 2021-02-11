@@ -11,4 +11,5 @@ This project contains Informatica Cloud Guides and Articles
     - [Environment Setup for ICAI Development](Guides/InformaticaCloud/set_development_environment.md)
     - [Configuration Documentation Example](Guides/InformaticaCloud/ICRT_org_configuration.md)
     - [Disaster Recovery](Guides/InformaticaCloud/disaster_recovery.md)
+    - [Setup Environment - Windows](Guides/InformaticaCloud/setup_tools_windows.md)
     - [Install Process Developer](Guides/InformaticaCloud/install_process_developer.md)

@@ -132,7 +132,7 @@ git config --global alias.alias "! git config --get-regexp ^alias\. | sed -e s/^
 
 # Recommended VS Code plugins
 
-VS Code is very useful environment for many aspects of the Informatica CLoud Development Scenarios, I highly recommend to use Sync Settings Plugin to synchronize the Configuration across different machines via Github Gists.
+VS Code is very useful environment for many aspects of the Informatica CLoud Development Scenarios, I highly recommend to use built in Sync or Sync Settings Plugin to synchronize the Configuration across different machines via Github Gists.
 See [Sync Settings](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 
 Another good way to quickly install set of plugins is this migration [method](https://stackoverflow.com/questions/35773299/how-can-you-export-the-visual-studio-code-extension-list)
