@@ -458,4 +458,6 @@ if [ -e "${HOME}/.aliases" ] ; then
 fi
 ```
 
-Now I have the sweet setup I wanted and can additional gnu tools if needed
+Now I have the sweet setup I wanted and can additional gnu tools quickly if needed
+
+![Windows terminal](images/windows_terminal.png)
