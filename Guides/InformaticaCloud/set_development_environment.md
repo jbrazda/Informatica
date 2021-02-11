@@ -54,7 +54,7 @@ We recommend to familiarize yourself with git as VCS of choice for many its adva
 Although there is a range range of visual git clients available  including Informatica Process Developer we recommend to familiarize yourself with git command line CLI
 Install git Client - there is a number of choices, see https://git-scm.com/
 
-> I prefer using [cygwin](https://www.cygwin.com/) shell with git installation from cygwin, but the git CLI provided on git home page is easier to install, make your own choice
+> I preferred using [cygwin](https://www.cygwin.com/) in the past but recently switched from Mac back to windows a here is my new [Windows Setup Guide](setup_tools_windows.md)
 
 ## Apache Ant
 
