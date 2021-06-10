@@ -2,7 +2,7 @@
 
 <!-- MarkdownTOC -->
 
-- [Informatica Cloud Naming Conventions !Logo](#informatica-cloud-naming-conventions-logo)
+- [Informatica Cloud Naming Conventions !Logo](#informatica-cloud-naming-conventions-)
   - [Agents and Agent Groups](#agents-and-agent-groups)
     - [Secure Agent](#secure-agent)
       - [Naming Agent Groups](#naming-agent-groups)
@@ -17,6 +17,7 @@
     - [Mappings](#mappings)
       - [Name Structure](#name-structure-3)
       - [Examples](#examples-1)
+      - [Mapping Transformations](#mapping-transformations)
     - [Task Flows](#task-flows)
       - [Name Structure](#name-structure-4)
       - [Examples](#examples-2)
@@ -131,7 +132,7 @@ Using upper case for groups makes it easier to know if the Design object referen
 ```
 
 | Example            | Name Structure Variant                          |
-|--------------------|-------------------------------------------------|
+| ------------------ | ----------------------------------------------- |
 | na_aws_east_01     | `<geography>_<hosting>_<region>_<agent_number>` |
 | na_east_sm_suse_01 | `<geography>_<hosting>_<region>_<agent_number>` |
 | na_rt_01           | `<geography>_<rt_or_batch>_<agent_number>`      |
@@ -213,6 +214,38 @@ M_<SOURCE>_<ENTITY>_to_<TARGET>_<NAME>_<VERSION>
 
 - M_CDI_Accounts_Contacts_to_SFDC
 - M_CDI_Accounts_FF_incremental
+
+#### Mapping Transformations
+
+| Transformation Objects | Naming Convention                                                                    |
+|------------------------|--------------------------------------------------------------------------------------|
+| Source                 | `src_<ObjectName>`                                                                   |
+| Target                 | `tgt_<ObjectName>`                                                                   |
+| Aggregator             | `agg_<BriefDescription>`                                                             |
+| Cleanse                | `cln_<BriefDescription>`                                                             |
+| Data Masking           | `dmsk_<BriefDescription>`                                                            |
+| Deduplicate            | `dedup_<BriefDescription>`                                                           |
+| Expression             | `exp_<BriefDescription>`                                                             |
+| Filter                 | `fil_<BriefDescription>`                                                             |
+| Hierarchy Builder      | `hrbld_<BriefDescription >`                                                          |
+| Hierarchy Parser       | `hpar_<BriefDescription >`                                                          |
+| Java                   | `jva_<BriefDescription >`                                                            |
+| Joiner                 | `jnr_<SourceTable/FileName1_SourceTable/FileName2>` - Example:  `jnr_Person_Address` |
+| Lookup                 | `lkp_<Lookup Table Name>`                                                            |
+| Mapplet                | `mplt_<BriefDescription>`                                                            |
+| Normalizer             | `nrm_<source name>`                                                                  |
+| Parse                  | `par_<source name>`                                                                  |
+| Rank                   | `rnk_<BriefDescription>`                                                             |
+| Router                 | `rtr_<BriefDescription>`                                                             |
+| Rule Specification     | `rspec_<BriefDescription>`                                                           |
+| Sequence Generator     | `seq_<BriefDescription>`                                                             |
+| Sorter                 | `srt_<BriefDescription>`                                                             |
+| SQL                    | `sql_<procedure name_or_statement_name>`                 |
+| Structure Parser       | `spar_<BriefDescription>`                                                           |
+| Transaction Control    | `tc_<BriefDescription>`                                                              |
+| Union                  | `un_<BriefDescription>`                                                              |
+| Verifier               | `vrf_<BriefDescription>`                                                             |
+| Web Services           | `ws_<BriefDescription>`                                                              |
 
 ### Task Flows
 

@@ -27,7 +27,7 @@ Informatica Cloud is an on-demand subscription service that provides data integr
 
 ## Informatica Cloud Components
 
-A multi-tenant cloud based batch and real-time integration platform that combines application and data integration and features pre-built connectors to cloud, on premise, mobile, and social data sources, as well as cloud Hosted Secure Agents to run Data Integration tasks in the cloud, Cloud Integration Hub and
+A multi-tenant cloud based batch and real-time integration platform that combines application and data integration and features pre-built connectors to cloud, on premise, mobile, and social data sources, as well as cloud Hosted Secure Agents to run Data Integration tasks in the cloud, Cloud Integration Hub and Secure Agents.
 
 ## Informatica Cloud Secure Agent
 
@@ -51,6 +51,7 @@ protect data. It uses authentication and encryption to ensure that data is secur
 ## Informatica Cloud Components
 
 Informatica Cloud Components are managed and operated by Informatica as a hosted multi-tenant system. Informatica takes necessary steps to maintain service availability, disaster recovery in accordance with industry practices.
+Informatica Cloud Hosted Components take care of High availability and disaster recovery procedures which should be transparent to IICS IPaaS Users.
 
 Secure Agents are the components that are hosted and managed by the Customers either on premise or in the cloud hosted environments.
 
@@ -64,6 +65,7 @@ Informatica Cloud Secure Agent is composed of several Components
 - Agent core - Manages agent runtime, agent and  its components updates and configuration managed from the Cloud Administration console.
 - CDI (Cloud Data Integration Integration Service) - provides technology based on ETL and large amount of connectors, DAta Quality and range of Data integration use cases
 - CAI (Cloud Application Integration) - formerly known as ICRT (Informatica Cloud Real Time) is an integration component responsible for event-driven Application Integration utilizing Process Engine (BPM) technology
+- Other Optional Components depending on the licenses and configuration of the org
 
 Each component of the system has its own characteristics and specific procedures for disaster recovery
 
