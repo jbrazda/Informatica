@@ -2,7 +2,7 @@
 
 <!-- MarkdownTOC -->
 
-- [Informatica Secure Agent Installation !Logo](#informatica-secure-agent-installation-logo)
+- [Informatica Secure Agent Installation !Logo](#informatica-secure-agent-installation-)
 - [Pre-Requisites](#pre-requisites)
   - [Install Secure Agent](#install-secure-agent)
     - [Download the Secure Agent](#download-the-secure-agent)
@@ -288,7 +288,7 @@ Note that you can see all other child processes started by Agent core
 ```text
 [iclab@iclab] [Sep 07, 2017 17:58:34]   /home/iclab/infaagent/apps/agentcore
 $ sudo systemctl status infaagent
-* infaagent.service - Informatica Secire Agent Service
+* infaagent.service - Informatica Secure Agent Service
    Loaded: loaded (/etc/systemd/system/infaagent.service; enabled; vendor preset: enabled)
    Active: active (running) since Mon 2017-09-18 12:37:04 EDT; 2min 9s ago
   Process: 62748 ExecStop=/home/iclab/infaagent/apps/agentcore/infaagent shutdown (code=exited, status=0/SUCCESS)
@@ -320,9 +320,9 @@ $ sudo systemctl status infaagent
            ├─63615 /bin/sh ./ics_status.sh
            └─63618 /home/iclab/infaagent/jre/bin/java -Xrs -Xms8m -Xmx256m -classpath ./lib/*: -Dlog4j.configuration=file:lib/log4j.properties com.informatica.saas.di.app.script.StatusScript
 
-Sep 18 12:37:04 iclab systemd[1]: Stopped Informatica Secire Agent Service.
-Sep 18 12:37:04 iclab systemd[1]: Starting Informatica Secire Agent Service...
-Sep 18 12:37:04 iclab systemd[1]: Started Informatica Secire Agent Service.
+Sep 18 12:37:04 iclab systemd[1]: Stopped Informatica Secure Agent Service.
+Sep 18 12:37:04 iclab systemd[1]: Starting Informatica Secure Agent Service...
+Sep 18 12:37:04 iclab systemd[1]: Started Informatica Secure Agent Service.
 
 ```
 
@@ -335,7 +335,7 @@ See a documentation
 
 Following method should work universally on any distribution
 
-- Crete file or copy [examples/agent.initd.sh](examples/agent.initd.sh) to  /etc/initt.d as `infaagent`
+- Crete file or copy [examples/agent.initd.sh](examples/agent.initd.sh) to  /etc/init.d as `infaagent`
 - Make sure that you edit the `WORK_DIR` variable in the file to point to actual full path to agentcore component
 - Make that you update the `DAEMON_USER` variable to refer to a user who owns and runs the secure agent (note that the secure agent can't run as root)
 
@@ -384,10 +384,10 @@ Feb 27 12:09:01 iclab systemd[1]: Started LSB: Start InfaAgent..
 # Description:       Start the Informatica Secure Agent.
 ### END INIT INFO
 
-# Specify Dierectory where is the Agent Installed
+# Specify Directory where is the Agent Installed
 WORK_DIR=/home/iclab/infaagent/apps/agentcore
-# Specify user unde which tghe agent will run
-# this should be a user that owns the dir wher the agent is installed
+# Specify user under which the agent will run
+# this should be a user that owns the dir where the agent is installed
 # Secure Agent ca't be run as root
 DAEMON_USER='iclab'
 
