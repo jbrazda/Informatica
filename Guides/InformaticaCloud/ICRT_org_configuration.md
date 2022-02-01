@@ -95,11 +95,11 @@ Example QA Orgs Layout
 
 ## PROD
 
-| Parameter         | Value                                                                       |
-|-------------------|-----------------------------------------------------------------------------|
-| Console URL       | https://ps1w2-ics.rt.informaticacloud.com/activevos/[ORGID]                 |
-| SOAP services URL | https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/[ORGID]      |
-| REST services URL | https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/REST/[ORGID] |
+| Parameter         | Value                                       |
+| ----------------- | ------------------------------------------- |
+| Console URL       | [CAI Console CLoud][cai-console-cloud]      |
+| SOAP services URL | [CAI Services URL][cai-services-cloud]      |
+| REST services URL | [CAI REST Services URL][cai-services-cloud] |
 
 ### Prod Agents
 
@@ -111,7 +111,7 @@ Example PROD orgs layout
 | NA (2)                         |           |
 | -- na_agent_01                 |           |
 | -- na_agent_02                 |           |
-| NA_DR (2)                      |           |
+| NA_DR (2)                      |           |
 | -- na_agent_dr_01              |           |
 | -- na_agent_dr_02              |           |
 | EMEA (2)                       |           |
@@ -202,64 +202,81 @@ mkdir -p /nfs/ipaas/data/hadoop
 
 #### Cloud Server QA
 
-| URN                         | VALUE                                     | Comment                                                              |
-|-----------------------------|-------------------------------------------|----------------------------------------------------------------------|
-| ae:agent-response-mechanism | async                                     | This optional parameter enables asynchronous communication to agents |
-| urn:environment:name        | Cloud Server QA                           | Defines Environment name for Reporting                               |
-| ae:base-uri                 | https://ps1w2-ics.rt.informaticacloud.com | Base URL of informatica cloud Pod                                    |
+| URN                                       | VALUE                                          | Comment                                                              |
+| ----------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------- |
+| ae:agent-response-mechanism               | async                                          | This optional parameter enables asynchronous communication to agents |
+| urn:environment:name                      | Cloud Server QA                                | Defines Environment name for Reporting                               |
+| ae:base-uri                               | `https://ps1w2-ics.rt.informaticacloud.com`    | Base URL of informatica cloud Pod                                    |
+| urn:environment:orgid                     | \<ORGID\> i.e. adoG8hzbqeIgKuWL6vhWQJ          | Org. ID                                                              |
+| urn:ic:faultAlerts:configuration:provider | gitlab                                         | Fault alert service Configuration Provider                           |
+| urn:ic:faultAlerts:configuration:url      | https://gitlab.com/api/v4/snippets/1902616/raw | Fault Alert Service Config URL                                       |
+| urn:ic:faultAlerts:falback:email          | dl_alerts@acme.com                             | Fault alert Fallback Email                                           |
 
 #### Cloud Server PROD
 
-| URN                         | VALUE                                     | Comment                                                              |
-|-----------------------------|-------------------------------------------|----------------------------------------------------------------------|
-| ae:agent-response-mechanism | async                                     | This optional parameter enables asynchronous communication to agents |
-| urn:environment:name        | Cloud Server PROD                         | Defines Environment name for Reporting                               |
-| ae:base-uri                 | https://ps1w2-ics.rt.informaticacloud.com | Base URL of informatica cloud Pod                                    |
+| URN                                       | VALUE                                          | Comment                                                              |
+| ----------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------- |
+| ae:agent-response-mechanism               | async                                          | This optional parameter enables asynchronous communication to agents |
+| urn:environment:name                      | Cloud Server PROD                              | Defines Environment name for Reporting                               |
+| ae:base-uri                               | `https://ps1w2-ics.rt.informaticacloud.com`    | Base URL of informatica cloud Pod                                    |
+| urn:environment:orgid                     | \<ORGID\> i.e. adoG8hzbqeIgKuWL6vhWQJ          | Org. ID                                                              |
+| urn:ic:faultAlerts:configuration:provider | gitlab                                         | Fault alert service Configuration Provider                           |
+| urn:ic:faultAlerts:configuration:url      | https://gitlab.com/api/v4/snippets/1902616/raw | Fault Alert Service Config URL                                       |
+| urn:ic:faultAlerts:falback:email          | dl_alerts@acme.com                             | Fault alert Fallback Email                                           |
 
 ### Agents DEV
 
-| URN                          | VALUE                                           | Comment                                                 |
-|------------------------------|-------------------------------------------------|---------------------------------------------------------|
-| ae:internal-reporting        | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
-| ae:task-inbox                | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
-| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com       | Base URL of informatica cloud Pod                       |
-| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
-| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
-| urn:environment:name         | <AGENT_NAME>  i.e.: na_agent_01                 | must match the Actual agent name in the Org. definition |
-| urn:environment:orgid        | \<ORGID\> i.e. 001WOZ                           | Org. ID                                                 |
-| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
-| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
-| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
+| URN                                       | VALUE                                           | Comment                                                 |
+| ----------------------------------------- | ----------------------------------------------- | ------------------------------------------------------- |
+| ae:internal-reporting                     | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
+| ae:task-inbox                             | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
+| ae:base-uri                               | `https://ps1w2-ics.rt.informaticacloud.com`     | Base URL of informatica cloud Pod                       |
+| java:comp/env/jdbc/ActiveVOS              | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
+| urn:aeHostEnvironmentRuntime              | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
+| urn:environment:name                      | <AGENT_NAME>  i.e.: go1_agent_01                | must match the Actual agent name in the Org. definition |
+| urn:environment:orgid                     | \<ORGID\> i.e. adoG8hzbqeIgKuWL6vhWQJ           | Org. ID                                                 |
+| urn:ic:faultAlerts:configuration:provider | gitlab                                          | Fault alert service Configuration Provider              |
+| urn:ic:faultAlerts:configuration:url      | https://gitlab.com/api/v4/snippets/1902616/raw  | Fault Alert Service Config URL                          |
+| urn:ic:faultAlerts:falback:email          | dl_alerts@acme.com                              | Fault alert Fallback Email                              |
+| urn:acme:api                              | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
+| urn:acme:api:authorization                | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
+| urn:knox:api:staging:dir                  | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
 
 #### Agents QA
 
-| URN                          | VALUE                                           | Comment                                                 |
-|------------------------------|-------------------------------------------------|---------------------------------------------------------|
-| ae:internal-reporting        | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
-| ae:task-inbox                | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
-| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com       | Base URL of informatica cloud Pod                       |
-| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
-| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
-| urn:environment:name         | \<AGENT_NAME\>  i.e.: na_agent_01               | must match the Actual agent name in the Org. definition |
-| urn:environment:orgid        | \<ORGID\> i.e. 001WOZ                           | Org. ID                                                 |
-| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
-| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
-| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
+| URN                                       | VALUE                                           | Comment                                                 |
+| ----------------------------------------- | ----------------------------------------------- | ------------------------------------------------------- |
+| ae:internal-reporting                     | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
+| ae:task-inbox                             | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
+| ae:base-uri                               | `https://ps1w2-ics.rt.informaticacloud.com`     | Base URL of informatica cloud Pod                       |
+| java:comp/env/jdbc/ActiveVOS              | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
+| urn:aeHostEnvironmentRuntime              | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
+| urn:environment:name                      | \<AGENT_NAME\>  i.e.: na_agent_01               | must match the Actual agent name in the Org. definition |
+| urn:environment:orgid                     | \<ORGID\> i.e. adoG8hzbqeIgKuWL6vhWQJ           | Org. ID                                                 |
+| urn:ic:faultAlerts:configuration:provider | gitlab                                          | Fault alert service Configuration Provider              |
+| urn:ic:faultAlerts:configuration:url      | https://gitlab.com/api/v4/snippets/1902616/raw  | Fault Alert Service Config URL                          |
+| urn:ic:faultAlerts:falback:email          | dl_alerts@acme.com                              | Fault alert Fallback Email                              |
+| urn:acme:api                              | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
+| urn:acme:api:authorization                | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
+| urn:knox:api:staging:dir                  | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
 
 #### Agents PROD
 
-| URN                          | VALUE                                           | Comment                                                 |
-|------------------------------|-------------------------------------------------|---------------------------------------------------------|
-| ae:internal-reporting        | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
-| ae:task-inbox                | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
-| ae:base-uri                  | https://ps1w2-ics.rt.informaticacloud.com       | Base URL of informatica cloud Pod                       |
-| java:comp/env/jdbc/ActiveVOS | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
-| urn:aeHostEnvironmentRuntime | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
-| urn:environment:name         | \<AGENT_NAME\>  i.e.: na_agent_01               | must match the Actual agent name in the Org. definition |
-| urn:environment:orgid        | \<ORGID\> i.e. 001WOZ                           | Org. ID                                                 |
-| urn:acme:api                 | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
-| urn:acme:api:authorization   | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
-| urn:knox:api:staging:dir     | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
+| URN                                       | VALUE                                           | Comment                                                 |
+| ----------------------------------------- | ----------------------------------------------- | ------------------------------------------------------- |
+| ae:internal-reporting                     | http://localhost:8080/activevos/internalreports | System Mapping, do not mot modify unless instructed     |
+| ae:task-inbox                             | http://localhost:8080/activevos-central/avc     | System Mapping, do not mot modify unless instructed     |
+| ae:base-uri                               | `https://ps1w2-ics.rt.informaticacloud.com`     | Base URL of informatica cloud Pod                       |
+| java:comp/env/jdbc/ActiveVOS              | java:comp/env/jdbc/ActiveVOS                    | System Mapping, do not mot modify unless instructed     |
+| urn:aeHostEnvironmentRuntime              | avHostEnvironmentRuntimeAccess                  | System Mapping, do not mot modify unless instructed     |
+| urn:environment:name                      | \<AGENT_NAME\>  i.e.: na_agent_01               | must match the Actual agent name in the Org. definition |
+| urn:environment:orgid                     | \<ORGID\> i.e. adoG8hzbqeIgKuWL6vhWQJ           | Org. ID                                                 |
+| urn:ic:faultAlerts:configuration:provider | gitlab                                          | Fault alert service Configuration Provider              |
+| urn:ic:faultAlerts:configuration:url      | https://gitlab.com/api/v4/snippets/1902616/raw  | Fault Alert Service Config URL                          |
+| urn:ic:faultAlerts:falback:email          | dl_alerts@acme.com                              | Fault alert Fallback Email                              |
+| urn:acme:api                              | https://api.acme.com:8443/api/entiy/v1          | Example API URL                                         |
+| urn:acme:api:authorization                | encrypted:wn+c1v7mfSucng5qxvaWCIrMvi49lDyq      | Example API credentials Encrypted                       |
+| urn:knox:api:staging:dir                  | /nfs/ipaas/data/acme/integration_name           | Example configurable path to Staging directory          |
 
 # Process Engine Alerting
 
@@ -294,7 +311,7 @@ mkdir -p /nfs/ipaas/data/hadoop
 ## ICRT Monitoring Thresholds (Agents Only)
 
 see:
-https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monitoring_thresholds.action
+[Monitoring](https://network.informatica.com/onlinehelp/IICS/prod/CAI/en/index.htm#page/cai-aae-monitor/Monitors.html)
 
 | Property to Monitor                       | Level     | Statistic | OP | Value |
 |-------------------------------------------|-----------|-----------|----|-------|
@@ -350,7 +367,7 @@ https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monito
 | TimeZone                 | Default                                            | Database timezone. Use this property if DB and Agent are in different timezones          |
 | __Read Attributes__      |                                                    |                                                                                          |
 | Isolation Level          | None                                               | Specifies the isolation level while reading from source object.                          |
-| Override Isolation Level | No                                                 | Yes No Specifies if the task should proceed if a non-supported isolation level is chosen |
+| Override Isolation Level | No                                                 | Yes/No Specifies if the task should proceed if a non-supported isolation level is chosen |
 | __Write Attributes__     |                                                    |                                                                                          |
 | Number of retries        | 5                                                  | Specifies the number of retries for a closed connection                                  |
 | Retry wait period        | 3                                                  | Specifies the waiting time period in seconds before retrying                             |
@@ -369,7 +386,7 @@ https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monito
 | TimeZone                 | Default                                            | Database timezone. Use this property if DB and Agent are in different timezones          |
 | __Read Attributes__      |                                                    |                                                                                          |
 | Isolation Level          | None                                               | Specifies the isolation level while reading from source object.                          |
-| Override Isolation Level | No                                                 | Yes No Specifies if the task should proceed if a non-supported isolation level is chosen |
+| Override Isolation Level | No                                                 | Yes/No Specifies if the task should proceed if a non-supported isolation level is chosen |
 | __Write Attributes__     |                                                    |                                                                                          |
 | Number of retries        | 5                                                  | Specifies the number of retries for a closed connection                                  |
 | Retry wait period        | 3                                                  | Specifies the waiting time period in seconds before retrying                             |
@@ -395,16 +412,16 @@ https://ps1w2-ics.rt.informaticacloud.com/activevos/001WZP/local/agent_01/monito
 
 # Process Engine Configuration Changes
 
-| Configuration Parameter             | Where                                                                                        | Default Value  | Mondelez Value    |
-|-------------------------------------|----------------------------------------------------------------------------------------------|----------------|-------------------|
-| JVM Memory Parameters "min-heap"    | Cloud Administration/Configure/RuntimeEnvironments/Agent/Process Server/JVM                  | '512M'         | '1G'              |
-| JVM Memory Parameters "max-heap"    | Cloud Administration/Configure/RuntimeEnvironments/Agent/Process Server/JVM                  | '1536M'        | '24G'             |
-| Message size limit                  | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/engine_properties.action | 5242880 (5 MB) | 157286400(150 MB) |
-| Message with attachments size limit | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/engine_properties.action | 5242880 (5 MB) | 157286400(150 MB) |
-| Contribution Cache                  | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/engine_properties.action | 100            | 200               |
-| Deployment Plan Cache:              | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/engine_properties.action | 100            | 200               |
-| Shell Service                       | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/shellcmd_service.action  | disabled       | enabled           |
-| Email Service                       | https://ps1w2-ics.rt.informaticacloud.com/activevos/ORG/local/AGENT/email_service.action     | disabled       | enabled           |
+| Configuration Parameter             | Where                                                                                    | Default Value  | Mondelez Value    |
+| ----------------------------------- | ---------------------------------------------------------------------------------------- | -------------- | ----------------- |
+| JVM Memory Parameters "min-heap"    | Administration/Configure/RuntimeEnvironments/Agent/Process Server/JVM                    | '512M'         | '1G'              |
+| JVM Memory Parameters "max-heap"    | Administration/Configure/RuntimeEnvironments/Agent/Process Server/JVM                    | '1536M'        | '24G'             |
+| Message size limit                  | Application Integration Console/Server Configuration/Agent/Server Settings               | 5242880 (5 MB) | 157286400(150 MB) |
+| Message with attachments size limit | Application Integration Console/Server Configuration/Agent/Server Settings               | 5242880 (5 MB) | 157286400(150 MB) |
+| Contribution Cache                  | Application Integration Console/Server Configuration/Agent/Server Settings               | 100            | 200               |
+| Deployment Plan Cache:              | Application Integration Console/Server Configuration/Agent/Server Settings               | 100            | 200               |
+| Shell Service                       | Application Integration Console/Server Configuration/Agent/System Services/Shell Service | disabled       | enabled           |
+| Email Service                       | Application Integration Console/Server Configuration/Agent/System Services/Email         | disabled       | enabled           |
 
 # SAP BAPI Connector Configuration
 
@@ -418,3 +435,7 @@ In addition the Secure Agent Classpath must be updated
 JAVA_LIBS
 ../bin/rdtm-extra/tpl/sap/sapjco3.jar:../bin/rdtm/javalib/sap/sap-adapter-common.jar
 ```
+
+[cai-console-cloud]: https://na1.ai.dm-us.informaticacloud.com/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processlist/cloud
+[cai-services-cloud]: https://na1.ai.dm-us.informaticacloud.com/active-bpel/services/adoG8hzbqeIgKuWL6vhWQJ
+[cai-rest-cloud]: https://na1.ai.dm-us.informaticacloud.com/active-bpel/services/REST/adoG8hzbqeIgKuWL6vhWQJ

@@ -6,7 +6,7 @@ https://releases.rancher.com/os/latest/rancheros.iso
 Original Instructionss
 http://rancher.com/docs/os/running-rancheros/server/install-to-disk/
 
-1. Create new VM Type Liunx Kerner 3.x 64 bit
+1. Create new VM Type Linux Kernel 3.x 64 bit
 2. Set Max Vm HDD size to 10 GB (split files)
 3. Set VN Memory to 2GB
 4. Point vm to downloaded  iso image

@@ -1,16 +1,6 @@
 # Install Process Developer
 
 This Guide is specific to Informatica Process developer currently available for download on IICS CLoud platforms.
-It is tested on following OS Versions but it should work on any macOS 10.12.x or higher or Linux with 1.7.x or higher JDK installed
-
-- Ubuntu 16.04 LTS
-- Ubuntu 18.04 LTS
-- macOS 10.12.6 (16G1212)
-- macOS 10.13.4 (17E199)
-- macOS 10.13.6 (17G65)
-- macOS 10.14.5 (18F132)
-- macOS 10.15.3 (19D76)
-- Windows 10
 
 Eclipse for RCP and RAP Developers
 Version: Kepler Service Release 2
@@ -39,6 +29,7 @@ Process Developer Component Versions:
     - [Running the Designer](#running-the-designer)
   - [Process Developer Issues on macOS and Linux](#process-developer-issues-on-macos-and-linux)
     - [XQuery Interpreter Fails with ClassNotFoundException](#xquery-interpreter-fails-with-classnotfoundexception)
+  - [Release Notes](#release-notes)
 
 <!-- /MarkdownTOC -->
 
@@ -74,7 +65,8 @@ You will need a specific version of Eclipse to install plug-ins based distributi
 
 You will also need to download and install JDK 1.7 or newer
 
-Download and install JDK specific to your system from 
+Download and install JDK specific to your system from
+
 - [Oracle Website][oracle jdk download]
 - [Open JDK](https://jdk.java.net/)
 
@@ -87,7 +79,7 @@ Direct [download](https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c693
 
 I install JDK to /c/opt/java/jdk-15.0.2
 
-Run following your have [msys2+packages](setup_tools_windows.md#install-open-jdk) installed
+Run following if you your [msys2+packages](setup_tools_windows.md#install-open-jdk) installed
 
 Bash/zsh
 
@@ -125,7 +117,7 @@ Expand-Archive "$env:USERPROFILE\Downloads\openjdk-15.0.2_windows-x64_bin.zip" -
 2. `sudo apt install openjdk-8-jdk`
 3. Download Eclipse Distribution
 4. Unzip Eclipse
-    `tar -xf eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz -C 'your_directry of choice'` recommended is `/opt/tools`
+    `tar -xf eclipse-rcp-kepler-SR2-linux-gtk-x86_64.tar.gz -C 'your_directory of choice'` recommended is `/opt/tools`
 5. Optionally Edit the /eclipse/eclipse.ini to set the -vm to pint the eclipse to a specific jdk (this is not necessary whe using OpenJDK installed by apt)
     `-vm`
     `/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java`
@@ -181,6 +173,7 @@ Do not install Legacy Java as suggested, it is unsafe and also broken on latest 
     You may want to rename the default 'eclipse' directory to something like `ipd` or `eclipse_kepler`
 7. Edit the `/Applications/eclipse_kepler/Eclipse.app/Contents/MacOS/eclipse.ini`,
     enter the -vm  just before the -vmargs argument to point the Eclipse to a specific jdk and make sure the -vm an path are on separte lines
+
     ```text
     -vm
     /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/server/libjvm.dylib
@@ -228,39 +221,50 @@ openFile
 ### Installing
 
 1. Select the `install new software` option from the help menu.
+  
   ![Install new Software](images/eclipse-install-new-software.png "Install New Software")
 2. Click the add button to add new update site repository
-  ![Add New Repositor](images/eclipse-install-ipd-step1.png "Add New Repository" )
+  
+  ![Add New Repository](images/eclipse-install-ipd-step1.png "Add New Repository" )
 3. Enter a name and click the local button and browse for a location of the Expanded Plugin Zip/updatesite
 4. Select the `updatesite` folder included with this distribution
 5. Click the OK button.
 6. Uncheck the `Group items by category` checkbox.
 7. Click "Select All"
 8. Click next and follow the prompts to complete the install.
+
   ![Select All Components](images/eclipse-install-ipd-step2.png "Select All Components" )
 9. Review The Install Details Summary and continue with next step.
+  
   ![Install Details](images/eclipse-install-ipd-step3.png "Install Details" )
 10. Agree to License Terms and User Agreement
+  
   ![User Agreement](images/eclipse-install-ipd-step4.png "User Agreement" )
 11. Plugin includes unsigned Libraries, accept and dismiss the warning
+  
   ![Dismiss Warning](images/eclipse-install-ipd-step5.png "Dismiss Warning" )
 12. You might be asked to trust the provided certificates, accept and confirm provided certs to trust
+  
   ![Certificate Trust](images/eclipse-install-ipd-step6.png "Certificate Trust" )
 13. Confirm Eclipse IDE restart  
+  
   ![Eclipse Restart](images/eclipse-install-ipd-step7.png "Eclipse Restart" )
 
 ### Running the Designer
 
 Installing the Informatica Cloud Process Developer License
 
-- Start Eclipse.
-- When Eclipse first starts, select the `Activate` button when prompted.
+1. Start Eclipse.
+2. When Eclipse first starts, select the `Activate` button when prompted.
+  
   ![IPD Activate](images/eclipse-install-ipd-step8.png "IPD Activate" )
-- Enter your name and `browse` to the license.lic file included with this distribution in `Cloud_Process_Developer_plugins/license`
+3. Enter your name and `browse` to the license.lic file included with this distribution in `Cloud_Process_Developer_plugins/license`
+  
   ![Import License](images/eclipse-install-ipd-step9.png "Import License" )
-- Select the `Update` button.
-- Select `OK` on the update confirmation dialog.
-- Switch to the Process Developer perspective (Window / Open Perspective / Other / Process Developer)
+4. Select the `Update` button.
+5. Select `OK` on the update confirmation dialog.
+5.  Switch to the Process Developer perspective (Window / Open Perspective / Other / Process Developer)
+  
   ![Change Perspective](images/eclipse-install-ipd-step10.png "Change Perspective" )
 
 ## Process Developer Issues on macOS and Linux
@@ -350,12 +354,28 @@ Params:
 
 Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
 
-1. Create External Tool<br>
+1. Create External Tool
+  
   ![External Tool Configuration](./images/xquery_set_saxon_tool.png "Create External Configuration")
-2. Configure External Tool ponting to your script and resource in your editor<br>
+2. Configure External Tool pointing to your script and resource in your editor
+  
   ![External Tool Configuration](./images/xquery_external_tool_config.png "External Cool Configuration")
 3. Now you should be able to run saxon by selecting external tool from the drop down when editing the main Saxon modules.<br>
+  
   ![Run External Tool Configuration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
+
+## Release Notes
+
+It is tested on following OS Versions but it should work on any macOS 10.12.x or higher or Linux with 1.7.x or higher JDK installed
+
+- Ubuntu 16.04 LTS
+- Ubuntu 18.04 LTS
+- macOS 10.12.6 (16G1212)
+- macOS 10.13.4 (17E199)
+- macOS 10.13.6 (17G65)
+- macOS 10.14.5 (18F132)
+- macOS 10.15.3 (19D76)
+- Windows 10
 
 [eclipse win 32-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32.zip
 [eclipse win 64-bit]: http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-rcp-kepler-SR2-win32-x86_64.zip
