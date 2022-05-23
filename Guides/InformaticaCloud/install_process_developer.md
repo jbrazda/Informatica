@@ -222,10 +222,12 @@ openFile
 
 1. Select the `install new software` option from the help menu.
   
-  ![Install new Software](images/eclipse-install-new-software.png "Install New Software")
+    ![Install new Software](images/eclipse-install-new-software.png "Install New Software")
+
 2. Click the add button to add new update site repository
   
-  ![Add New Repository](images/eclipse-install-ipd-step1.png "Add New Repository" )
+    ![Add New Repository](images/eclipse-install-ipd-step1.png "Add New Repository" )
+
 3. Enter a name and click the local button and browse for a location of the Expanded Plugin Zip/updatesite
 4. Select the `updatesite` folder included with this distribution
 5. Click the OK button.
@@ -233,22 +235,27 @@ openFile
 7. Click "Select All"
 8. Click next and follow the prompts to complete the install.
 
-  ![Select All Components](images/eclipse-install-ipd-step2.png "Select All Components" )
+    ![Select All Components](images/eclipse-install-ipd-step2.png "Select All Components" )
+
 9. Review The Install Details Summary and continue with next step.
   
-  ![Install Details](images/eclipse-install-ipd-step3.png "Install Details" )
+    ![Install Details](images/eclipse-install-ipd-step3.png "Install Details" )
+
 10. Agree to License Terms and User Agreement
   
-  ![User Agreement](images/eclipse-install-ipd-step4.png "User Agreement" )
+    ![User Agreement](images/eclipse-install-ipd-step4.png "User Agreement" )
+  
 11. Plugin includes unsigned Libraries, accept and dismiss the warning
   
-  ![Dismiss Warning](images/eclipse-install-ipd-step5.png "Dismiss Warning" )
+    ![Dismiss Warning](images/eclipse-install-ipd-step5.png "Dismiss Warning" )
+  
 12. You might be asked to trust the provided certificates, accept and confirm provided certs to trust
   
-  ![Certificate Trust](images/eclipse-install-ipd-step6.png "Certificate Trust" )
+    ![Certificate Trust](images/eclipse-install-ipd-step6.png "Certificate Trust" )
+  
 13. Confirm Eclipse IDE restart  
   
-  ![Eclipse Restart](images/eclipse-install-ipd-step7.png "Eclipse Restart" )
+    ![Eclipse Restart](images/eclipse-install-ipd-step7.png "Eclipse Restart" )
 
 ### Running the Designer
 
@@ -257,16 +264,18 @@ Installing the Informatica Cloud Process Developer License
 1. Start Eclipse.
 2. When Eclipse first starts, select the `Activate` button when prompted.
   
-  ![IPD Activate](images/eclipse-install-ipd-step8.png "IPD Activate" )
+    ![IPD Activate](images/eclipse-install-ipd-step8.png "IPD Activate" )
+  
 3. Enter your name and `browse` to the license.lic file included with this distribution in `Cloud_Process_Developer_plugins/license`
   
-  ![Import License](images/eclipse-install-ipd-step9.png "Import License" )
+    ![Import License](images/eclipse-install-ipd-step9.png "Import License" )
+  
 4. Select the `Update` button.
 5. Select `OK` on the update confirmation dialog.
-5.  Switch to the Process Developer perspective (Window / Open Perspective / Other / Process Developer)
+6. Switch to the Process Developer perspective (Window / Open Perspective / Other / Process Developer)
   
-  ![Change Perspective](images/eclipse-install-ipd-step10.png "Change Perspective" )
-
+    ![Change Perspective](images/eclipse-install-ipd-step10.png "Change Perspective" )
+  
 ## Process Developer Issues on macOS and Linux
 
 There are several known issues running Process Developer on Mac but I have found some workarounds
@@ -356,13 +365,15 @@ Then Setup Saxon XQuery interpreter as external tool in Eclipse as follows
 
 1. Create External Tool
   
-  ![External Tool Configuration](./images/xquery_set_saxon_tool.png "Create External Configuration")
+    ![External Tool Configuration](./images/xquery_set_saxon_tool.png "Create External Configuration")
+
 2. Configure External Tool pointing to your script and resource in your editor
   
-  ![External Tool Configuration](./images/xquery_external_tool_config.png "External Cool Configuration")
-3. Now you should be able to run saxon by selecting external tool from the drop down when editing the main Saxon modules.<br>
+    ![External Tool Configuration](./images/xquery_external_tool_config.png "External Cool Configuration")
+
+3. Now you should be able to run saxon by selecting external tool from the drop down when editing the main Saxon modules.
   
-  ![Run External Tool Configuration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
+    ![Run External Tool Configuration](./images/xquery_run_as_external_tool.png "Run External Cool Configuration")
 
 ## Release Notes
 
