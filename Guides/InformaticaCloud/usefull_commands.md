@@ -7,8 +7,12 @@
     - [Verify Health Check of the Server and access to IICS MDM API](#verify-health-check-of-the-server-and-access-to-iics-mdm-api)
     - [Check the Speed of the Internet connection](#check-the-speed-of-the-internet-connection)
         - [Windows - Powershell](#windows---powershell)
+        - [Linux Ubuntu/Debian](#linux-ubuntudebian)
         - [One-liners for Admin Shell Guide](#one-liners-for-admin-shell-guide)
         - [Example Ookla Speedtest output](#example-ookla-speedtest-output)
+    - [Inspect IICS Secure Agent logs via Admin Shell Guide](#inspect-iics-secure-agent-logs-via-admin-shell-guide)
+        - [On Windows](#on-windows)
+        - [On Linux](#on-linux)
 
 <!-- /TOC -->
 
@@ -73,6 +77,16 @@ catch {
 Write-Host "Now you can Run $speedtest_target_location\speedtest.exe --accept-license -p -v"
 ```
 
+### Linux Ubuntu/Debian
+
+On ubuntu/Debian, the speedtest-cli is available in the system package manager
+
+```shell
+sudo apt install speedtest-cli
+```
+
+> On Mac you can use brew or Mac Ports
+
 ### One-liners for Admin Shell Guide
 
 ```cmd
@@ -114,4 +128,27 @@ Idle Latency:     9.96 ms   (jitter: 0.31ms, low: 9.71ms, high: 10.19ms)
 [warning] No libz support available, not compressing data.
  Packet Loss:     0.0%
   Result URL: https://www.speedtest.net/result/c/7d56a03b-7413-4f52-96f3-6dfa20402dfc
+  
+```
+
+## Inspect IICS Secure Agent logs via Admin Shell Guide
+
+### On Windows
+
+```cmd
+REM Get last 100 lines of the current day Process Server log
+powershell -command "Get-Content -Tail 100 $env:APP_DIR\logs\catalina.$(Get-Date -Format 'yyyy-mm-dd').log"
+REM Get last 100 lines of the agentcore.log
+powershell -command "Get-Content -Tail 100 $env:APP_DIR\..\agentcore\agentcore.log"
+```
+
+### On Linux
+
+```shell
+# Get last 100 lines of the current day Process Server log
+tail -n 100 "$APP_DIR/logs/catalina.$(date '+%Y-%m-%d').log"
+# Get last 100 lines of the yesterday's Process Server log
+tail -n 100 "$APP_DIR/logs/catalina.$(date -d yesterday '+%Y-%m-%d').log"
+# Get last 100 lines of the agentcore.log
+tail -n 100 "$APP_DIR/logs/../agentcore/agentcore.log"
 ```
